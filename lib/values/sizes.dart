@@ -112,6 +112,7 @@ class Sizes {
   static const double MARGIN_46 = 46.0;
   static const double MARGIN_44 = 44.0;
   static const double MARGIN_40 = 40.0;
+  static const double MARGIN_36 = 36.0;
   static const double MARGIN_32 = 32.0;
   static const double MARGIN_30 = 30.0;
   static const double MARGIN_24 = 24.0;

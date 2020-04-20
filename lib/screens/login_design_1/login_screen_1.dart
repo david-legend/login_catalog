@@ -40,10 +40,11 @@ class LoginScreen1 extends StatelessWidget {
             ),
           ),
           Container(
-            margin: const EdgeInsets.symmetric(horizontal: 24),
+            margin: const EdgeInsets.symmetric(horizontal: Sizes.MARGIN_36),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                //10% of the height of screen
+                SizedBox(height: heightOfScreen * 0.1,),
                 ListBody(
                   children: <Widget>[
                     Text(
@@ -61,7 +62,7 @@ class LoginScreen1 extends StatelessWidget {
                         fontWeight: FontWeight.w900,
                       ),
                     ),
-                    SpaceH8(),
+                    SpaceH4(),
                     Text(
                       StringConst.SIGN_IN_MSG,
                       style: textTheme.subtitle.copyWith(
@@ -70,7 +71,7 @@ class LoginScreen1 extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    SpaceH96(),
+                    SizedBox(height: heightOfScreen * 0.1,),
                     Text(
                       StringConst.SIGN_IN,
                       style: textTheme.headline.copyWith(
@@ -104,7 +105,7 @@ class LoginScreen1 extends StatelessWidget {
                     size: Sizes.ICON_SIZE_20,
                   ),
                 ),
-                SpaceH16(),
+                SpaceH24(),
                 CustomButton(
                   title: StringConst.SIGN_ME_IN,
                   textStyle: textTheme.button,

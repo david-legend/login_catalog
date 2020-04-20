@@ -4,10 +4,10 @@ class CustomLoginShapeClipper1 extends CustomClipper<Path> {
   @override
   getClip(Size size) {
     final Path path = Path();
-    path.lineTo(0.0, size.height / 2);
+    path.lineTo(0.0, size.height * 0.5);
 
-    var firstEndpoint = Offset(size.width, size.height / 4);
-    var firstControlPoint = Offset(size.width / 2, (size.height / 2) * 1.1);
+    var firstEndpoint = Offset(size.width, size.height * 0.25);
+    var firstControlPoint = Offset(size.width * 0.75 , size.height * 0.5);
 
     path.quadraticBezierTo(firstControlPoint.dx, firstControlPoint.dy,
         firstEndpoint.dx, firstEndpoint.dy);
@@ -29,11 +29,11 @@ class CustomLoginShapeClipper2 extends CustomClipper<Path> {
   @override
   getClip(Size size) {
     final Path path = Path();
-    path.lineTo(0.0, size.height * 0.8);
+    path.lineTo(0.0, size.height * 0.85);
 
 
     var firstEndpoint = Offset(size.width, size.height * 0.7);
-    var firstControlPoint = Offset(size.width * 0.70, size.height * 0.8);
+    var firstControlPoint = Offset(size.width * 0.75, size.height * 0.85);
 
     path.quadraticBezierTo(firstControlPoint.dx, firstControlPoint.dy,
         firstEndpoint.dx, firstEndpoint.dy);

@@ -49,7 +49,7 @@ class SignUpScreen1 extends StatelessWidget {
             ),
           ),
           Container(
-            margin: const EdgeInsets.symmetric(horizontal: 24),
+            margin: const EdgeInsets.symmetric(horizontal: Sizes.MARGIN_36),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
