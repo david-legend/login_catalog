@@ -11,10 +11,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.loginScreen1,
+//      initialRoute: Routes.signupScreen1,
       theme: LoginCatalogThemeData.lightThemeData,
       onGenerateRoute: Router().onGenerateRoute,
-      builder: ExtendedNavigator<Router>(router: Router()),
+      builder: ExtendedNavigator<Router>(router: Router(), initialRoute: Routes.signupScreen1,),
     );
   }
 }

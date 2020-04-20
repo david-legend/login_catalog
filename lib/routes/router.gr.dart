@@ -8,9 +8,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:logincatalog/screens/login_design_1/login_screen_1.dart';
+import 'package:logincatalog/screens/login_design_1/signup_screen_1.dart';
 
 abstract class Routes {
   static const loginScreen1 = '/';
+  static const signupScreen1 = '/signup-screen1';
 }
 
 class Router extends RouterBase {
@@ -26,6 +28,11 @@ class Router extends RouterBase {
       case Routes.loginScreen1:
         return MaterialPageRoute<dynamic>(
           builder: (_) => LoginScreen1(),
+          settings: settings,
+        );
+      case Routes.signupScreen1:
+        return MaterialPageRoute<dynamic>(
+          builder: (_) => SignUpScreen1(),
           settings: settings,
         );
       default:
