@@ -3,7 +3,7 @@ part of 'values.dart';
 class Styles {
 
 
-  static TextStyle hintTextStyle({
+  static TextStyle customTextStyle({
     Color color = AppColors.blackShade3,
     FontWeight fontWeight = FontWeight.w600,
     double fontSize = Sizes.TEXT_SIZE_14,

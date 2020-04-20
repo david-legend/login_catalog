@@ -112,7 +112,8 @@ class SignUpScreen1 extends StatelessWidget {
           hasPrefixIcon: true,
           textInputType: TextInputType.text,
           hintText: StringConst.NAME,
-          hintTextStyle: Styles.hintTextStyle(),
+          hintTextStyle: Styles.customTextStyle(),
+          textStyle: Styles.customTextStyle(),
           prefixIcon: Icon(
             FeatherIcons.user,
             color: AppColors.blackShade4,
@@ -124,7 +125,8 @@ class SignUpScreen1 extends StatelessWidget {
           hasPrefixIcon: true,
           textInputType: TextInputType.emailAddress,
           hintText: StringConst.EMAIL_ADDRESS,
-          hintTextStyle: Styles.hintTextStyle(),
+          hintTextStyle: Styles.customTextStyle(),
+          textStyle: Styles.customTextStyle(),
           prefixIcon: Icon(
             FeatherIcons.mail,
             color: AppColors.blackShade4,
@@ -136,7 +138,9 @@ class SignUpScreen1 extends StatelessWidget {
           hasPrefixIcon: true,
           textInputType: TextInputType.text,
           hintText: StringConst.PASSWORD,
-          hintTextStyle: Styles.hintTextStyle(),
+          hintTextStyle: Styles.customTextStyle(),
+          textStyle: Styles.customTextStyle(),
+          obscured: true,
           prefixIcon: Icon(
             FeatherIcons.key,
             color: AppColors.blackShade4,

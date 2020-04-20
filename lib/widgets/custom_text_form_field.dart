@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:logincatalog/values/values.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  final TextStyle textFormFieldStyle;
+  final TextStyle textStyle;
   final TextStyle hintTextStyle;
   final Widget prefixIcon;
   final String hintText;
@@ -19,7 +19,7 @@ class CustomTextFormField extends StatelessWidget {
 
   CustomTextFormField({
     this.prefixIcon,
-    this.textFormFieldStyle,
+    this.textStyle,
     this.hintTextStyle,
     this.border = Borders.primaryInputBorder,
     this.focusedBorder = Borders.focusedBorder,
@@ -37,7 +37,7 @@ class CustomTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: TextFormField(
-        style: textFormFieldStyle,
+        style: textStyle,
         keyboardType: textInputType,
         onChanged: onChanged,
         validator: validator,

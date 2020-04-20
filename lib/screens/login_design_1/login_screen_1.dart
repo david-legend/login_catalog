@@ -9,11 +9,10 @@ import 'package:logincatalog/widgets/custom_text_form_field.dart';
 import 'package:logincatalog/widgets/spaces.dart';
 
 class LoginScreen1 extends StatelessWidget {
+  final heightOfAppBar = 56.0;
+
   @override
   Widget build(BuildContext context) {
-    var textTheme = Theme.of(context).textTheme;
-    var iconTheme = Theme.of(context).iconTheme;
-    var heightOfAppBar = 56.0;
     var heightOfScreen = MediaQuery.of(context).size.height - heightOfAppBar;
 
     return Scaffold(
@@ -56,112 +55,126 @@ class LoginScreen1 extends StatelessWidget {
               children: <Widget>[
                 //10% of the height of screen
                 SizedBox(height: heightOfScreen * 0.075),
-                ListBody(
-                  children: <Widget>[
-                    Text(
-                      StringConst.WELCOME,
-                      style: textTheme.headline.copyWith(
-                        color: AppColors.white,
-                        fontWeight: FontWeight.w900,
-                      ),
-                    ),
-                    SpaceH4(),
-                    Text(
-                      StringConst.BACK,
-                      style: textTheme.headline.copyWith(
-                        color: AppColors.white,
-                        fontWeight: FontWeight.w900,
-                      ),
-                    ),
-                    SpaceH4(),
-                    Text(
-                      StringConst.SIGN_IN_MSG,
-                      style: textTheme.subtitle.copyWith(
-                        color: AppColors.white,
-                        fontSize: Sizes.TEXT_SIZE_16,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    SizedBox(height: heightOfScreen * 0.075),
-                    Text(
-                      StringConst.SIGN_IN,
-                      style: textTheme.headline.copyWith(
-                        color: AppColors.white,
-                        fontWeight: FontWeight.w900,
-                      ),
-                    ),
-                  ],
-                ),
+                _buildIntroText(context),
                 SpaceH8(),
-                Container(
-                  child: Column(
-                    children: <Widget>[
-                      CustomTextFormField(
-                        hasPrefixIcon: true,
-                        textInputType: TextInputType.emailAddress,
-                        hintText: StringConst.EMAIL_ADDRESS,
-                        hintTextStyle: Styles.hintTextStyle(color: AppColors.white),
-                        prefixIcon: Icon(
-                          FeatherIcons.mail,
-                          color: iconTheme.color,
-                          size: Sizes.ICON_SIZE_20,
-                        ),
-                      ),
-                      SpaceH20(),
-                      CustomTextFormField(
-                        hasPrefixIcon: true,
-                        textInputType: TextInputType.text,
-                        hintTextStyle: Styles.hintTextStyle(color: AppColors.white),
-                        hintText: StringConst.PASSWORD,
-                        prefixIcon: Icon(
-                          FeatherIcons.key,
-                          color: iconTheme.color,
-                          size: Sizes.ICON_SIZE_20,
-                        ),
-                      ),
-                      SpaceH24(),
-                      CustomButton(
-                        title: StringConst.SIGN_ME_IN,
-                        textStyle: textTheme.button,
-                        onPressed: () {},
-                      ),
-                      SpaceH20(),
-                      InkWell(
-                        onTap: () => Router.navigator.pushReplacementNamed(Routes.signupScreen1),
-                        child: Text(
-                          StringConst.DONT_HAVE_AN_ACCOUNT,
-                          textAlign: TextAlign.center,
-                          style: textTheme.subtitle.copyWith(
-                            fontSize: Sizes.TEXT_SIZE_14,
-                            color: AppColors.blackShade6,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      ),
-                      SpaceH16(),
-                      Text(
-                        StringConst.NEED_HELP,
-                        textAlign: TextAlign.center,
-                        style: textTheme.subtitle.copyWith(
-                          fontSize: Sizes.TEXT_SIZE_14,
-                          color: AppColors.blackShade6,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      SpaceH2(),
-                      CustomDivider(
-                        color: AppColors.blackShade6,
-                      )
-                    ],
-                  ),
-                ),
-
-
+                _buildForm(context),
               ],
             ),
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildIntroText(BuildContext context) {
+    var textTheme = Theme.of(context).textTheme;
+    var heightOfScreen = MediaQuery.of(context).size.height - heightOfAppBar;
+
+    return ListBody(
+      children: <Widget>[
+        Text(
+          StringConst.WELCOME,
+          style: textTheme.headline.copyWith(
+            color: AppColors.white,
+            fontWeight: FontWeight.w900,
+          ),
+        ),
+        SpaceH4(),
+        Text(
+          StringConst.BACK,
+          style: textTheme.headline.copyWith(
+            color: AppColors.white,
+            fontWeight: FontWeight.w900,
+          ),
+        ),
+        SpaceH4(),
+        Text(
+          StringConst.SIGN_IN_MSG,
+          style: textTheme.subtitle.copyWith(
+            color: AppColors.white,
+            fontSize: Sizes.TEXT_SIZE_16,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        SizedBox(height: heightOfScreen * 0.075),
+        Text(
+          StringConst.SIGN_IN,
+          style: textTheme.headline.copyWith(
+            color: AppColors.white,
+            fontWeight: FontWeight.w900,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildForm(BuildContext context) {
+    var textTheme = Theme.of(context).textTheme;
+    var iconTheme = Theme.of(context).iconTheme;
+
+    return Column(
+      children: <Widget>[
+        CustomTextFormField(
+          hasPrefixIcon: true,
+          textInputType: TextInputType.emailAddress,
+          hintText: StringConst.EMAIL_ADDRESS,
+          hintTextStyle: Styles.customTextStyle(color: AppColors.white),
+          textStyle: Styles.customTextStyle(color: AppColors.white),
+          prefixIcon: Icon(
+            FeatherIcons.mail,
+            color: iconTheme.color,
+            size: Sizes.ICON_SIZE_20,
+          ),
+        ),
+        SpaceH20(),
+        CustomTextFormField(
+          hasPrefixIcon: true,
+          textInputType: TextInputType.text,
+          hintTextStyle: Styles.customTextStyle(color: AppColors.white),
+          textStyle: Styles.customTextStyle(color: AppColors.white),
+          hintText: StringConst.PASSWORD,
+          obscured: true,
+          prefixIcon: Icon(
+            FeatherIcons.key,
+            color: iconTheme.color,
+            size: Sizes.ICON_SIZE_20,
+          ),
+        ),
+        SpaceH24(),
+        CustomButton(
+          title: StringConst.SIGN_ME_IN,
+          textStyle: textTheme.button,
+          onPressed: () {},
+        ),
+        SpaceH20(),
+        InkWell(
+          onTap: () =>
+              Router.navigator.pushReplacementNamed(Routes.signupScreen1),
+          child: Text(
+            StringConst.DONT_HAVE_AN_ACCOUNT,
+            textAlign: TextAlign.center,
+            style: textTheme.subtitle.copyWith(
+              fontSize: Sizes.TEXT_SIZE_14,
+              color: AppColors.blackShade6,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ),
+        SpaceH16(),
+        Text(
+          StringConst.NEED_HELP,
+          textAlign: TextAlign.center,
+          style: textTheme.subtitle.copyWith(
+            fontSize: Sizes.TEXT_SIZE_14,
+            color: AppColors.blackShade6,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        SpaceH2(),
+        CustomDivider(
+          color: AppColors.blackShade6,
+        )
+      ],
     );
   }
 }
