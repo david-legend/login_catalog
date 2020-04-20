@@ -6,15 +6,18 @@ class AppColors {
 
   static const Color primaryText = Color(0xFFFFFFFF);
 
-  static const Color violetShade1 = Color(0xFF4F44FF);
 
   //Black
   static const Color black = Color(0xFF000000);
   static const Color blackShade1 = Color(0xFF3B3870);
+  static const Color blackShade2 = Color(0xFF2D3041);
+  static const Color blackShade3 = Color(0xFF797C82);
+  static const Color blackShade4 = Color(0xFF626061);
+  static const Color blackShade5 = Color(0xFF323345);
 
   //White
   static const Color white = Color(0xFFFFFFFF);
-  static const Color whiteShade1 = Color(0xFFFFFFDE);
+  static const Color whiteShade1 = Color(0xFFF6F6F6);
 
   //Grey
   static const Color grey = Color(0xFFE0E0E0);
@@ -25,6 +28,7 @@ class AppColors {
   static const Color red = Color(0xFFF1291A);
 
   static const Color pink = Color(0xFFC2366D);
+  static const Color pinkShade1 = Color(0xFFDC669F);
 
   //Green
   static const Color green = Color(0xFF3ACC6C);

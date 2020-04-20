@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:logincatalog/values/values.dart';
 import 'package:logincatalog/widgets/custom_button.dart';
 import 'package:logincatalog/widgets/custom_shape_clippers.dart';
@@ -9,6 +10,7 @@ class SignUpScreen1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var textTheme = Theme.of(context).textTheme;
+    var iconTheme = Theme.of(context).iconTheme;
     var heightOfAppBar = 56.0;
     var heightOfScreen = MediaQuery.of(context).size.height - heightOfAppBar;
     var widthOfScreen = MediaQuery.of(context).size.width;
@@ -17,7 +19,7 @@ class SignUpScreen1 extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: AppColors.greyShade2,
         leading: IconButton(
-          onPressed: (){},
+          onPressed: () {},
           icon: Icon(Icons.arrow_back_ios),
         ),
         elevation: Sizes.ELEVATION_0,
@@ -30,26 +32,20 @@ class SignUpScreen1 extends StatelessWidget {
           Container(
             height: heightOfScreen,
             width: widthOfScreen,
-            decoration: BoxDecoration(
-                color: AppColors.pink
-            ),
+            decoration: BoxDecoration(color: AppColors.pink),
           ),
           ClipPath(
             clipper: CustomSignUpShapeClipper2(),
             child: Container(
               height: heightOfScreen,
-              decoration: BoxDecoration(
-                  color: AppColors.white
-              ),
+              decoration: BoxDecoration(color: AppColors.white),
             ),
           ),
           ClipPath(
             clipper: CustomSignUpShapeClipper1(),
             child: Container(
               height: heightOfScreen,
-              decoration: BoxDecoration(
-                  color: AppColors.greyShade2
-              ),
+              decoration: BoxDecoration(color: AppColors.greyShade2),
             ),
           ),
           Container(
@@ -59,9 +55,22 @@ class SignUpScreen1 extends StatelessWidget {
               children: <Widget>[
                 ListBody(
                   children: <Widget>[
-                    Text(StringConst.SIGN_UP, style: textTheme.headline.copyWith()),
+                    Text(
+                      StringConst.SIGN_UP,
+                      style: textTheme.headline.copyWith(
+                        color: AppColors.blackShade2,
+                        fontWeight: FontWeight.w900,
+                      ),
+                    ),
                     SpaceH8(),
-                    Text(StringConst.SIGN_UP_MSG, style: textTheme.subtitle.copyWith()),
+                    Text(
+                      StringConst.SIGN_UP_MSG,
+                      style: textTheme.subtitle.copyWith(
+                        color: AppColors.pinkShade1,
+                        fontSize: Sizes.TEXT_SIZE_16,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
                   ],
                 ),
                 SpaceH20(),
@@ -69,32 +78,67 @@ class SignUpScreen1 extends StatelessWidget {
                   hasPrefixIcon: true,
                   textInputType: TextInputType.text,
                   hintText: StringConst.NAME,
-                  prefixIcon: Icon(Icons.person_outline),
+                  hintTextStyle: Styles.hintTextStyle,
+                  prefixIcon: Icon(
+                    FeatherIcons.user,
+                    color: iconTheme.color,
+                    size: Sizes.ICON_SIZE_20,
+                  ),
                 ),
                 SpaceH16(),
                 CustomTextFormField(
                   hasPrefixIcon: true,
                   textInputType: TextInputType.emailAddress,
                   hintText: StringConst.EMAIL_ADDRESS,
-                  prefixIcon: Icon(Icons.mail),
+                  hintTextStyle: Styles.hintTextStyle,
+
+                  prefixIcon: Icon(
+                    FeatherIcons.mail,
+                    color: iconTheme.color,
+                    size: Sizes.ICON_SIZE_20,
+                  ),
                 ),
                 SpaceH16(),
                 CustomTextFormField(
                   hasPrefixIcon: true,
                   textInputType: TextInputType.text,
                   hintText: StringConst.PASSWORD,
-                  prefixIcon: Icon(Icons.lock),
+                  hintTextStyle: Styles.hintTextStyle,
+                  prefixIcon: Icon(
+                    FeatherIcons.key,
+                    color: iconTheme.color,
+                    size: Sizes.ICON_SIZE_20,
+                  ),
                 ),
                 SpaceH16(),
                 CustomButton(
                   title: StringConst.SIGN_ME_UP,
+                  color: AppColors.blackShade5,
                   textStyle: textTheme.button,
                   onPressed: () {},
                 ),
                 SpaceH16(),
-                Text(StringConst.ALREADY_HAVE_AN_ACCOUNT),
+                Text(
+                  StringConst.ALREADY_HAVE_AN_ACCOUNT,
+                  style: textTheme.subtitle.copyWith(
+                    fontSize: Sizes.TEXT_SIZE_14,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
                 SpaceH8(),
-                Text(StringConst.NEED_HELP),
+                Text(
+                  StringConst.NEED_HELP,
+                  style: textTheme.subtitle.copyWith(
+                    fontSize: Sizes.TEXT_SIZE_14,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                SpaceH2(),
+                Container(
+                  width: Sizes.WIDTH_80,
+                  height: Sizes.HEIGHT_1,
+                  color: AppColors.white,
+                ),
               ],
             ),
           ),
@@ -103,3 +147,4 @@ class SignUpScreen1 extends StatelessWidget {
     );
   }
 }
+//transform: Matrix4.translationValues(-12.0, 0.0, 0.0),

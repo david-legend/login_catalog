@@ -14,17 +14,18 @@ class LoginCatalogThemeData {
     return ThemeData(
       colorScheme: colorScheme,
       textTheme: _textTheme,
-      iconTheme: IconThemeData(color: colorScheme.onPrimary),
+      iconTheme: IconThemeData(color: AppColors.blackShade4),
       canvasColor: colorScheme.background,
       scaffoldBackgroundColor: colorScheme.background,
       highlightColor: Colors.transparent,
       accentColor: colorScheme.primary,
-      focusColor: AppColors.violetShade1,
+      focusColor: AppColors.primaryColor,
+
     );
   }
 
   static const ColorScheme lightColorScheme = ColorScheme(
-    primary: Color(0xFFB93C5D),
+    primary: Color(0xFFC2366D),
     primaryVariant: Color(0xFF117378),
     secondary: Color(0xFFEFF3F3),
     secondaryVariant: Color(0xFFFAFBFB),
@@ -40,53 +41,54 @@ class LoginCatalogThemeData {
   );
 
 
-  static const _regular = FontWeight.w400;
-  static const _semiBold = FontWeight.w600;
+  static const _superBold = FontWeight.w900;
   static const _bold = FontWeight.w700;
+  static const _semiBold = FontWeight.w600;
   static const _medium = FontWeight.w500;
+  static const _regular = FontWeight.w400;
   static const _light = FontWeight.w300;
 
   static final TextTheme _textTheme = TextTheme(
-    display1: GoogleFonts.josefinSans(
-      fontSize: Sizes.TEXT_SIZE_36,
+    display1: GoogleFonts.roboto(
+      fontSize: Sizes.TEXT_SIZE_44,
       color: AppColors.primaryText,
-      fontWeight: FontWeight.bold,
+      fontWeight: _superBold,
       fontStyle: FontStyle.normal,
     ),
-    headline: GoogleFonts.josefinSans(
-      fontSize: Sizes.TEXT_SIZE_36,
+    headline: GoogleFonts.roboto(
+      fontSize: Sizes.TEXT_SIZE_40,
       color: AppColors.primaryText,
-      fontWeight: FontWeight.bold,
+      fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    subhead: GoogleFonts.josefinSans(
+    subhead: GoogleFonts.roboto(
       fontSize: Sizes.TEXT_SIZE_18,
       color: AppColors.primaryText,
-      fontWeight: FontWeight.w600,
+      fontWeight: _semiBold,
       fontStyle: FontStyle.normal,
     ),
-    title: GoogleFonts.josefinSans(
+    title: GoogleFonts.roboto(
       fontSize: Sizes.TEXT_SIZE_18,
       color: AppColors.primaryText,
-      fontWeight: FontWeight.w600,
+      fontWeight: _medium,
       fontStyle: FontStyle.normal,
     ),
-    body1: GoogleFonts.josefinSans(
+    body1: GoogleFonts.roboto(
       fontSize: Sizes.TEXT_SIZE_18,
       color: AppColors.primaryText,
-      fontWeight: FontWeight.normal,
+      fontWeight: _light,
       fontStyle: FontStyle.normal,
     ),
-    button: GoogleFonts.josefinSans(
+    button: GoogleFonts.roboto(
         fontSize: Sizes.TEXT_SIZE_18,
         color: AppColors.primaryText,
         fontStyle: FontStyle.normal,
-        fontWeight: FontWeight.bold
+        fontWeight: _medium,
     ),
-    subtitle: GoogleFonts.josefinSans(
+    subtitle: GoogleFonts.roboto(
       fontSize: Sizes.TEXT_SIZE_18,
       color: AppColors.primaryText,
-      fontWeight: FontWeight.bold,
+      fontWeight: _regular,
       fontStyle: FontStyle.normal,
     ),
   );

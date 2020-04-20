@@ -18,6 +18,8 @@ class Sizes {
 
   //TextSizes
   static const double TEXT_SIZE_50 = 50.0;
+  static const double TEXT_SIZE_48 = 48.0;
+  static const double TEXT_SIZE_44 = 44.0;
   static const double TEXT_SIZE_40 = 40.0;
   static const double TEXT_SIZE_36 = 36.0;
   static const double TEXT_SIZE_32 = 32.0;
@@ -72,6 +74,8 @@ class Sizes {
   static const double HEIGHT_14 = 14.0;
   static const double HEIGHT_10 = 10.0;
   static const double HEIGHT_8 = 8.0;
+  static const double HEIGHT_4 = 4.0;
+  static const double HEIGHT_1 = 1.0;
 
   //Widths
   static const double WIDTH_300 = 300.0;
@@ -81,6 +85,7 @@ class Sizes {
   static const double WIDTH_160 = 160.0;
   static const double WIDTH_150 = 150.0;
   static const double WIDTH_100 = 100.0;
+  static const double WIDTH_80 = 80.0;
   static const double WIDTH_60 = 60.0;
   static const double WIDTH_50 = 50.0;
   static const double WIDTH_40 = 40.0;
