@@ -79,11 +79,10 @@ class CustomSignUpShapeClipper2 extends CustomClipper<Path> {
   @override
   getClip(Size size) {
     final Path path = Path();
-//    path.lineTo(0.0, size.height * 0.30);
     path.lineTo(0.0, size.height);
 
-    var firstEndpoint = Offset(size.width, size.height * 0.6);
-    var firstControlPoint = Offset(size.width * 0.25, size.height * 0.55);
+    var firstEndpoint = Offset(size.width, size.height * 0.52);
+    var firstControlPoint = Offset(size.width * 0.25, size.height * 0.52);
 
     path.quadraticBezierTo(firstControlPoint.dx, firstControlPoint.dy,
         firstEndpoint.dx, firstEndpoint.dy);

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
+import 'package:logincatalog/routes/router.gr.dart';
 import 'package:logincatalog/values/values.dart';
 import 'package:logincatalog/widgets/custom_button.dart';
 import 'package:logincatalog/widgets/custom_divider.dart';
@@ -44,7 +45,7 @@ class LoginScreen1 extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 //10% of the height of screen
-                SizedBox(height: heightOfScreen * 0.1,),
+                SizedBox(height: heightOfScreen * 0.1),
                 ListBody(
                   children: <Widget>[
                     Text(
@@ -71,7 +72,7 @@ class LoginScreen1 extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    SizedBox(height: heightOfScreen * 0.1,),
+                    SizedBox(height: heightOfScreen * 0.1),
                     Text(
                       StringConst.SIGN_IN,
                       style: textTheme.headline.copyWith(
@@ -112,12 +113,15 @@ class LoginScreen1 extends StatelessWidget {
                   onPressed: () {},
                 ),
                 SpaceH16(),
-                Text(
-                  StringConst.DONT_HAVE_AN_ACCOUNT,
-                  style: textTheme.subtitle.copyWith(
-                    fontSize: Sizes.TEXT_SIZE_14,
-                    color: AppColors.blackShade6,
-                    fontWeight: FontWeight.w600,
+                InkWell(
+                  onTap: () => Router.navigator.pushReplacementNamed(Routes.signupScreen1),
+                  child: Text(
+                    StringConst.DONT_HAVE_AN_ACCOUNT,
+                    style: textTheme.subtitle.copyWith(
+                      fontSize: Sizes.TEXT_SIZE_14,
+                      color: AppColors.blackShade6,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
                 SpaceH8(),

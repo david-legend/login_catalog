@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
+import 'package:logincatalog/routes/router.gr.dart';
 import 'package:logincatalog/values/values.dart';
 import 'package:logincatalog/widgets/custom_button.dart';
 import 'package:logincatalog/widgets/custom_divider.dart';
@@ -19,7 +20,7 @@ class SignUpScreen1 extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: AppColors.greyShade2,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () => Router.navigator.pushReplacementNamed(Routes.loginScreen1),
           icon: Icon(Icons.arrow_back_ios),
         ),
         elevation: Sizes.ELEVATION_0,
@@ -51,8 +52,8 @@ class SignUpScreen1 extends StatelessWidget {
           Container(
             margin: const EdgeInsets.symmetric(horizontal: Sizes.MARGIN_36),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                SizedBox(height: heightOfScreen * 0.2),
                 ListBody(
                   children: <Widget>[
                     Text(
@@ -91,7 +92,6 @@ class SignUpScreen1 extends StatelessWidget {
                   textInputType: TextInputType.emailAddress,
                   hintText: StringConst.EMAIL_ADDRESS,
                   hintTextStyle: Styles.hintTextStyle(),
-
                   prefixIcon: Icon(
                     FeatherIcons.mail,
                     color: AppColors.blackShade4,
@@ -110,7 +110,7 @@ class SignUpScreen1 extends StatelessWidget {
                     size: Sizes.ICON_SIZE_20,
                   ),
                 ),
-                SpaceH16(),
+                SpaceH24(),
                 CustomButton(
                   title: StringConst.SIGN_ME_UP,
                   color: AppColors.blackShade5,
@@ -118,11 +118,14 @@ class SignUpScreen1 extends StatelessWidget {
                   onPressed: () {},
                 ),
                 SpaceH16(),
-                Text(
-                  StringConst.ALREADY_HAVE_AN_ACCOUNT,
-                  style: textTheme.subtitle.copyWith(
-                    fontSize: Sizes.TEXT_SIZE_14,
-                    fontWeight: FontWeight.w600,
+                InkWell(
+                  onTap: () => Router.navigator.pushReplacementNamed(Routes.loginScreen1),
+                  child: Text(
+                    StringConst.ALREADY_HAVE_AN_ACCOUNT,
+                    style: textTheme.subtitle.copyWith(
+                      fontSize: Sizes.TEXT_SIZE_14,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
                 SpaceH8(),
