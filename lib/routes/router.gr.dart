@@ -10,7 +10,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:logincatalog/screens/login_design_1/login_screen_1.dart';
 
 abstract class Routes {
-  static const loginScreen1 = '/login-screen1';
+  static const loginScreen1 = '/';
 }
 
 class Router extends RouterBase {

@@ -2,49 +2,29 @@ part of values;
 
 class StringConst {
   //strings
-  static const String APP_NAME = "Onboarding App";
-
-  static const String STARTED = "Let's Get Started";
-  static const String JOIN = "Join Us Now And Enjoy";
-  static const String FREE_SHIPPING = "Credit Free Shipping";
-  static const String INSTANTLY = "Instantly";
-
-  static const String REGISTRATION = "Registration";
-  static const String ENTER_MOBILE = "Enter Your Mobile Number To";
-  static const String RECEIVE_VERIFICATION = "Receive A Verification Code";
-
-  static const String VERIFICATION = "Verification";
-  static const String ENTER_CODE = "Enter A 4 Digit Number That";
-  static const String RECEIVED_CODE = "Was Sent To ";
-
-  static const String FINGERPRINT = "Fingerprint";
-  static const String REST_FINGER = "Rest Your Finger On The Sensor";
-  static const String CAPTURE_FINGERPRINT = "To Capture Your Fingerorint";
-  static const String OPTIONAL = "(Optional)";
-
-  static const String IDENTITY = "Identity";
-  static const String VERIFY_IDENTITY = "We Need To Verify Your Identity";
-  static const String REQUIRED = "(Required)";
+  static const String APP_NAME = "Login Catalog";
 
   static const String WELCOME = "Welcome";
-  static const String WELCOME_MSG_1 = "Well you have thus come this far!";
-  static const String WELCOME_MSG_2 = "Speak friend and enter or some";
-  static const String LOREM_IPSUM = "lorem ipsum";
+  static const String BACK = "Back!";
+  static const String SIGN_IN_MSG = "Hey! Good to see you again.";
+  static const String SIGN_UP_MSG = "We are happy to see you here!";
 
-  //Button Texts
-  static const String CREATE_ACCOUNT = "Create Account";
-  static const String LOGIN = "Login";
-  static const String GET_CODE = "Get Code";
-  static const String VERIFY = "Verify";
-  static const String CONTINUE = "Continue";
-  static const String DONE = "Done!";
-  static const String HOORAY = "Hooray!";
+  static const String SIGN_IN = "Sign in";
+  static const String SIGN_UP = "Sign up";
 
-  static const String SKIP_TEXT = "Skip This Step";
-  static const String VALID_PHONE_NUMBER = "Enter a valid phone number";
-  static const String PHONE_NUMBER_HINT_TEXT = "Enter your phone number";
+  //hint_text
+  static const String NAME = "Name";
+  static const String EMAIL_ADDRESS = "Email Address";
+  static const String PASSWORD = "Password";
 
-  static const String RESEND_CODE = "Re-Send Code In 0:";
+  //Buttons
+  static const String SIGN_ME_IN = "Sign me in";
+  static const String SIGN_ME_UP = "Sign me in";
+
+  static const String ALREADY_HAVE_AN_ACCOUNT = "Already have an account ?";
+  static const String DONT_HAVE_AN_ACCOUNT = "Don't have an account ?";
+  static const String NEED_HELP = "Need Help?";
+
 
   //Font Family
   static const String FONT_FAMILY = "Gotham";
