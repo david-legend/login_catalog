@@ -14,7 +14,7 @@ class LoginCatalogThemeData {
     return ThemeData(
       colorScheme: colorScheme,
       textTheme: _textTheme,
-      iconTheme: IconThemeData(color: AppColors.blackShade4),
+      iconTheme: IconThemeData(color: AppColors.white),
       canvasColor: colorScheme.background,
       scaffoldBackgroundColor: colorScheme.background,
       highlightColor: Colors.transparent,
@@ -86,7 +86,7 @@ class LoginCatalogThemeData {
         fontWeight: _medium,
     ),
     subtitle: GoogleFonts.roboto(
-      fontSize: Sizes.TEXT_SIZE_18,
+      fontSize: Sizes.TEXT_SIZE_16,
       color: AppColors.primaryText,
       fontWeight: _regular,
       fontStyle: FontStyle.normal,

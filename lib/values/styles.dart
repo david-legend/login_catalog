@@ -1,10 +1,19 @@
-part of  'values.dart';
+part of 'values.dart';
 
 class Styles {
- static  TextStyle hintTextStyle  = GoogleFonts.roboto(
-   fontSize: Sizes.TEXT_SIZE_14,
-   color: AppColors.blackShade3,
-   fontWeight: FontWeight.w600,
-   fontStyle: FontStyle.normal,
- );
+
+
+  static TextStyle hintTextStyle({
+    Color color = AppColors.blackShade3,
+    FontWeight fontWeight = FontWeight.w600,
+    double fontSize = Sizes.TEXT_SIZE_14,
+    FontStyle fontStyle: FontStyle.normal,
+  }) {
+    return GoogleFonts.roboto(
+      fontSize: fontSize,
+      color: color,
+      fontWeight: fontWeight,
+      fontStyle: fontStyle,
+    );
+  }
 }

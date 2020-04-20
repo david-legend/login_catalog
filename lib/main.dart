@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
 //      initialRoute: Routes.signupScreen1,
       theme: LoginCatalogThemeData.lightThemeData,
       onGenerateRoute: Router().onGenerateRoute,
-      builder: ExtendedNavigator<Router>(router: Router(), initialRoute: Routes.signupScreen1,),
+      builder: ExtendedNavigator<Router>(router: Router(), initialRoute: Routes.loginScreen1,),
     );
   }
 }

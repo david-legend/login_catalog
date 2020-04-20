@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:logincatalog/values/values.dart';
 import 'package:logincatalog/widgets/custom_button.dart';
+import 'package:logincatalog/widgets/custom_divider.dart';
 import 'package:logincatalog/widgets/custom_shape_clippers.dart';
 import 'package:logincatalog/widgets/custom_text_form_field.dart';
 import 'package:logincatalog/widgets/spaces.dart';
@@ -10,7 +11,6 @@ class SignUpScreen1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var textTheme = Theme.of(context).textTheme;
-    var iconTheme = Theme.of(context).iconTheme;
     var heightOfAppBar = 56.0;
     var heightOfScreen = MediaQuery.of(context).size.height - heightOfAppBar;
     var widthOfScreen = MediaQuery.of(context).size.width;
@@ -78,10 +78,10 @@ class SignUpScreen1 extends StatelessWidget {
                   hasPrefixIcon: true,
                   textInputType: TextInputType.text,
                   hintText: StringConst.NAME,
-                  hintTextStyle: Styles.hintTextStyle,
+                  hintTextStyle: Styles.hintTextStyle(),
                   prefixIcon: Icon(
                     FeatherIcons.user,
-                    color: iconTheme.color,
+                    color: AppColors.blackShade4,
                     size: Sizes.ICON_SIZE_20,
                   ),
                 ),
@@ -90,11 +90,11 @@ class SignUpScreen1 extends StatelessWidget {
                   hasPrefixIcon: true,
                   textInputType: TextInputType.emailAddress,
                   hintText: StringConst.EMAIL_ADDRESS,
-                  hintTextStyle: Styles.hintTextStyle,
+                  hintTextStyle: Styles.hintTextStyle(),
 
                   prefixIcon: Icon(
                     FeatherIcons.mail,
-                    color: iconTheme.color,
+                    color: AppColors.blackShade4,
                     size: Sizes.ICON_SIZE_20,
                   ),
                 ),
@@ -103,10 +103,10 @@ class SignUpScreen1 extends StatelessWidget {
                   hasPrefixIcon: true,
                   textInputType: TextInputType.text,
                   hintText: StringConst.PASSWORD,
-                  hintTextStyle: Styles.hintTextStyle,
+                  hintTextStyle: Styles.hintTextStyle(),
                   prefixIcon: Icon(
                     FeatherIcons.key,
-                    color: iconTheme.color,
+                    color: AppColors.blackShade4,
                     size: Sizes.ICON_SIZE_20,
                   ),
                 ),
@@ -134,11 +134,7 @@ class SignUpScreen1 extends StatelessWidget {
                   ),
                 ),
                 SpaceH2(),
-                Container(
-                  width: Sizes.WIDTH_80,
-                  height: Sizes.HEIGHT_1,
-                  color: AppColors.white,
-                ),
+                CustomDivider(),
               ],
             ),
           ),
