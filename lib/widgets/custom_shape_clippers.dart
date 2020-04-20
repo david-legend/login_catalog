@@ -33,7 +33,7 @@ class CustomLoginShapeClipper2 extends CustomClipper<Path> {
 
 
     var firstEndpoint = Offset(size.width, size.height * 0.7);
-    var firstControlPoint = Offset(size.width * 0.75, size.height * 0.85);
+    var firstControlPoint = Offset(size.width * 0.6, size.height * 0.85);
 
     path.quadraticBezierTo(firstControlPoint.dx, firstControlPoint.dy,
         firstEndpoint.dx, firstEndpoint.dy);

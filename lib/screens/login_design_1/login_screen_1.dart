@@ -26,26 +26,36 @@ class LoginScreen1 extends StatelessWidget {
       ),
       body: Stack(
         children: <Widget>[
-          ClipPath(
-            clipper: CustomLoginShapeClipper2(),
-            child: Container(
-              height: heightOfScreen,
-              decoration: BoxDecoration(color: AppColors.greyShade2),
+          Positioned(
+            left: 0,
+            top: 0,
+            right: 0,
+            child: ClipPath(
+              clipper: CustomLoginShapeClipper2(),
+              child: Container(
+                height: heightOfScreen,
+                decoration: BoxDecoration(color: AppColors.greyShade2),
+              ),
             ),
           ),
-          ClipPath(
-            clipper: CustomLoginShapeClipper1(),
-            child: Container(
-              height: heightOfScreen,
-              decoration: BoxDecoration(color: AppColors.pink),
+          Positioned(
+            left: 0,
+            top: 0,
+            right: 0,
+            child: ClipPath(
+              clipper: CustomLoginShapeClipper1(),
+              child: Container(
+                height: heightOfScreen,
+                decoration: BoxDecoration(color: AppColors.pink),
+              ),
             ),
           ),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: Sizes.MARGIN_36),
-            child: Column(
+            child: ListView(
               children: <Widget>[
                 //10% of the height of screen
-                SizedBox(height: heightOfScreen * 0.1),
+                SizedBox(height: heightOfScreen * 0.075),
                 ListBody(
                   children: <Widget>[
                     Text(
@@ -72,7 +82,7 @@ class LoginScreen1 extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    SizedBox(height: heightOfScreen * 0.1),
+                    SizedBox(height: heightOfScreen * 0.075),
                     Text(
                       StringConst.SIGN_IN,
                       style: textTheme.headline.copyWith(
@@ -82,61 +92,71 @@ class LoginScreen1 extends StatelessWidget {
                     ),
                   ],
                 ),
-                SpaceH16(),
-                CustomTextFormField(
-                  hasPrefixIcon: true,
-                  textInputType: TextInputType.emailAddress,
-                  hintText: StringConst.EMAIL_ADDRESS,
-                  hintTextStyle: Styles.hintTextStyle(color: AppColors.white),
-                  prefixIcon: Icon(
-                    FeatherIcons.mail,
-                    color: iconTheme.color,
-                    size: Sizes.ICON_SIZE_20,
-                  ),
-                ),
-                SpaceH16(),
-                CustomTextFormField(
-                  hasPrefixIcon: true,
-                  textInputType: TextInputType.text,
-                  hintTextStyle: Styles.hintTextStyle(color: AppColors.white),
-                  hintText: StringConst.PASSWORD,
-                  prefixIcon: Icon(
-                    FeatherIcons.key,
-                    color: iconTheme.color,
-                    size: Sizes.ICON_SIZE_20,
-                  ),
-                ),
-                SpaceH24(),
-                CustomButton(
-                  title: StringConst.SIGN_ME_IN,
-                  textStyle: textTheme.button,
-                  onPressed: () {},
-                ),
-                SpaceH16(),
-                InkWell(
-                  onTap: () => Router.navigator.pushReplacementNamed(Routes.signupScreen1),
-                  child: Text(
-                    StringConst.DONT_HAVE_AN_ACCOUNT,
-                    style: textTheme.subtitle.copyWith(
-                      fontSize: Sizes.TEXT_SIZE_14,
-                      color: AppColors.blackShade6,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
                 SpaceH8(),
-                Text(
-                  StringConst.NEED_HELP,
-                  style: textTheme.subtitle.copyWith(
-                    fontSize: Sizes.TEXT_SIZE_14,
-                    color: AppColors.blackShade6,
-                    fontWeight: FontWeight.w600,
+                Container(
+                  child: Column(
+                    children: <Widget>[
+                      CustomTextFormField(
+                        hasPrefixIcon: true,
+                        textInputType: TextInputType.emailAddress,
+                        hintText: StringConst.EMAIL_ADDRESS,
+                        hintTextStyle: Styles.hintTextStyle(color: AppColors.white),
+                        prefixIcon: Icon(
+                          FeatherIcons.mail,
+                          color: iconTheme.color,
+                          size: Sizes.ICON_SIZE_20,
+                        ),
+                      ),
+                      SpaceH20(),
+                      CustomTextFormField(
+                        hasPrefixIcon: true,
+                        textInputType: TextInputType.text,
+                        hintTextStyle: Styles.hintTextStyle(color: AppColors.white),
+                        hintText: StringConst.PASSWORD,
+                        prefixIcon: Icon(
+                          FeatherIcons.key,
+                          color: iconTheme.color,
+                          size: Sizes.ICON_SIZE_20,
+                        ),
+                      ),
+                      SpaceH24(),
+                      CustomButton(
+                        title: StringConst.SIGN_ME_IN,
+                        textStyle: textTheme.button,
+                        onPressed: () {},
+                      ),
+                      SpaceH20(),
+                      InkWell(
+                        onTap: () => Router.navigator.pushReplacementNamed(Routes.signupScreen1),
+                        child: Text(
+                          StringConst.DONT_HAVE_AN_ACCOUNT,
+                          textAlign: TextAlign.center,
+                          style: textTheme.subtitle.copyWith(
+                            fontSize: Sizes.TEXT_SIZE_14,
+                            color: AppColors.blackShade6,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                      SpaceH16(),
+                      Text(
+                        StringConst.NEED_HELP,
+                        textAlign: TextAlign.center,
+                        style: textTheme.subtitle.copyWith(
+                          fontSize: Sizes.TEXT_SIZE_14,
+                          color: AppColors.blackShade6,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      SpaceH2(),
+                      CustomDivider(
+                        color: AppColors.blackShade6,
+                      )
+                    ],
                   ),
                 ),
-                SpaceH2(),
-                CustomDivider(
-                  color: AppColors.blackShade6,
-                )
+
+
               ],
             ),
           ),
