@@ -151,7 +151,9 @@ class SignUpScreen1 extends StatelessWidget {
         CustomButton(
           title: StringConst.SIGN_ME_UP,
           color: AppColors.blackShade5,
-          textStyle: textTheme.button,
+          textStyle: textTheme.button.copyWith(
+            color: AppColors.white,
+          ),
           onPressed: () {},
         ),
         SpaceH20(),

@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:logincatalog/values/values.dart';
 
-class LoginCatalogThemeData {
+class LoginDesign1Theme {
   static const _lightFillColor = Colors.black;
 
   static final Color _lightFocusColor = Colors.black.withOpacity(0.12);
 
   static ThemeData lightThemeData =
-      themeData(lightColorScheme, _lightFocusColor);
+  themeData(lightColorScheme, _lightFocusColor);
 
   static ThemeData themeData(ColorScheme colorScheme, Color focusColor) {
     return ThemeData(
@@ -20,7 +20,6 @@ class LoginCatalogThemeData {
       highlightColor: Colors.transparent,
       accentColor: colorScheme.primary,
       focusColor: AppColors.primaryColor,
-
     );
   }
 
@@ -39,7 +38,6 @@ class LoginCatalogThemeData {
     onSurface: Color(0xFF241E30),
     brightness: Brightness.light,
   );
-
 
   static const _superBold = FontWeight.w900;
   static const _bold = FontWeight.w700;
@@ -80,18 +78,16 @@ class LoginCatalogThemeData {
       fontStyle: FontStyle.normal,
     ),
     button: GoogleFonts.roboto(
-        fontSize: Sizes.TEXT_SIZE_18,
-        color: AppColors.primaryText,
-        fontStyle: FontStyle.normal,
-        fontWeight: _medium,
+      fontSize: Sizes.TEXT_SIZE_18,
+      color: AppColors.primaryText,
+      fontStyle: FontStyle.normal,
+      fontWeight: _medium,
     ),
     subtitle: GoogleFonts.roboto(
       fontSize: Sizes.TEXT_SIZE_16,
-      color: AppColors.primaryText,
+      color: AppColors.white,
       fontWeight: _regular,
       fontStyle: FontStyle.normal,
     ),
   );
-
-
 }

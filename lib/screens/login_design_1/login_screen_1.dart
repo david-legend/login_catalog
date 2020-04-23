@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
+import 'package:logincatalog/bloc/theme_bloc.dart';
 import 'package:logincatalog/routes/router.gr.dart';
+import 'package:logincatalog/themes/login_design_2_theme.dart';
 import 'package:logincatalog/values/values.dart';
 import 'package:logincatalog/widgets/custom_button.dart';
 import 'package:logincatalog/widgets/custom_divider.dart';
@@ -8,8 +10,26 @@ import 'package:logincatalog/widgets/custom_shape_clippers.dart';
 import 'package:logincatalog/widgets/custom_text_form_field.dart';
 import 'package:logincatalog/widgets/spaces.dart';
 
-class LoginScreen1 extends StatelessWidget {
+import '../../themes/app_theme.dart';
+
+class LoginScreen1 extends StatefulWidget {
+  LoginScreen1({@required this.themeBloc});
+
+  final ThemeBloc themeBloc;
+
+  @override
+  _LoginScreen1State createState() => _LoginScreen1State();
+}
+
+class _LoginScreen1State extends State<LoginScreen1> {
   final heightOfAppBar = 56.0;
+
+  @override
+  void initState() {
+    super.initState();
+
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -143,13 +163,16 @@ class LoginScreen1 extends StatelessWidget {
         SpaceH24(),
         CustomButton(
           title: StringConst.SIGN_ME_IN,
-          textStyle: textTheme.button,
+          textStyle: textTheme.button.copyWith(
+            color: AppColors.white,
+          ),
           onPressed: () {},
         ),
         SpaceH20(),
         InkWell(
-          onTap: () =>
-              Router.navigator.pushReplacementNamed(Routes.signupScreen1),
+          onTap: () => Router.navigator.pushNamed(
+            Routes.signUpScreen1,
+          ),
           child: Text(
             StringConst.DONT_HAVE_AN_ACCOUNT,
             textAlign: TextAlign.center,

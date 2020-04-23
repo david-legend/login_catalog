@@ -10,12 +10,14 @@ class CustomTextFormField extends StatelessWidget {
   final bool obscured;
   final bool hasPrefixIcon;
   final TextInputType textInputType;
-  ValueChanged<String> onChanged;
-  FormFieldValidator<String> validator;
-  List<TextInputFormatter> inputFormatters;
-  UnderlineInputBorder border;
-  UnderlineInputBorder enabledBorder;
-  UnderlineInputBorder focusedBorder;
+  final ValueChanged<String> onChanged;
+  final FormFieldValidator<String> validator;
+  final List<TextInputFormatter> inputFormatters;
+  final UnderlineInputBorder border;
+  final UnderlineInputBorder enabledBorder;
+  final UnderlineInputBorder focusedBorder;
+  final double width;
+  final double height;
 
   CustomTextFormField({
     this.prefixIcon,
@@ -31,11 +33,15 @@ class CustomTextFormField extends StatelessWidget {
     this.onChanged,
     this.validator,
     this.inputFormatters,
+    this.width,
+    this.height,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: width,
+      height: height,
       child: TextFormField(
         style: textStyle,
         keyboardType: textInputType,

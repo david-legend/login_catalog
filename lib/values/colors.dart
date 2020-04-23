@@ -4,7 +4,7 @@ class AppColors {
   static const Color primaryColor = Color.fromARGB(255, 255, 255, 255);
   static const Color secondaryColor = Color.fromARGB(255, 246, 247, 255);
 
-  static const Color primaryText = Color(0xFFFFFFFF);
+  static const Color primaryText = Color(0xFF000000);
 
 
   //Black
@@ -30,6 +30,7 @@ class AppColors {
 
   static const Color pink = Color(0xFFC2366D);
   static const Color pinkShade1 = Color(0xFFDC669F);
+  static const Color pinkShade2 = Color(0xFFFF9796);
 
   //Green
   static const Color green = Color(0xFF3ACC6C);

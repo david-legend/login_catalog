@@ -8,11 +8,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:logincatalog/screens/login_design_1/login_screen_1.dart';
+import 'package:logincatalog/bloc/theme_bloc.dart';
 import 'package:logincatalog/screens/login_design_1/signup_screen_1.dart';
+import 'package:logincatalog/screens/login_design_2/login_screen_2.dart';
+import 'package:logincatalog/screens/login_design_2/signup_screen_2.dart';
 
 abstract class Routes {
-  static const loginScreen1 = '/';
-  static const signupScreen1 = '/signup-screen1';
+  static const loginScreen1 = '/login-screen1';
+  static const signUpScreen1 = '/sign-up-screen1';
+  static const loginScreen2 = '/login-screen2';
+  static const signUpScreen2 = '/';
 }
 
 class Router extends RouterBase {
@@ -26,17 +31,51 @@ class Router extends RouterBase {
     final args = settings.arguments;
     switch (settings.name) {
       case Routes.loginScreen1:
+        if (hasInvalidArgs<LoginScreen1Arguments>(args, isRequired: true)) {
+          return misTypedArgsRoute<LoginScreen1Arguments>(args);
+        }
+        final typedArgs = args as LoginScreen1Arguments;
         return MaterialPageRoute<dynamic>(
-          builder: (_) => LoginScreen1(),
+          builder: (_) => LoginScreen1(themeBloc: typedArgs.themeBloc),
           settings: settings,
         );
-      case Routes.signupScreen1:
+      case Routes.signUpScreen1:
         return MaterialPageRoute<dynamic>(
           builder: (_) => SignUpScreen1(),
+          settings: settings,
+        );
+      case Routes.loginScreen2:
+        return MaterialPageRoute<dynamic>(
+          builder: (_) => LoginScreen2(),
+          settings: settings,
+        );
+      case Routes.signUpScreen2:
+        if (hasInvalidArgs<SignUpScreen2Arguments>(args, isRequired: true)) {
+          return misTypedArgsRoute<SignUpScreen2Arguments>(args);
+        }
+        final typedArgs = args as SignUpScreen2Arguments;
+        return MaterialPageRoute<dynamic>(
+          builder: (_) => SignUpScreen2(themeBloc: typedArgs.themeBloc),
           settings: settings,
         );
       default:
         return unknownRoutePage(settings.name);
     }
   }
+}
+
+//**************************************************************************
+// Arguments holder classes
+//***************************************************************************
+
+//LoginScreen1 arguments holder class
+class LoginScreen1Arguments {
+  final ThemeBloc themeBloc;
+  LoginScreen1Arguments({@required this.themeBloc});
+}
+
+//SignUpScreen2 arguments holder class
+class SignUpScreen2Arguments {
+  final ThemeBloc themeBloc;
+  SignUpScreen2Arguments({@required this.themeBloc});
 }
