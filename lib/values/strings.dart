@@ -25,8 +25,10 @@ class StringConst {
   static const String SIGN_ME_IN = "Sign me in";
   static const String SIGN_ME_UP = "Sign me up";
   static const String REGISTER_WITH_GOOGLE = "Register with Google";
+  static const String SIGN_IN_WITH_GOOGLE = "Sign in with Google";
 
   static const String ALREADY_HAVE_AN_ACCOUNT = "Already have an account ?";
+  static const String FORGOT_PASSWORD = "Forgot Password?";
   static const String ALREADY_REGISTERED = "Already Registered?";
   static const String DONT_HAVE_AN_ACCOUNT = "Don't have an account ?";
   static const String NEED_HELP = "Need Help?";

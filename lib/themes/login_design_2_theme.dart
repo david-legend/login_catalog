@@ -54,7 +54,7 @@ class LoginDesign2Theme {
       fontStyle: FontStyle.normal,
     ),
     headline: GoogleFonts.comfortaa(
-      fontSize: Sizes.TEXT_SIZE_40,
+      fontSize: Sizes.TEXT_SIZE_30,
       color: AppColors.primaryText,
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
@@ -68,11 +68,11 @@ class LoginDesign2Theme {
     title: GoogleFonts.comfortaa(
       fontSize: Sizes.TEXT_SIZE_18,
       color: AppColors.primaryText,
-      fontWeight: _medium,
+      fontWeight: _semiBold,
       fontStyle: FontStyle.normal,
     ),
     body1: GoogleFonts.comfortaa(
-      fontSize: Sizes.TEXT_SIZE_18,
+      fontSize: Sizes.TEXT_SIZE_14,
       color: AppColors.primaryText,
       fontWeight: _light,
       fontStyle: FontStyle.normal,

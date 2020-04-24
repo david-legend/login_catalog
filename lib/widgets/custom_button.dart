@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:logincatalog/values/values.dart';
+import 'package:logincatalog/widgets/spaces.dart';
 
 class CustomButton extends StatelessWidget {
   CustomButton({
@@ -12,6 +13,8 @@ class CustomButton extends StatelessWidget {
     this.color = AppColors.blackShade5,
     this.borderSide = Borders.defaultPrimaryBorder,
     this.textStyle,
+    this.icon,
+    this.hasIcon = false,
   });
 
   final VoidCallback onPressed;
@@ -23,6 +26,8 @@ class CustomButton extends StatelessWidget {
   final Color color;
   final BorderSide borderSide;
   final TextStyle textStyle;
+  final Widget icon;
+  final bool hasIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -36,9 +41,16 @@ class CustomButton extends StatelessWidget {
       ),
       height: height,
       color: color,
-      child: Text(
-        title,
-        style: textStyle,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          hasIcon ? icon : Container(),
+          hasIcon ? SpaceW16() : Container(),
+          Text(
+            title,
+            style: textStyle,
+          ),
+        ],
       ),
     );
   }
