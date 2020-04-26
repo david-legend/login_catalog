@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:logincatalog/routes/router.gr.dart';
 import 'package:logincatalog/bloc/theme_bloc.dart';
-import 'package:logincatalog/screens/login_design_1/login_screen_1.dart';
 
 void main() {
   runApp(
@@ -33,10 +32,11 @@ class _MyAppState extends State<MyApp> {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: snapshot.data,
+          darkTheme: null,
           builder: ExtendedNavigator<Router>(
             router: Router(),
-            initialRoute: Routes.signUpScreen2,
-            initialRouteArgs: SignUpScreen2Arguments(themeBloc: _themeBloc),
+            initialRoute: Routes.signUpScreen3,
+//            initialRouteArgs: SignUpScreen2Arguments(themeBloc: _themeBloc),
 //            initialRoute: Routes.loginScreen1,
           ),
         );

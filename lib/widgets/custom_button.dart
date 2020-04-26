@@ -4,7 +4,7 @@ import 'package:logincatalog/widgets/spaces.dart';
 
 class CustomButton extends StatelessWidget {
   CustomButton({
-    @required this.title,
+    this.title,
     this.onPressed,
     this.width = Sizes.WIDTH_150,
     this.height = Sizes.HEIGHT_50,
@@ -34,7 +34,7 @@ class CustomButton extends StatelessWidget {
     return MaterialButton(
       onPressed: onPressed,
       elevation: elevation,
-      minWidth: MediaQuery.of(context).size.width,
+//      minWidth: width ?? MediaQuery.of(context).size.width,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(borderRadius),
         side: borderSide,
@@ -46,10 +46,12 @@ class CustomButton extends StatelessWidget {
         children: <Widget>[
           hasIcon ? icon : Container(),
           hasIcon ? SpaceW16() : Container(),
-          Text(
-            title,
-            style: textStyle,
-          ),
+          title != null
+              ? Text(
+                  title,
+                  style: textStyle,
+                )
+              : Container(),
         ],
       ),
     );

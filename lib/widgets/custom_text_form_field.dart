@@ -20,12 +20,14 @@ class CustomTextFormField extends StatelessWidget {
   final InputBorder focusedBorder;
   final double width;
   final double height;
+  final EdgeInsetsGeometry contentPadding;
 
   CustomTextFormField({
     this.prefixIcon,
     this.textStyle,
     this.hintTextStyle,
     this.labelStyle,
+    this.contentPadding,
     this.border = Borders.primaryInputBorder,
     this.focusedBorder = Borders.focusedBorder,
     this.enabledBorder = Borders.enabledBorder,
@@ -53,6 +55,7 @@ class CustomTextFormField extends StatelessWidget {
         validator: validator,
         inputFormatters: inputFormatters,
         decoration: InputDecoration(
+          contentPadding: contentPadding,
           labelText: labelText,
           labelStyle: labelStyle,
           border: border,

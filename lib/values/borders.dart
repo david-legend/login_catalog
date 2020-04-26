@@ -62,4 +62,10 @@ class Borders {
       style: BorderStyle.solid,
     ),
   );
+
+  static const UnderlineInputBorder noBorder = UnderlineInputBorder(
+    borderSide: BorderSide(
+      style: BorderStyle.none,
+    ),
+  );
 }

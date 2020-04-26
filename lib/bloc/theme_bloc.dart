@@ -27,7 +27,7 @@ class ThemeBloc {
   CurrentTheme initialTheme() {
     return CurrentTheme(
       'initial',
-      LoginDesign2Theme.lightThemeData
+      LoginDesign1Theme.lightThemeData
     );
   }
 }

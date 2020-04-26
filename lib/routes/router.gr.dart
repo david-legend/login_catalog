@@ -12,12 +12,16 @@ import 'package:logincatalog/bloc/theme_bloc.dart';
 import 'package:logincatalog/screens/login_design_1/signup_screen_1.dart';
 import 'package:logincatalog/screens/login_design_2/login_screen_2.dart';
 import 'package:logincatalog/screens/login_design_2/signup_screen_2.dart';
+import 'package:logincatalog/screens/login_design_3/signup_screen_3.dart';
+import 'package:logincatalog/screens/login_design_3/login_screen_3.dart';
 
 abstract class Routes {
   static const loginScreen1 = '/login-screen1';
   static const signUpScreen1 = '/sign-up-screen1';
-  static const loginScreen2 = '/login-screen2';
-  static const signUpScreen2 = '/';
+  static const loginScreen2 = '/';
+  static const signUpScreen2 = '/sign-up-screen2';
+  static const signUpScreen3 = '/sign-up-screen3';
+  static const loginScreen3 = '/login-screen3';
 }
 
 class Router extends RouterBase {
@@ -56,6 +60,16 @@ class Router extends RouterBase {
         final typedArgs = args as SignUpScreen2Arguments;
         return MaterialPageRoute<dynamic>(
           builder: (_) => SignUpScreen2(themeBloc: typedArgs.themeBloc),
+          settings: settings,
+        );
+      case Routes.signUpScreen3:
+        return MaterialPageRoute<dynamic>(
+          builder: (_) => SignUpScreen3(),
+          settings: settings,
+        );
+      case Routes.loginScreen3:
+        return MaterialPageRoute<dynamic>(
+          builder: (_) => LoginScreen3(),
           settings: settings,
         );
       default:

@@ -11,11 +11,13 @@ class StringConst {
   static const String SIGN_UP_MSG = "We are happy to see you here!";
 
   static const String LOG_IN = "Log in";
+  static const String LOG_IN_2 = "Login";
   static const String SIGN_IN = "Sign in";
   static const String SIGN_UP = "Sign up";
 
   //hint_text
   static const String FIRST_NAME = "First Name";
+  static const String USER_NAME = "Username";
   static const String LAST_NAME = "Last Name";
   static const String NAME = "Name";
   static const String EMAIL_ADDRESS = "Email Address";

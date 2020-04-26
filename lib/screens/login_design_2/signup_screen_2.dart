@@ -74,7 +74,7 @@ class _SignUpScreen2State extends State<SignUpScreen2> {
                     Text(
                       StringConst.LOG_IN,
                       style: textTheme.body1.copyWith(
-                        color: AppColors.blue,
+                        color: AppColors.lightBlue,
                           fontWeight: FontWeight.w600,
                       ),
                     ),

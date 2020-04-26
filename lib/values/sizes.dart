@@ -39,6 +39,7 @@ class Sizes {
   static const double ICON_SIZE_50 = 50.0;
   static const double ICON_SIZE_40 = 40.0;
   static const double ICON_SIZE_32 = 32.0;
+  static const double ICON_SIZE_30 = 30.0;
   static const double ICON_SIZE_24 = 24.0;
   static const double ICON_SIZE_22 = 22.0;
   static const double ICON_SIZE_20 = 20.0;
@@ -86,6 +87,7 @@ class Sizes {
   static const double WIDTH_170 = 170.0;
   static const double WIDTH_160 = 160.0;
   static const double WIDTH_150 = 150.0;
+  static const double WIDTH_120 = 120.0;
   static const double WIDTH_100 = 100.0;
   static const double WIDTH_80 = 80.0;
   static const double WIDTH_60 = 60.0;

@@ -62,7 +62,7 @@ class _LoginScreen2State extends State<LoginScreen2> {
                     Text(
                       StringConst.REGISTER,
                       style: textTheme.body1.copyWith(
-                        color: AppColors.blue,
+                        color: AppColors.lightBlue,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -110,7 +110,7 @@ class _LoginScreen2State extends State<LoginScreen2> {
             Text(
               StringConst.FORGOT_PASSWORD,
               style: textTheme.body1.copyWith(
-                color: AppColors.blue,
+                color: AppColors.lightBlue,
               ),
             ),
           ],
