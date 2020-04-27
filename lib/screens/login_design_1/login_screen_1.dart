@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:logincatalog/bloc/theme_bloc.dart';
 import 'package:logincatalog/routes/router.gr.dart';
-import 'package:logincatalog/themes/login_design_2_theme.dart';
+import 'package:logincatalog/themes/login_design_1_theme.dart';
 import 'package:logincatalog/values/values.dart';
 import 'package:logincatalog/widgets/custom_button.dart';
 import 'package:logincatalog/widgets/custom_divider.dart';
@@ -10,7 +10,6 @@ import 'package:logincatalog/widgets/custom_shape_clippers.dart';
 import 'package:logincatalog/widgets/custom_text_form_field.dart';
 import 'package:logincatalog/widgets/spaces.dart';
 
-import '../../themes/app_theme.dart';
 
 class LoginScreen1 extends StatefulWidget {
   LoginScreen1({@required this.themeBloc});
@@ -27,7 +26,11 @@ class _LoginScreen1State extends State<LoginScreen1> {
   @override
   void initState() {
     super.initState();
+    widget.themeBloc.selectedTheme.add(_buildLightTheme());
+  }
 
+  CurrentTheme _buildLightTheme() {
+    return CurrentTheme('light', LoginDesign1Theme.lightThemeData);
   }
 
 

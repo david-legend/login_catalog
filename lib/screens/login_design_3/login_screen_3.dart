@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
+import 'package:logincatalog/bloc/theme_bloc.dart';
 import 'package:logincatalog/routes/router.gr.dart';
+import 'package:logincatalog/themes/login_design_1_theme.dart';
 import 'package:logincatalog/values/values.dart';
 import 'package:logincatalog/widgets/custom_button.dart';
 import 'package:logincatalog/widgets/custom_shape_clippers.dart';
@@ -8,6 +10,10 @@ import 'package:logincatalog/widgets/custom_text_form_field.dart';
 import 'package:logincatalog/widgets/spaces.dart';
 
 class LoginScreen3 extends StatefulWidget {
+  LoginScreen3({@required this.themeBloc});
+
+  ThemeBloc themeBloc;
+
   @override
   _LoginScreen3State createState() => _LoginScreen3State();
 }
@@ -20,10 +26,15 @@ class _LoginScreen3State extends State<LoginScreen3> {
   @override
   void initState() {
     super.initState();
+    widget.themeBloc.selectedTheme.add(_buildLightTheme());
     WidgetsBinding.instance.addPostFrameCallback((_) {
       // executes after build
       getSizeOfCard();
     });
+  }
+
+  CurrentTheme _buildLightTheme() {
+    return CurrentTheme('light', LoginDesign1Theme.lightThemeData);
   }
 
   void getSizeOfCard() {

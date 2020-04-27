@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:logincatalog/bloc/theme_bloc.dart';
 import 'package:logincatalog/routes/router.gr.dart';
+import 'package:logincatalog/themes/login_design_2_theme.dart';
 import 'package:logincatalog/values/values.dart';
 import 'package:logincatalog/widgets/custom_button.dart';
 import 'package:logincatalog/widgets/custom_divider.dart';
@@ -7,6 +9,9 @@ import 'package:logincatalog/widgets/custom_text_form_field.dart';
 import 'package:logincatalog/widgets/spaces.dart';
 
 class LoginScreen2 extends StatefulWidget {
+  LoginScreen2({@required this.themeBloc});
+
+  ThemeBloc themeBloc;
   @override
   _LoginScreen2State createState() => _LoginScreen2State();
 }
@@ -15,6 +20,11 @@ class _LoginScreen2State extends State<LoginScreen2> {
   @override
   void initState() {
     super.initState();
+    widget.themeBloc.selectedTheme.add(_buildLightTheme());
+  }
+
+  CurrentTheme _buildLightTheme() {
+    return CurrentTheme('light', LoginDesign2Theme.lightThemeData);
   }
 
   @override

@@ -19,7 +19,7 @@ class SignUpScreen1 extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: AppColors.greyShade2,
         leading: IconButton(
-          onPressed: () => Router.navigator.pushReplacementNamed(Routes.loginScreen1),
+          onPressed: () => Router.navigator.pop(),
           icon: Icon(Icons.arrow_back_ios),
         ),
         elevation: Sizes.ELEVATION_0,

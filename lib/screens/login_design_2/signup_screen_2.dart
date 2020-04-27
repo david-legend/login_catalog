@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:logincatalog/bloc/theme_bloc.dart';
+import 'package:logincatalog/routes/router.dart';
 import 'package:logincatalog/routes/router.gr.dart';
 import 'package:logincatalog/themes/login_design_2_theme.dart';
 import 'package:logincatalog/values/values.dart';
@@ -9,9 +10,9 @@ import 'package:logincatalog/widgets/custom_text_form_field.dart';
 import 'package:logincatalog/widgets/spaces.dart';
 
 class SignUpScreen2 extends StatefulWidget {
-  SignUpScreen2({@required this.themeBloc});
+  SignUpScreen2();
 
-  final ThemeBloc themeBloc;
+
 
   @override
   _SignUpScreen2State createState() => _SignUpScreen2State();
