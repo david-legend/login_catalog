@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
+import 'package:logincatalog/routes/router.gr.dart';
 import 'package:logincatalog/values/values.dart';
+import 'package:logincatalog/widgets/custom_shape_clippers.dart';
 import 'package:logincatalog/widgets/custom_text_form_field.dart';
 import 'package:logincatalog/widgets/spaces.dart';
 
@@ -49,67 +51,120 @@ class _SignUpScreen3State extends State<SignUpScreen3> {
     var heightOfScreen = MediaQuery.of(context).size.height;
     var widthOfScreen = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: SafeArea(
-        child: Stack(
-          children: <Widget>[
-            Positioned(
-              top: heightOfScreen * 0.1,
-              right: Sizes.SIZE_0,
+      body: Stack(
+        children: <Widget>[
+          Positioned(
+            left: 0,
+            top: 0,
+            right: 0,
+            child: ClipPath(
+              clipper: CustomLoginShapeClipper4(),
               child: Container(
-                height: Sizes.HEIGHT_60,
-                width: Sizes.WIDTH_120,
-                child: RaisedButton(
-                  onPressed: () {},
-                  color: AppColors.white,
-                  elevation: Sizes.ELEVATION_6,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(Sizes.RADIUS_30),
-                      bottomLeft: Radius.circular(Sizes.RADIUS_30),
-                    ),
+                height: heightOfScreen,
+                decoration: BoxDecoration(color: AppColors.orangeShade2),
+              ),
+            ),
+          ),
+          Positioned(
+            left: 0,
+            top: 0,
+            right: 0,
+            child: ClipPath(
+              clipper: CustomLoginShapeClipper5(),
+              child: Container(
+                height: heightOfScreen,
+                decoration: BoxDecoration(
+                  gradient: Gradients.curvesGradient1,
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            left: 0,
+            top: 0,
+            right: 0,
+            child: ClipPath(
+              clipper: CustomLoginShapeClipper6(),
+              child: Container(
+                height: heightOfScreen,
+                decoration: BoxDecoration(
+                  color: AppColors.lighterBlue,
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            left: 0,
+            top: 0,
+            right: 0,
+            child: ClipPath(
+              clipper: CustomLoginShapeClipper3(),
+              child: Container(
+                height: heightOfScreen,
+                decoration: BoxDecoration(
+                  gradient: Gradients.curvesGradient2,
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: heightOfScreen * 0.1,
+            right: Sizes.SIZE_0,
+            child: Container(
+              height: Sizes.HEIGHT_60,
+              width: Sizes.WIDTH_120,
+              child: RaisedButton(
+                onPressed: () => Router.navigator.pushNamed(Routes.loginScreen3),
+                color: AppColors.white,
+                elevation: Sizes.ELEVATION_6,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(Sizes.RADIUS_30),
+                    bottomLeft: Radius.circular(Sizes.RADIUS_30),
                   ),
-                  child: Text(
-                    StringConst.LOG_IN_2,
-                    style: textTheme.button.copyWith(
-                      color: AppColors.orangeShade1,
-                    ),
+                ),
+                child: Text(
+                  StringConst.LOG_IN_2,
+                  style: textTheme.button.copyWith(
+                    color: AppColors.orangeShade1,
                   ),
                 ),
               ),
             ),
-            Stack(
-              children: <Widget>[
-                Positioned(
-                  child: Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Expanded(
-                          child: ListView(
-                            children: <Widget>[
-                              Container(
-                                height: heightOfScreen * 0.25,
+          ),
+          Stack(
+            children: <Widget>[
+              Positioned(
+                child: Container(
+                  child: Column(
+                    children: <Widget>[
+                      Expanded(
+                        child: ListView(
+                          children: <Widget>[
+                            Container(
+                              height: heightOfScreen * 0.25,
+                            ),
+                            Text(
+                              StringConst.REGISTER,
+                              textAlign: TextAlign.center,
+                              style: textTheme.headline.copyWith(
+                                color: AppColors.lightBlueShade5,
                               ),
-                              Text(
-                                StringConst.REGISTER,
-                                textAlign: TextAlign.center,
-                                style: textTheme.headline.copyWith(
-                                  color: AppColors.lightBlueShade5,
-                                ),
-                              ),
-                              SizedBox(height: heightOfScreen * 0.05),
-                              _buildForm(context: context),
-                            ],
-                          ),
+                            ),
+                            SizedBox(height: heightOfScreen * 0.05),
+                            _buildForm(context: context),
+
+
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
-              ],
-            ),
-          ],
-        ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
@@ -212,7 +267,7 @@ class _SignUpScreen3State extends State<SignUpScreen3> {
               child: RaisedButton(
                 padding: const EdgeInsets.all(Sizes.PADDING_0),
                 elevation: Sizes.ELEVATION_8,
-                onPressed: () {},
+                onPressed: (){},
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(Sizes.RADIUS_30),
                 ),

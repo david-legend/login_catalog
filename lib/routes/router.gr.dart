@@ -18,9 +18,9 @@ import 'package:logincatalog/screens/login_design_3/login_screen_3.dart';
 abstract class Routes {
   static const loginScreen1 = '/login-screen1';
   static const signUpScreen1 = '/sign-up-screen1';
-  static const loginScreen2 = '/';
+  static const loginScreen2 = '/login-screen2';
   static const signUpScreen2 = '/sign-up-screen2';
-  static const signUpScreen3 = '/sign-up-screen3';
+  static const signUpScreen3 = '/';
   static const loginScreen3 = '/login-screen3';
 }
 

@@ -12,11 +12,11 @@ class $Router {
   LoginScreen1 loginScreen1;
   SignUpScreen1 signUpScreen1;
 
-  @initial
   LoginScreen2 loginScreen2;
 
   SignUpScreen2 signUpScreen2;
 
+  @initial
   SignUpScreen3 signUpScreen3;
   LoginScreen3 loginScreen3;
 
