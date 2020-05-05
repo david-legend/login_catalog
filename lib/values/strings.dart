@@ -12,6 +12,9 @@ class StringConst {
   static const String SIGN_IN_MSG = "Hey! Good to see you again.";
   static const String SIGN_UP_MSG = "We are happy to see you here!";
 
+  static const String LOGIN_MSG = '''Enter your registered email id or contact 
+  number and password to login into your acount.''';
+
   static const String LOG_IN = "Log in";
   static const String LOG_IN_2 = "Login";
   static const String LOG_IN_3 = "LOGIN";
@@ -34,22 +37,22 @@ class StringConst {
   static const String SIGN_ME_IN = "Sign me in";
   static const String SIGN_ME_UP = "Sign me up";
   static const String REGISTER_WITH_GOOGLE = "Register with Google";
+  static const String GOOGLE = "Google";
   static const String SIGN_IN_WITH_GOOGLE = "Sign in with Google";
   static const String SIGN_UP_WITH_GOOGLE = "Sign up with Google";
   static const String CONTINUE_WITH_FACEBOOK = "Continue with Facebook";
+  static const String FACEBOOK = "Facebook";
   static const String LOGIN_WITH_FACEBOOK = "Login With Facebook";
   static const String USE_EMAIL = "I'll use email or phone";
 
   static const String ALREADY_HAVE_AN_ACCOUNT = "Already have an account ?";
   static const String FORGOT_PASSWORD = "Forgot Password?";
   static const String ACCEPT_TERMS = "I accept the policy and terms";
-  static const String ACCEPT_CONDITIONS = "I agree with the Terms and Conditions";
+  static const String ACCEPT_CONDITIONS =
+      "I agree with the Terms and Conditions";
   static const String REMEMBER_ME = "Remember me";
   static const String ALREADY_REGISTERED = "Already Registered?";
   static const String DONT_HAVE_AN_ACCOUNT = "Don't have an account ?";
   static const String NEED_HELP = "Need Help?";
   static const String OR = "OR";
-
-
-
 }
