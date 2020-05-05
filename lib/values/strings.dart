@@ -12,6 +12,7 @@ class StringConst {
 
   static const String LOG_IN = "Log in";
   static const String LOG_IN_2 = "Login";
+  static const String LOG_IN_3 = "LOGIN";
   static const String SIGN_IN = "Sign in";
   static const String SIGN_UP = "Sign up";
   static const String SIGN_UP_2 = "Sign Up";
@@ -31,6 +32,7 @@ class StringConst {
   static const String REGISTER_WITH_GOOGLE = "Register with Google";
   static const String SIGN_IN_WITH_GOOGLE = "Sign in with Google";
   static const String CONTINUE_WITH_FACEBOOK = "Continue with Facebook";
+  static const String LOGIN_WITH_FACEBOOK = "Login With Facebook";
   static const String USE_EMAIL = "I'll use email or phone";
 
   static const String ALREADY_HAVE_AN_ACCOUNT = "Already have an account ?";
