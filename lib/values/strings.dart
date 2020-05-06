@@ -45,7 +45,7 @@ class StringConst {
   static const String LOGIN_WITH_FACEBOOK = "Login With Facebook";
   static const String USE_EMAIL = "I'll use email or phone";
 
-  static const String ALREADY_HAVE_AN_ACCOUNT = "Already have an account ?";
+  static const String ALREADY_HAVE_AN_ACCOUNT = "Already have an account? ";
   static const String FORGOT_PASSWORD = "Forgot Password?";
   static const String ACCEPT_TERMS = "I accept the policy and terms";
   static const String ACCEPT_CONDITIONS =

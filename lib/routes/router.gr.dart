@@ -15,6 +15,9 @@ import 'package:logincatalog/screens/login_design_2/login_screen_2.dart';
 import 'package:logincatalog/screens/login_design_2/signup_screen_2.dart';
 import 'package:logincatalog/screens/login_design_3/signup_screen_3.dart';
 import 'package:logincatalog/screens/login_design_3/login_screen_3.dart';
+import 'package:logincatalog/screens/login_design_4/login_screen_4.dart';
+import 'package:logincatalog/screens/login_design_4/signup_4.dart';
+import 'package:logincatalog/screens/login_design_4/signup_screen_4.dart';
 
 abstract class Routes {
   static const rootScreen = '/';
@@ -24,6 +27,9 @@ abstract class Routes {
   static const signUpScreen2 = '/sign-up-screen2';
   static const signUpScreen3 = '/sign-up-screen3';
   static const loginScreen3 = '/login-screen3';
+  static const loginScreen4 = '/login-screen4';
+  static const signUp4 = '/sign-up4';
+  static const signUpScreen4 = '/sign-up-screen4';
 }
 
 class Router extends RouterBase {
@@ -85,6 +91,21 @@ class Router extends RouterBase {
         final typedArgs = args as LoginScreen3Arguments;
         return MaterialPageRoute<dynamic>(
           builder: (_) => LoginScreen3(themeBloc: typedArgs.themeBloc),
+          settings: settings,
+        );
+      case Routes.loginScreen4:
+        return MaterialPageRoute<dynamic>(
+          builder: (_) => LoginScreen4(),
+          settings: settings,
+        );
+      case Routes.signUp4:
+        return MaterialPageRoute<dynamic>(
+          builder: (_) => SignUp4(),
+          settings: settings,
+        );
+      case Routes.signUpScreen4:
+        return MaterialPageRoute<dynamic>(
+          builder: (_) => SignUpScreen4(),
           settings: settings,
         );
       default:

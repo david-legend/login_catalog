@@ -7,10 +7,12 @@ class CustomTextFormField extends StatelessWidget {
   final TextStyle hintTextStyle;
   final TextStyle labelStyle;
   final Widget prefixIcon;
+  final Widget suffixIcon;
   final String hintText;
   final String labelText;
   final bool obscured;
   final bool hasPrefixIcon;
+  final bool hasSuffixIcon;
   final TextInputType textInputType;
   final ValueChanged<String> onChanged;
   final FormFieldValidator<String> validator;
@@ -24,6 +26,7 @@ class CustomTextFormField extends StatelessWidget {
 
   CustomTextFormField({
     this.prefixIcon,
+    this.suffixIcon,
     this.textStyle,
     this.hintTextStyle,
     this.labelStyle,
@@ -34,6 +37,7 @@ class CustomTextFormField extends StatelessWidget {
     this.hintText,
     this.labelText,
     this.hasPrefixIcon = false,
+    this.hasSuffixIcon = false,
     this.obscured = false,
     this.textInputType,
     this.onChanged,
@@ -62,6 +66,7 @@ class CustomTextFormField extends StatelessWidget {
           enabledBorder: enabledBorder,
           focusedBorder: focusedBorder,
           prefixIcon: hasPrefixIcon ? prefixIcon : null,
+          suffixIcon: hasSuffixIcon ? suffixIcon : null,
           hintText: hintText,
           hintStyle: hintTextStyle,
         ),
