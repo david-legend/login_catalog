@@ -85,13 +85,12 @@ class Borders {
     );
   }
 
-  static customUnderlineInputBorder(
-      {double borderRadius = Sizes.RADIUS_4,
-      Color color = AppColors.grey,
-      double width = Sizes.WIDTH_1,
-      BorderStyle style = BorderStyle.solid}) {
-    return OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
+  static customUnderlineInputBorder({
+    Color color = AppColors.grey,
+    double width = Sizes.WIDTH_1,
+    BorderStyle style = BorderStyle.solid,
+  }) {
+    return UnderlineInputBorder(
       borderSide: BorderSide(
         color: color,
         width: width,

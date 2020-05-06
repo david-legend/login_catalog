@@ -18,6 +18,8 @@ import 'package:logincatalog/screens/login_design_3/login_screen_3.dart';
 import 'package:logincatalog/screens/login_design_4/login_screen_4.dart';
 import 'package:logincatalog/screens/login_design_4/signup_4.dart';
 import 'package:logincatalog/screens/login_design_4/signup_screen_4.dart';
+import 'package:logincatalog/screens/login_design_5/login_screen_5.dart';
+import 'package:logincatalog/screens/login_design_5/signup_screen_5.dart';
 
 abstract class Routes {
   static const rootScreen = '/';
@@ -30,6 +32,8 @@ abstract class Routes {
   static const loginScreen4 = '/login-screen4';
   static const signUp4 = '/sign-up4';
   static const signUpScreen4 = '/sign-up-screen4';
+  static const loginScreen5 = '/login-screen5';
+  static const signUpScreen5 = '/sign-up-screen5';
 }
 
 class Router extends RouterBase {
@@ -106,6 +110,16 @@ class Router extends RouterBase {
       case Routes.signUpScreen4:
         return MaterialPageRoute<dynamic>(
           builder: (_) => SignUpScreen4(),
+          settings: settings,
+        );
+      case Routes.loginScreen5:
+        return MaterialPageRoute<dynamic>(
+          builder: (_) => LoginScreen5(),
+          settings: settings,
+        );
+      case Routes.signUpScreen5:
+        return MaterialPageRoute<dynamic>(
+          builder: (_) => SignUpScreen5(),
           settings: settings,
         );
       default:

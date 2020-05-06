@@ -52,7 +52,7 @@ class StringConst {
       "I agree with the Terms and Conditions";
   static const String REMEMBER_ME = "Remember me";
   static const String ALREADY_REGISTERED = "Already Registered?";
-  static const String DONT_HAVE_AN_ACCOUNT = "Don't have an account ?";
+  static const String DONT_HAVE_AN_ACCOUNT = "Don't have an account? ";
   static const String NEED_HELP = "Need Help?";
   static const String OR = "OR";
 }

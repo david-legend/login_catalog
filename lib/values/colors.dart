@@ -47,6 +47,7 @@ class AppColors {
   static const Color greyShade1 = Color(0xFFE7E7E7);
   static const Color greyShade2 = Color(0xFFDAD0D3);
   static const Color greyShade3 = Color(0xFFEDEEF2);
+  static const Color greyShade7 = Color(0xFFB2B2B2);
   static const Color greyShade8 = Color(0xFFA3A3A3);
 
   //green
@@ -55,13 +56,16 @@ class AppColors {
   //Red
   static const Color googleRed = Color(0xFFD42D21);
   static const Color red = Color(0xFFF1291A);
+  static const Color redShade4 = Color(0xFFFF4758);
 
   static const Color pink = Color(0xFFC2366D);
   static const Color pinkShade1 = Color(0xFFDC669F);
   static const Color pinkShade2 = Color(0xFFFF9796);
+  static const Color pinkShade3 = Color(0xFFFF6673);
 
   //Blue
   static const Color twitterBlue = Color(0xFF1867C7);
+  static const Color facebookBlue = Color(0xFF44619D);
   static const Color linkedInBlue = Color(0xFF0467C2);
   static const Color lighterBlue = Color(0xFFD8F4FD);
   static const Color lightBlue = Color(0xFF83C0CF);

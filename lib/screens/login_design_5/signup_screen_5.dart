@@ -8,29 +8,64 @@ import 'package:logincatalog/widgets/spaces.dart';
 class SignUpScreen5 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    ThemeData theme = Theme.of(context);
     return Scaffold(
       body: Container(
         child: ListView(
           shrinkWrap: true,
           children: <Widget>[
-            Text(StringConst.SIGN_UP.toUpperCase()),
+            Text(
+              StringConst.SIGN_UP.toUpperCase(),
+              style: theme.textTheme.headline.copyWith(
+                color: AppColors.black,
+                fontSize: 32,
+              ),
+            ),
             RichText(
               text: TextSpan(
                 children: [
-                  TextSpan(text: StringConst.ALREADY_HAVE_AN_ACCOUNT),
-                  TextSpan(text: StringConst.LOG_IN_3),
+                  TextSpan(
+                    text: StringConst.ALREADY_HAVE_AN_ACCOUNT,
+                    style: theme.textTheme.subtitle.copyWith(
+                      color: AppColors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  TextSpan(
+                    text: StringConst.LOG_IN_3,
+                    style: theme.textTheme.subtitle.copyWith(
+                      color: AppColors.pinkShade3,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ],
               ),
             ),
-            _buildForm(),
+            _buildForm(context),
+            SpaceH16(),
             CustomButton(
-              title: StringConst.CONTINUE_WITH_FACEBOOK,
+              title: StringConst.LOGIN_WITH_FACEBOOK,
+              color: AppColors.white,
+              borderRadius: Sizes.RADIUS_4,
               hasIcon: true,
-              icon: Icon(FeatherIcons.facebook),
+              textStyle: theme.textTheme.button
+                  .copyWith(color: AppColors.facebookBlue),
+              icon: Icon(
+                FeatherIcons.facebook,
+                color: AppColors.facebookBlue,
+              ),
               onPressed: () {},
             ),
+            SpaceH16(),
             CustomButton(
               title: StringConst.SIGN_UP.toUpperCase(),
+              borderRadius: Sizes.RADIUS_4,
+              color: AppColors.redShade4,
+              textStyle: theme.textTheme.button.copyWith(
+                color: AppColors.white,
+              ),
               onPressed: () {},
             ),
           ],
@@ -39,27 +74,49 @@ class SignUpScreen5 extends StatelessWidget {
     );
   }
 
-  Widget _buildForm() {
+  Widget _buildForm(BuildContext context) {
+    ThemeData theme = Theme.of(context);
     return Column(
       children: <Widget>[
         CustomTextFormField(
+          hasTitle: true,
+          title: "USER NAME",
+          titleStyle: theme.textTheme.title
+              .copyWith(color: AppColors.greyShade8, fontSize: 16),
           textInputType: TextInputType.text,
           hintTextStyle: Styles.customTextStyle(color: AppColors.white),
+          enabledBorder: Borders.customUnderlineInputBorder(),
+          focusedBorder:
+              Borders.customUnderlineInputBorder(color: AppColors.pinkShade3),
           textStyle: Styles.customTextStyle(color: AppColors.white),
           hintText: StringConst.USER_NAME,
         ),
         SpaceH16(),
         CustomTextFormField(
+          hasTitle: true,
+          title: "PASSWORD",
+          titleStyle: theme.textTheme.title
+              .copyWith(color: AppColors.greyShade8, fontSize: 16),
           textInputType: TextInputType.text,
           hintTextStyle: Styles.customTextStyle(color: AppColors.white),
+          enabledBorder: Borders.customUnderlineInputBorder(),
+          focusedBorder:
+          Borders.customUnderlineInputBorder(color: AppColors.pinkShade3),
           textStyle: Styles.customTextStyle(color: AppColors.white),
           hintText: StringConst.PASSWORD,
           obscured: true,
         ),
         SpaceH16(),
         CustomTextFormField(
+          hasTitle: true,
+          title: "EMAIL",
+          titleStyle: theme.textTheme.title
+              .copyWith(color: AppColors.greyShade8, fontSize: 16),
           textInputType: TextInputType.text,
           hintTextStyle: Styles.customTextStyle(color: AppColors.white),
+          enabledBorder: Borders.customUnderlineInputBorder(),
+          focusedBorder:
+          Borders.customUnderlineInputBorder(color: AppColors.pinkShade3),
           textStyle: Styles.customTextStyle(color: AppColors.white),
           hintText: StringConst.EMAIL_ADDRESS,
         ),
