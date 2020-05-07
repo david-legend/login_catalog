@@ -102,6 +102,10 @@ class RootScreen extends StatelessWidget {
                   context: context,
                   title: "Login Design 4",
                   imageUrl: ImagePath.LOGIN_4,
+                  navigate: () => Router.navigator.pushNamed(
+                    Routes.signUp4,
+//                    arguments: LoginScreen3Arguments(themeBloc: themeBloc),
+                  ),
                 ),
                 designCard(
                   context: context,
@@ -117,6 +121,11 @@ class RootScreen extends StatelessWidget {
                   context: context,
                   title: "Login Design 7",
                   imageUrl: ImagePath.LOGIN_7,
+                ),
+                designCard(
+                  context: context,
+                  title: "Login Design 8",
+                  imageUrl: ImagePath.LOGIN_8,
                 ),
               ],
             ),

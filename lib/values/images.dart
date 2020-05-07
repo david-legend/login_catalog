@@ -13,6 +13,7 @@ class ImagePath {
   static const String LOGIN_5 = "$screenshotsDir/login5.png";
   static const String LOGIN_6 = "$screenshotsDir/login6.jpg";
   static const String LOGIN_7 = "$screenshotsDir/login7.jpg";
+  static const String LOGIN_8 = "$screenshotsDir/login8.png";
 
 
   //Icons
