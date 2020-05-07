@@ -69,12 +69,25 @@ class Borders {
     ),
   );
 
+  static customBorder({
+    Color color = AppColors.blackShade10,
+    double width = Sizes.WIDTH_1,
+    BorderStyle style = BorderStyle.solid,
+  }) {
+    return BorderSide(
+      color: color,
+      width: width,
+      style: style,
+    );
+  }
+
   static customOutlineInputBorder({
     double borderRadius = Sizes.RADIUS_12,
     Color color = AppColors.grey,
     double width = Sizes.WIDTH_1,
     BorderStyle style = BorderStyle.solid,
   }) {
+
     return OutlineInputBorder(
       borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
       borderSide: BorderSide(

@@ -5,7 +5,9 @@ class StringConst {
   static const String APP_NAME = "Login Catalog";
 
   static const String WELCOME = "Welcome";
+  static const String WELCOME_BACK = "Welcome back,";
   static const String HELLO = "HELLO";
+  static const String HELLO_2 = "Hello,";
   static const String GET_STARTED = "Let's Get Started!";
   static const String REGISTER = "Register";
   static const String BACK = "Back!";
@@ -19,9 +21,11 @@ class StringConst {
   static const String LOG_IN_2 = "Login";
   static const String LOG_IN_3 = "LOGIN";
   static const String LOG_IN_4 = "Log In";
+  static const String LOG_IN_5 = "Log In!";
   static const String SIGN_IN = "Sign in";
   static const String SIGN_UP = "Sign up";
   static const String SIGN_UP_2 = "Sign Up";
+  static const String SIGN_UP_3 = "Sign Up!";
   static const String EASY_SIGN_UP = "It's easier to sign up now";
 
   //hint_text

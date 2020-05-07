@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:logincatalog/routes/router.gr.dart';
 import 'package:logincatalog/values/values.dart';
 import 'package:logincatalog/widgets/custom_button.dart';
 import 'package:logincatalog/widgets/spaces.dart';
@@ -15,108 +16,142 @@ class _SignUp4State extends State<SignUp4> {
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
     return Scaffold(
-      body: Container(
-        child: Column(
-          children: <Widget>[
-            Icon(Icons.all_inclusive, size: 60),
-            Text(
-              StringConst.SIGN_UP_2,
-              style: theme.textTheme.subtitle.copyWith(
-                color: AppColors.black,
-                fontSize: Sizes.TEXT_SIZE_40,
-                fontWeight: FontWeight.w600,
+      body: SafeArea(
+        child: Container(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: <Widget>[
+              Spacer(flex: 1),
+              Icon(
+                Icons.all_inclusive,
+                size: 200,
+                color: AppColors.blue,
               ),
-            ),
-            SpaceH8(),
-            Text(
-              StringConst.EASY_SIGN_UP,
-              style: theme.textTheme.subtitle.copyWith(
-                color: AppColors.greyShade8,
-                fontWeight: FontWeight.bold
-              ),
-            ),
-            SpaceH20(),
-            Container(
-              width: MediaQuery.of(context).size.width - 52,
-              child: CustomButton(
-                title: StringConst.CONTINUE_WITH_FACEBOOK,
-                elevation: Sizes.ELEVATION_12,
-                textStyle: theme.textTheme.subtitle.copyWith(
-                  color: AppColors.white,
+              Spacer(flex: 1),
+              Text(
+                StringConst.SIGN_UP_2,
+                style: theme.textTheme.headline5.copyWith(
+                  color: AppColors.black,
+                  fontSize: Sizes.TEXT_SIZE_40,
                   fontWeight: FontWeight.w600,
                 ),
-                color: AppColors.blue,
-                onPressed: () {},
               ),
-            ),
-            SpaceH16(),
-            Container(
-              width: MediaQuery.of(context).size.width - 70,
-              child: CustomButton(
-                title: StringConst.USE_EMAIL,
-                elevation: Sizes.ELEVATION_12,
-                textStyle: theme.textTheme.subtitle.copyWith(
-                  color: AppColors.white,
-                  fontWeight: FontWeight.w600,
-                ),
-                color: AppColors.blue,
-                onPressed: () {},
+              SpaceH8(),
+              Text(
+                StringConst.EASY_SIGN_UP,
+                style: theme.textTheme.subtitle2.copyWith(
+                    color: AppColors.greyShade8, fontWeight: FontWeight.bold),
               ),
-            ),
-            SpaceH16(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                FloatingActionButton(
-                  backgroundColor: AppColors.twitterBlue,
-                  mini: true,
-                  onPressed: () {},
-                  child: Icon(FeatherIcons.twitter),
-                  heroTag: "twitter",
-                ),
-                SpaceW16(),
-                FloatingActionButton(
-                  backgroundColor: AppColors.googleRed,
-                  mini: true,
-                  onPressed: () {},
-                  child: Icon(FontAwesomeIcons.google),
-                  heroTag: "google",
-                ),
-                SpaceW16(),
-                FloatingActionButton(
-                  backgroundColor: AppColors.linkedInBlue,
-                  mini: true,
-                  onPressed: () {},
-                  child: Icon(FeatherIcons.linkedin),
-                  heroTag: "linkedIn",
-                ),
-              ],
-            ),
-            RichText(
-              text: TextSpan(
-//            style: ,
-                children: [
-                  TextSpan(
-                    text: StringConst.ALREADY_HAVE_AN_ACCOUNT,
-                    style: theme.textTheme.subtitle.copyWith(
-                      color: AppColors.greyShade8,
-                      fontSize: Sizes.TEXT_SIZE_14,
-                      fontWeight: FontWeight.bold,
-                    ),
+              Spacer(flex: 1),
+              Container(
+                decoration: Decorations.customBoxDecoration(blurRadius: 10),
+                width: MediaQuery.of(context).size.width * 0.8,
+                child: CustomButton(
+                  title: StringConst.CONTINUE_WITH_FACEBOOK,
+                  elevation: Sizes.ELEVATION_12,
+                  hasIcon: true,
+                  icon: Icon(
+                    FontAwesomeIcons.facebookF,
+                    color: AppColors.white,
                   ),
-                  TextSpan(
-                    text: StringConst.LOG_IN_2,
-                    style: theme.textTheme.subtitle.copyWith(
-                      color: AppColors.purple,
-                      fontSize: Sizes.TEXT_SIZE_14,
-                      decoration: TextDecoration.underline,
-                      fontWeight: FontWeight.bold,
-                    )
+                  color: AppColors.blue,
+                  textStyle: theme.textTheme.button.copyWith(
+                    color: AppColors.white,
+                    fontWeight: FontWeight.w600,
+                    fontSize: Sizes.TEXT_SIZE_14
+                  ),
+                  onPressed: () {},
+                ),
+              ),
+              SpaceH24(),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.6,
+                child: CustomButton(
+                  title: StringConst.USE_EMAIL,
+                  elevation: Sizes.ELEVATION_2,
+                  color: AppColors.white,
+                  borderSide: Borders.customBorder(width: 1.5),
+                  textStyle: theme.textTheme.button.copyWith(
+                    color: AppColors.blackShade10,
+                    fontWeight: FontWeight.w600,
+                    fontSize: Sizes.TEXT_SIZE_14
+                  ),
+                  onPressed: () => Router.navigator.pushNamed(Routes.signUpScreen4),
+                ),
+              ),
+              Spacer(flex: 1),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  FloatingActionButton(
+                    backgroundColor: AppColors.twitterBlue,
+                    onPressed: () {},
+                    mini: true,
+                    child: Icon(
+                      FeatherIcons.twitter,
+                      color: AppColors.white,
+                      size: Sizes.ICON_SIZE_18,
+                    ),
+                    heroTag: "twitter",
+                  ),
+                  SpaceW16(),
+                  FloatingActionButton(
+                    backgroundColor: AppColors.googleRed,
+                    onPressed: () {},
+                    mini: true,
+                    child: Icon(
+                      FontAwesomeIcons.google,
+                      color: AppColors.white,
+                      size: Sizes.ICON_SIZE_18,
+                    ),
+                    heroTag: "google",
+                  ),
+                  SpaceW16(),
+                  FloatingActionButton(
+                    backgroundColor: AppColors.linkedInBlue,
+                    onPressed: () {},
+                    mini: true,
+                    child: Icon(
+                      FeatherIcons.linkedin,
+                      color: AppColors.white,
+                      size: Sizes.ICON_SIZE_18,
+                    ),
+                    heroTag: "linkedIn",
                   ),
                 ],
               ),
-            )
-          ],
+              Spacer(flex: 1),
+              InkWell(
+                onTap: () => Router.navigator.pushNamed(Routes.loginScreen4),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: StringConst.ALREADY_HAVE_AN_ACCOUNT,
+                          style: theme.textTheme.subtitle.copyWith(
+                            color: AppColors.greyShade8,
+                            fontSize: Sizes.TEXT_SIZE_14,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        TextSpan(
+                            text: StringConst.LOG_IN_2,
+                            style: theme.textTheme.subtitle.copyWith(
+                              color: AppColors.purple,
+                              fontSize: Sizes.TEXT_SIZE_14,
+                              decoration: TextDecoration.underline,
+                              fontWeight: FontWeight.bold,
+                            )),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Spacer(flex: 1),
+            ],
+          ),
         ),
       ),
     );

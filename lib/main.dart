@@ -35,7 +35,7 @@ class _MyAppState extends State<MyApp> {
           darkTheme: null,
           builder: ExtendedNavigator<Router>(
             router: Router(),
-            initialRoute: Routes.signUpScreen5,
+            initialRoute: Routes.signUp4,
 //            initialRouteArgs: RootScreenArguments(themeBloc: _themeBloc),
 //            initialRoute: Routes.loginScreen1,
           ),
