@@ -22,6 +22,7 @@ import 'package:logincatalog/screens/login_design_5/login_screen_5.dart';
 import 'package:logincatalog/screens/login_design_5/signup_screen_5.dart';
 import 'package:logincatalog/screens/login_design_6/login_screen_6.dart';
 import 'package:logincatalog/screens/login_design_6/signup_screen_6.dart';
+import 'package:logincatalog/screens/login_design_7/register_screen_7.dart';
 
 abstract class Routes {
   static const rootScreen = '/';
@@ -38,6 +39,7 @@ abstract class Routes {
   static const signUpScreen5 = '/sign-up-screen5';
   static const loginScreen6 = '/login-screen6';
   static const signUpScreen6 = '/sign-up-screen6';
+  static const registerScreen7 = '/register-screen7';
 }
 
 class Router extends RouterBase {
@@ -144,6 +146,15 @@ class Router extends RouterBase {
           builder: (_) => SignUpScreen6(),
           settings: settings,
         );
+      case Routes.registerScreen7:
+        if (hasInvalidArgs<RegisterScreen7Arguments>(args, isRequired: true)) {
+          return misTypedArgsRoute<RegisterScreen7Arguments>(args);
+        }
+        final typedArgs = args as RegisterScreen7Arguments;
+        return MaterialPageRoute<dynamic>(
+          builder: (_) => RegisterScreen7(themeBloc: typedArgs.themeBloc),
+          settings: settings,
+        );
       default:
         return unknownRoutePage(settings.name);
     }
@@ -188,4 +199,10 @@ class LoginScreen5Arguments {
 class LoginScreen6Arguments {
   final ThemeBloc themeBloc;
   LoginScreen6Arguments({@required this.themeBloc});
+}
+
+//RegisterScreen7 arguments holder class
+class RegisterScreen7Arguments {
+  final ThemeBloc themeBloc;
+  RegisterScreen7Arguments({@required this.themeBloc});
 }

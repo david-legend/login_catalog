@@ -87,6 +87,9 @@ class AppColors {
 
 
   static const Color purple = Color(0xFF7B80FF);
+
+  static const Color violet = Color(0xFF8764C3);
+  static const Color violetShade1 = Color(0xFFB9A7D9);
   static const Color violetShade200 = Color(0xFF655796);
 
   static const Color yellow = Color(0xFFFFC702);

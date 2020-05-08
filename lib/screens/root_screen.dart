@@ -129,6 +129,10 @@ class RootScreen extends StatelessWidget {
                   context: context,
                   title: "Login Design 7",
                   imageUrl: ImagePath.LOGIN_7,
+                  navigate: () => Router.navigator.pushNamed(
+                    Routes.registerScreen7,
+                    arguments: RegisterScreen7Arguments(themeBloc: themeBloc),
+                  ),
                 ),
                 designCard(
                   context: context,

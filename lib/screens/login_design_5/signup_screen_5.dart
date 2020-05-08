@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:logincatalog/routes/router.gr.dart';
 import 'package:logincatalog/values/values.dart';
 import 'package:logincatalog/widgets/custom_button.dart';
-import 'package:logincatalog/widgets/custom_paints.dart';
+import 'package:logincatalog/widgets/custom_painters.dart';
 import 'package:logincatalog/widgets/custom_shape_clippers.dart';
 import 'package:logincatalog/widgets/custom_text_form_field.dart';
 import 'package:logincatalog/widgets/spaces.dart';
@@ -150,7 +150,11 @@ class _SignUpScreen5State extends State<SignUpScreen5> {
             child: Opacity(
               opacity: 0.9,
               child: CustomPaint(
-                painter: DrawCircle(),
+                painter: DrawCircle(
+                  offset: Offset(widthOfScreen * 0.7, heightOfScreen * 0.1),
+                  radius: 70.0,
+                  color: AppColors.blueShade2,
+                ),
               ),
             ),
           ),

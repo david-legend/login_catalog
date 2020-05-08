@@ -13,6 +13,7 @@ class Sizes {
   static const double SIZE_6 = 6.0;
   static const double SIZE_4 = 4.0;
   static const double SIZE_2 = 2.0;
+  static const double SIZE_1 = 1.0;
   static const double SIZE_0 = 0.0;
 
 
