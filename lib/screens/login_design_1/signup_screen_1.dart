@@ -27,56 +27,64 @@ class SignUpScreen1 extends StatelessWidget {
           IconButton(icon: Icon(Icons.settings), onPressed: () {})
         ],
       ),
-      body: Stack(
-        children: <Widget>[
-          Container(
-            height: heightOfScreen,
-            width: widthOfScreen,
-            decoration: BoxDecoration(color: AppColors.pink),
-          ),
-          Positioned(
-            left: 0,
-            top: 0,
-            right: 0,
-            child: ClipPath(
-              clipper: CustomSignUpShapeClipper2(),
-              child: Container(
-                height: heightOfScreen,
-                decoration: BoxDecoration(color: AppColors.white),
-              ),
+      body: GestureDetector(
+        onTap: () {
+          FocusScopeNode currentFocus = FocusScope.of(context);
+          if (!currentFocus.hasPrimaryFocus) {
+            currentFocus.unfocus();
+          }
+        },
+        child: Stack(
+          children: <Widget>[
+            Container(
+              height: heightOfScreen,
+              width: widthOfScreen,
+              decoration: BoxDecoration(color: AppColors.pink),
             ),
-          ),
-          Positioned(
-            left: 0,
-            top: 0,
-            right: 0,
-            child: ClipPath(
-              clipper: CustomSignUpShapeClipper1(),
-              child: Container(
-                height: heightOfScreen,
-                decoration: BoxDecoration(color: AppColors.greyShade2),
-              ),
-            ),
-          ),
-          Container(
-            child: ListView(
-              children: <Widget>[
-                Container(
-                  margin: const EdgeInsets.symmetric(horizontal: Sizes.MARGIN_36),
-                  child: Column(
-                    children: <Widget>[
-                      SizedBox(height: heightOfScreen * 0.2),
-                      _buildIntroText(context),
-                      SpaceH20(),
-                      _buildForm(context),
-                    ],
-                  ),
+            Positioned(
+              left: 0,
+              top: 0,
+              right: 0,
+              child: ClipPath(
+                clipper: CustomSignUpShapeClipper2(),
+                child: Container(
+                  height: heightOfScreen,
+                  decoration: BoxDecoration(color: AppColors.white),
                 ),
-
-              ],
+              ),
             ),
-          ),
-        ],
+            Positioned(
+              left: 0,
+              top: 0,
+              right: 0,
+              child: ClipPath(
+                clipper: CustomSignUpShapeClipper1(),
+                child: Container(
+                  height: heightOfScreen,
+                  decoration: BoxDecoration(color: AppColors.greyShade2),
+                ),
+              ),
+            ),
+            Container(
+              child: ListView(
+                children: <Widget>[
+                  Container(
+                    margin: const EdgeInsets.symmetric(horizontal: Sizes.MARGIN_36),
+                    child: Column(
+                      children: <Widget>[
+                        SizedBox(height: heightOfScreen * 0.2),
+                        _buildIntroText(context),
+                        SpaceH20(),
+                        _buildForm(context),
+                      ],
+                    ),
+                  ),
+
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

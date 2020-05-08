@@ -6,7 +6,7 @@ class Gradients {
     end: Alignment.centerRight,
     colors: [
       AppColors.green,
-      AppColors.greeShade1,
+      AppColors.greenShade1,
     ],
   );
 
@@ -23,6 +23,15 @@ class Gradients {
       AppColors.seaBlue3,
       AppColors.seaBlue2,
       AppColors.seaBlue1,
+    ],
+  );
+
+  static const LinearGradient curvesGradient3 = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [
+      Color(0xFF88CEBC),
+      Color(0xFF69C7C6),
     ],
   );
 }

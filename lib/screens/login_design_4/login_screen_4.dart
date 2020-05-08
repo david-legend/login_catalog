@@ -22,51 +22,59 @@ class _LoginScreen4State extends State<LoginScreen4> {
     var widthOfScreen = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      body: Container(
-        child: ListView(
-          padding: EdgeInsets.all(Sizes.PADDING_0),
-          children: <Widget>[
-            ClipShadowPath(
-              clipper: LoginDesign4ShapeClipper(),
-              shadow: Shadow(blurRadius: 24, color: AppColors.blue),
-              child: Container(
-                height: heightOfScreen * 0.4,
-                width: widthOfScreen,
-                color: AppColors.blue,
+      body: GestureDetector(
+        onTap: () {
+          FocusScopeNode currentFocus = FocusScope.of(context);
+          if (!currentFocus.hasPrimaryFocus) {
+            currentFocus.unfocus();
+          }
+        },
+        child: Container(
+          child: ListView(
+            padding: EdgeInsets.all(Sizes.PADDING_0),
+            children: <Widget>[
+              ClipShadowPath(
+                clipper: LoginDesign4ShapeClipper(),
+                shadow: Shadow(blurRadius: 24, color: AppColors.blue),
                 child: Container(
-                  margin: EdgeInsets.only(left: Sizes.MARGIN_24),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      SizedBox(
-                        height: heightOfScreen * 0.1,
-                      ),
-                      Text(
-                        StringConst.WELCOME_BACK,
-                        style: theme.textTheme.headline6.copyWith(
-                          fontSize: Sizes.TEXT_SIZE_20,
-                          color: AppColors.white,
+                  height: heightOfScreen * 0.4,
+                  width: widthOfScreen,
+                  color: AppColors.blue,
+                  child: Container(
+                    margin: EdgeInsets.only(left: Sizes.MARGIN_24),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        SizedBox(
+                          height: heightOfScreen * 0.1,
                         ),
-                      ),
-                      Text(
-                        StringConst.LOG_IN_5,
-                        style: theme.textTheme.headline4.copyWith(
-                          color: AppColors.white,
+                        Text(
+                          StringConst.WELCOME_BACK,
+                          style: theme.textTheme.headline6.copyWith(
+                            fontSize: Sizes.TEXT_SIZE_20,
+                            color: AppColors.white,
+                          ),
                         ),
-                      ),
-                    ],
+                        Text(
+                          StringConst.LOG_IN_5,
+                          style: theme.textTheme.headline4.copyWith(
+                            color: AppColors.white,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: heightOfScreen * 0.05,
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: Sizes.MARGIN_20),
-              child: _buildForm(),
-            ),
-          ],
+              SizedBox(
+                height: heightOfScreen * 0.05,
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: Sizes.MARGIN_20),
+                child: _buildForm(),
+              ),
+            ],
+          ),
         ),
       ),
     );

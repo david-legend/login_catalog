@@ -6,7 +6,7 @@ class CustomButton extends StatelessWidget {
   CustomButton({
     this.title,
     this.onPressed,
-    this.width = Sizes.WIDTH_150,
+//    this.width = Sizes.WIDTH_150,
     this.height = Sizes.HEIGHT_50,
     this.elevation = Sizes.ELEVATION_1,
     this.borderRadius = Sizes.RADIUS_24,
@@ -18,7 +18,7 @@ class CustomButton extends StatelessWidget {
   });
 
   final VoidCallback onPressed;
-  final double width;
+//  final double width;
   final double height;
   final double elevation;
   final double borderRadius;

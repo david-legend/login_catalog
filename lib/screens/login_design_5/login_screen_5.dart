@@ -37,100 +37,108 @@ class _LoginScreen5State extends State<LoginScreen5> {
     var widthOfScreen = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      body: Container(
-        child: ListView(
-          padding: EdgeInsets.all(Sizes.PADDING_0),
-          children: <Widget>[
-            _drawCircles(),
-            SizedBox(
-              height: heightOfScreen * 0.02,
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: Sizes.MARGIN_16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    StringConst.LOG_IN_3,
-                    style: theme.textTheme.headline4.copyWith(
-                      color: AppColors.black,
-                    ),
-                  ),
-                  SpaceH8(),
-                  InkWell(
-                    onTap: () =>
-                        Router.navigator.pushNamed(Routes.signUpScreen5),
-                    child: RichText(
-                      text: TextSpan(
-                        children: [
-                          TextSpan(
-                            text: StringConst.DONT_HAVE_AN_ACCOUNT,
-                            style: theme.textTheme.subtitle2.copyWith(
-                              color: AppColors.black,
-                              fontSize: Sizes.TEXT_SIZE_16,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          TextSpan(
-                            text: StringConst.SIGN_UP.toUpperCase(),
-                            style: theme.textTheme.subtitle2.copyWith(
-                              color: AppColors.pinkShade3,
-                              fontSize: Sizes.TEXT_SIZE_16,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
+      body: GestureDetector(
+        onTap: () {
+          FocusScopeNode currentFocus = FocusScope.of(context);
+          if (!currentFocus.hasPrimaryFocus) {
+            currentFocus.unfocus();
+          }
+        },
+        child: Container(
+          child: ListView(
+            padding: EdgeInsets.all(Sizes.PADDING_0),
+            children: <Widget>[
+              _drawCircles(),
+              SizedBox(
+                height: heightOfScreen * 0.02,
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: Sizes.MARGIN_16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      StringConst.LOG_IN_3,
+                      style: theme.textTheme.headline4.copyWith(
+                        color: AppColors.black,
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    height: heightOfScreen * 0.05,
-                  ),
-                  _buildForm(context),
-                ],
+                    SpaceH8(),
+                    InkWell(
+                      onTap: () =>
+                          Router.navigator.pushNamed(Routes.signUpScreen5),
+                      child: RichText(
+                        text: TextSpan(
+                          children: [
+                            TextSpan(
+                              text: StringConst.DONT_HAVE_AN_ACCOUNT,
+                              style: theme.textTheme.subtitle2.copyWith(
+                                color: AppColors.black,
+                                fontSize: Sizes.TEXT_SIZE_16,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            TextSpan(
+                              text: StringConst.SIGN_UP.toUpperCase(),
+                              style: theme.textTheme.subtitle2.copyWith(
+                                color: AppColors.pinkShade3,
+                                fontSize: Sizes.TEXT_SIZE_16,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: heightOfScreen * 0.05,
+                    ),
+                    _buildForm(context),
+                  ],
+                ),
               ),
-            ),
-            SizedBox(
-              height: heightOfScreen * 0.1,
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: Sizes.MARGIN_20),
-              child: Column(
-                children: <Widget>[
-                  CustomButton(
-                    title: StringConst.LOGIN_WITH_FACEBOOK,
-                    color: AppColors.white,
-                    borderRadius: Sizes.RADIUS_4,
-                    hasIcon: true,
-                    elevation: Sizes.ELEVATION_0,
-                    height: Sizes.HEIGHT_60,
-                    textStyle: theme.textTheme.button.copyWith(
-                      color: AppColors.facebookBlue,
-                      fontWeight: FontWeight.w800,
-                    ),
-                    borderSide: Borders.customBorder(
-                      color: AppColors.grey,
-                    ),
-                    icon: Icon(
-                      FontAwesomeIcons.facebookSquare,
-                      color: AppColors.facebookBlue,
-                    ),
-                    onPressed: () {},
-                  ),
-                  SpaceH20(),
-                  CustomButton(
-                    title: StringConst.LOG_IN_3,
-                    borderRadius: Sizes.RADIUS_4,
-                    color: AppColors.redShade4,
-                    height: Sizes.HEIGHT_60,
-                    textStyle: theme.textTheme.button.copyWith(
-                        color: AppColors.white, fontSize: Sizes.TEXT_SIZE_16),
-                    onPressed: () {},
-                  ),
-                ],
+              SizedBox(
+                height: heightOfScreen * 0.1,
               ),
-            ),
-          ],
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: Sizes.MARGIN_20),
+                child: Column(
+                  children: <Widget>[
+                    CustomButton(
+                      title: StringConst.LOGIN_WITH_FACEBOOK,
+                      color: AppColors.white,
+                      borderRadius: Sizes.RADIUS_4,
+                      hasIcon: true,
+                      elevation: Sizes.ELEVATION_0,
+                      height: Sizes.HEIGHT_60,
+                      textStyle: theme.textTheme.button.copyWith(
+                        color: AppColors.facebookBlue,
+                        fontWeight: FontWeight.w800,
+                      ),
+                      borderSide: Borders.customBorder(
+                        color: AppColors.grey,
+                      ),
+                      icon: Icon(
+                        FontAwesomeIcons.facebookSquare,
+                        color: AppColors.facebookBlue,
+                      ),
+                      onPressed: () {},
+                    ),
+                    SpaceH20(),
+                    CustomButton(
+                      title: StringConst.LOG_IN_3,
+                      borderRadius: Sizes.RADIUS_4,
+                      color: AppColors.redShade4,
+                      height: Sizes.HEIGHT_60,
+                      textStyle: theme.textTheme.button.copyWith(
+                          color: AppColors.white, fontSize: Sizes.TEXT_SIZE_16),
+                      onPressed: () {},
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -189,12 +197,12 @@ class _LoginScreen5State extends State<LoginScreen5> {
             fontSize: Sizes.TEXT_SIZE_14,
           ),
           textInputType: TextInputType.text,
-          hintTextStyle: Styles.customTextStyle(color: AppColors.white),
+          hintTextStyle: Styles.customTextStyle(color: AppColors.blackShade10),
           enabledBorder: Borders.customUnderlineInputBorder(),
           focusedBorder:
               Borders.customUnderlineInputBorder(color: AppColors.pinkShade3),
           textStyle: Styles.customTextStyle(color: AppColors.blackShade10),
-          hintText: StringConst.USER_NAME,
+          hintText: StringConst.USER_NAME_2,
         ),
         SpaceH16(),
         CustomTextFormField(
@@ -205,12 +213,12 @@ class _LoginScreen5State extends State<LoginScreen5> {
             fontSize: Sizes.TEXT_SIZE_14,
           ),
           textInputType: TextInputType.text,
-          hintTextStyle: Styles.customTextStyle(color: AppColors.white),
+          hintTextStyle: Styles.customTextStyle(color: AppColors.blackShade10),
           enabledBorder: Borders.customUnderlineInputBorder(),
           focusedBorder:
               Borders.customUnderlineInputBorder(color: AppColors.pinkShade3),
           textStyle: Styles.customTextStyle(color: AppColors.blackShade10),
-          hintText: StringConst.PASSWORD,
+          hintText: StringConst.PASSWORD_2,
           obscured: true,
         ),
         SpaceH8(),

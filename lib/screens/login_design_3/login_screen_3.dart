@@ -54,126 +54,134 @@ class _LoginScreen3State extends State<LoginScreen3> {
     var widthOfScreen = MediaQuery.of(context).size.width;
     var textTheme = Theme.of(context).textTheme;
     return Scaffold(
-      body: Stack(
-        children: <Widget>[
-          Positioned(
-            left: 0,
-            top: 0,
-            right: 0,
-            child: ClipPath(
-              clipper: CustomLoginShapeClipper4(),
-              child: Container(
-                height: heightOfScreen,
-                decoration: BoxDecoration(color: AppColors.orangeShade2),
-              ),
-            ),
-          ),
-          Positioned(
-            left: 0,
-            top: 0,
-            right: 0,
-            child: ClipPath(
-              clipper: CustomLoginShapeClipper5(),
-              child: Container(
-                height: heightOfScreen,
-                decoration: BoxDecoration(
-                  gradient: Gradients.curvesGradient1,
+      body: GestureDetector(
+        onTap: () {
+          FocusScopeNode currentFocus = FocusScope.of(context);
+          if (!currentFocus.hasPrimaryFocus) {
+            currentFocus.unfocus();
+          }
+        },
+        child: Stack(
+          children: <Widget>[
+            Positioned(
+              left: 0,
+              top: 0,
+              right: 0,
+              child: ClipPath(
+                clipper: CustomLoginShapeClipper4(),
+                child: Container(
+                  height: heightOfScreen,
+                  decoration: BoxDecoration(color: AppColors.orangeShade2),
                 ),
               ),
             ),
-          ),
-          Positioned(
-            left: 0,
-            top: 0,
-            right: 0,
-            child: ClipPath(
-              clipper: CustomLoginShapeClipper6(),
-              child: Container(
-                height: heightOfScreen,
-                decoration: BoxDecoration(
-                  color: AppColors.lighterBlue,
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            left: 0,
-            top: 0,
-            right: 0,
-            child: ClipPath(
-              clipper: CustomLoginShapeClipper3(),
-              child: Container(
-                height: heightOfScreen,
-                decoration: BoxDecoration(
-                  gradient: Gradients.curvesGradient2,
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            child: Container(
-              margin: const EdgeInsets.all(Sizes.MARGIN_0),
-              child: Column(
-                children: <Widget>[
-                  Expanded(
-                    child: ListView(
-                      children: <Widget>[
-                        Container(
-                          height: heightOfScreen * 0.25,
-                        ),
-                        Text(
-                          StringConst.LOG_IN_2,
-                          textAlign: TextAlign.center,
-                          style: textTheme.headline.copyWith(
-                            color: AppColors.lightBlueShade5,
-                          ),
-                        ),
-                        SizedBox(height: heightOfScreen * 0.05),
-                        _buildForm(context: context),
-                        SpaceH16(),
-                        Container(
-                          margin: EdgeInsets.only(left: (widthOfScreen * 0.75)),
-                          child: Text(
-                            "Forgot ?",
-                            style: textTheme.body1.copyWith(
-                              fontSize: Sizes.TEXT_SIZE_16,
-                              color: AppColors.lightBlueShade1,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                        SpaceH16(),
-                        Container(
-                          height: 60,
-                          width: 120,
-                          margin: EdgeInsets.only(right: (widthOfScreen - 120)),
-                          child: RaisedButton(
-                            onPressed: () => Router.navigator
-                                .pushNamed(Routes.signUpScreen3),
-                            color: AppColors.white,
-                            elevation: Sizes.ELEVATION_6,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(Sizes.RADIUS_30),
-                                bottomRight: Radius.circular(Sizes.RADIUS_30),
-                              ),
-                            ),
-                            child: Text(
-                              StringConst.REGISTER,
-                              style: textTheme.button.copyWith(
-                                color: AppColors.orangeShade1,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+            Positioned(
+              left: 0,
+              top: 0,
+              right: 0,
+              child: ClipPath(
+                clipper: CustomLoginShapeClipper5(),
+                child: Container(
+                  height: heightOfScreen,
+                  decoration: BoxDecoration(
+                    gradient: Gradients.curvesGradient1,
                   ),
-                ],
+                ),
               ),
             ),
-          ),
-        ],
+            Positioned(
+              left: 0,
+              top: 0,
+              right: 0,
+              child: ClipPath(
+                clipper: CustomLoginShapeClipper6(),
+                child: Container(
+                  height: heightOfScreen,
+                  decoration: BoxDecoration(
+                    color: AppColors.lighterBlue,
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              left: 0,
+              top: 0,
+              right: 0,
+              child: ClipPath(
+                clipper: CustomLoginShapeClipper3(),
+                child: Container(
+                  height: heightOfScreen,
+                  decoration: BoxDecoration(
+                    gradient: Gradients.curvesGradient2,
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              child: Container(
+                margin: const EdgeInsets.all(Sizes.MARGIN_0),
+                child: Column(
+                  children: <Widget>[
+                    Expanded(
+                      child: ListView(
+                        children: <Widget>[
+                          Container(
+                            height: heightOfScreen * 0.25,
+                          ),
+                          Text(
+                            StringConst.LOG_IN_2,
+                            textAlign: TextAlign.center,
+                            style: textTheme.headline.copyWith(
+                              color: AppColors.lightBlueShade5,
+                            ),
+                          ),
+                          SizedBox(height: heightOfScreen * 0.05),
+                          _buildForm(context: context),
+                          SpaceH16(),
+                          Container(
+                            margin: EdgeInsets.only(left: (widthOfScreen * 0.75)),
+                            child: Text(
+                              "Forgot ?",
+                              style: textTheme.body1.copyWith(
+                                fontSize: Sizes.TEXT_SIZE_16,
+                                color: AppColors.lightBlueShade1,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                          SpaceH16(),
+                          Container(
+                            height: 60,
+                            width: 120,
+                            margin: EdgeInsets.only(right: (widthOfScreen - 120)),
+                            child: RaisedButton(
+                              onPressed: () => Router.navigator
+                                  .pushNamed(Routes.signUpScreen3),
+                              color: AppColors.white,
+                              elevation: Sizes.ELEVATION_6,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(Sizes.RADIUS_30),
+                                  bottomRight: Radius.circular(Sizes.RADIUS_30),
+                                ),
+                              ),
+                              child: Text(
+                                StringConst.REGISTER,
+                                style: textTheme.button.copyWith(
+                                  color: AppColors.orangeShade1,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -26,6 +26,8 @@ class StringConst {
   static const String SIGN_UP = "Sign up";
   static const String SIGN_UP_2 = "Sign Up";
   static const String SIGN_UP_3 = "Sign Up!";
+  static const String SIGN = "Sign";
+  static const String UP = "up";
   static const String EASY_SIGN_UP = "It's easier to sign up now";
 
   //hint_text
@@ -36,10 +38,13 @@ class StringConst {
   static const String NAME = "Name";
   static const String EMAIL_ADDRESS = "Email Address";
   static const String EMAIL = "EMAIL";
+  static const String EMAIL_2 = "Email";
   static const String PASSWORD = "Password";
   static const String PASSWORD_2 = "PASSWORD";
   static const String CONFIRM_PASSWORD = "Confirm Password";
 
+  static const String PASSWORD_HINT_TEXT = "******";
+  static const String EMAIL_HINT_TEXT = "example@gmail.com";
   //Buttons
   static const String SIGN_ME_IN = "Sign me in";
   static const String SIGN_ME_UP = "Sign me up";

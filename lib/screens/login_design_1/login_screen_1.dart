@@ -46,45 +46,53 @@ class _LoginScreen1State extends State<LoginScreen1> {
           IconButton(icon: Icon(Icons.settings), onPressed: () {})
         ],
       ),
-      body: Stack(
-        children: <Widget>[
-          Positioned(
-            left: 0,
-            top: 0,
-            right: 0,
-            child: ClipPath(
-              clipper: CustomLoginShapeClipper2(),
-              child: Container(
-                height: heightOfScreen,
-                decoration: BoxDecoration(color: AppColors.greyShade2),
+      body: GestureDetector(
+        onTap: () {
+          FocusScopeNode currentFocus = FocusScope.of(context);
+          if (!currentFocus.hasPrimaryFocus) {
+            currentFocus.unfocus();
+          }
+        },
+        child: Stack(
+          children: <Widget>[
+            Positioned(
+              left: 0,
+              top: 0,
+              right: 0,
+              child: ClipPath(
+                clipper: CustomLoginShapeClipper2(),
+                child: Container(
+                  height: heightOfScreen,
+                  decoration: BoxDecoration(color: AppColors.greyShade2),
+                ),
               ),
             ),
-          ),
-          Positioned(
-            left: 0,
-            top: 0,
-            right: 0,
-            child: ClipPath(
-              clipper: CustomLoginShapeClipper1(),
-              child: Container(
-                height: heightOfScreen,
-                decoration: BoxDecoration(color: AppColors.pink),
+            Positioned(
+              left: 0,
+              top: 0,
+              right: 0,
+              child: ClipPath(
+                clipper: CustomLoginShapeClipper1(),
+                child: Container(
+                  height: heightOfScreen,
+                  decoration: BoxDecoration(color: AppColors.pink),
+                ),
               ),
             ),
-          ),
-          Container(
-            margin: const EdgeInsets.symmetric(horizontal: Sizes.MARGIN_36),
-            child: ListView(
-              children: <Widget>[
-                //10% of the height of screen
-                SizedBox(height: heightOfScreen * 0.075),
-                _buildIntroText(context),
-                SpaceH8(),
-                _buildForm(context),
-              ],
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: Sizes.MARGIN_36),
+              child: ListView(
+                children: <Widget>[
+                  //10% of the height of screen
+                  SizedBox(height: heightOfScreen * 0.075),
+                  _buildIntroText(context),
+                  SpaceH8(),
+                  _buildForm(context),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
