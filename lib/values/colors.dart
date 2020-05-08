@@ -58,6 +58,7 @@ class AppColors {
   static const Color googleRed = Color(0xFFD42D21);
   static const Color red = Color(0xFFF1291A);
   static const Color redShade4 = Color(0xFFFF4758);
+  static const Color redShade5 = Color(0xFFFB4656);
 
   static const Color pink = Color(0xFFC2366D);
   static const Color pinkShade1 = Color(0xFFDC669F);
@@ -72,6 +73,7 @@ class AppColors {
   static const Color lightBlue = Color(0xFF83C0CF);
   static const Color blue = Color(0xFF4045EE);
   static const Color blueShade1 = Color(0xFF70C4CD);
+  static const Color blueShade2 = Color(0xFF47A9FF);
   static const Color seaBlue1 = Color(0xFF47B3FE);
   static const Color seaBlue2 = Color(0xFF2DCBFE);
   static const Color seaBlue3 = Color(0xFF0DE6FE);
@@ -79,6 +81,8 @@ class AppColors {
 
   static const Color purple = Color(0xFF7B80FF);
   static const Color violetShade200 = Color(0xFF655796);
+
+  static const Color yellow = Color(0xFFFFC702);
 
 
 

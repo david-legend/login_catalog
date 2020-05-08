@@ -5,6 +5,8 @@ import 'package:logincatalog/routes/router.gr.dart';
 import 'package:logincatalog/themes/login_design_5_theme.dart';
 import 'package:logincatalog/values/values.dart';
 import 'package:logincatalog/widgets/custom_button.dart';
+import 'package:logincatalog/widgets/custom_paints.dart';
+import 'package:logincatalog/widgets/custom_shape_clippers.dart';
 import 'package:logincatalog/widgets/custom_text_form_field.dart';
 import 'package:logincatalog/widgets/spaces.dart';
 
@@ -37,7 +39,12 @@ class _LoginScreen5State extends State<LoginScreen5> {
     return Scaffold(
       body: Container(
         child: ListView(
+          padding: EdgeInsets.all(Sizes.PADDING_0),
           children: <Widget>[
+            _drawCircles(),
+            SizedBox(
+              height: heightOfScreen * 0.02,
+            ),
             Container(
               margin: EdgeInsets.symmetric(horizontal: Sizes.MARGIN_16),
               child: Column(
@@ -51,7 +58,8 @@ class _LoginScreen5State extends State<LoginScreen5> {
                   ),
                   SpaceH8(),
                   InkWell(
-                    onTap: () => Router.navigator.pushNamed(Routes.signUpScreen5),
+                    onTap: () =>
+                        Router.navigator.pushNamed(Routes.signUpScreen5),
                     child: RichText(
                       text: TextSpan(
                         children: [
@@ -124,6 +132,47 @@ class _LoginScreen5State extends State<LoginScreen5> {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _drawCircles() {
+    var heightOfScreen = MediaQuery.of(context).size.height;
+    var widthOfScreen = MediaQuery.of(context).size.width;
+    return Container(
+      height: heightOfScreen * 0.2,
+      child: Stack(
+        children: <Widget>[
+          ClipPath(
+            clipper: SemiCircleShapeClipper2(),
+            child: Container(
+              height: heightOfScreen * 0.2,
+              width: widthOfScreen,
+              color: AppColors.redShade5,
+            ),
+          ),
+          Container(
+            height: heightOfScreen * 0.2,
+            width: widthOfScreen,
+            child: Opacity(
+              opacity: 0.9,
+              child: CustomPaint(
+                painter: DrawCircle(),
+              ),
+            ),
+          ),
+          ClipPath(
+            clipper: SemiCircleShapeClipper(),
+            child: Opacity(
+              opacity: 0.95,
+              child: Container(
+                height: heightOfScreen * 0.2,
+                width: widthOfScreen,
+                color: AppColors.yellow,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

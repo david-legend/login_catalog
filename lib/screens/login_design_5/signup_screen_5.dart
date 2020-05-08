@@ -3,18 +3,17 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:logincatalog/routes/router.gr.dart';
 import 'package:logincatalog/values/values.dart';
 import 'package:logincatalog/widgets/custom_button.dart';
+import 'package:logincatalog/widgets/custom_paints.dart';
+import 'package:logincatalog/widgets/custom_shape_clippers.dart';
 import 'package:logincatalog/widgets/custom_text_form_field.dart';
 import 'package:logincatalog/widgets/spaces.dart';
 
 class SignUpScreen5 extends StatefulWidget {
-
-
   @override
   _SignUpScreen5State createState() => _SignUpScreen5State();
 }
 
 class _SignUpScreen5State extends State<SignUpScreen5> {
-
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
@@ -24,7 +23,9 @@ class _SignUpScreen5State extends State<SignUpScreen5> {
     return Scaffold(
       body: Container(
         child: ListView(
+          padding: EdgeInsets.all(Sizes.PADDING_0),
           children: <Widget>[
+            _drawCircles(),
             Container(
               margin: EdgeInsets.symmetric(horizontal: Sizes.MARGIN_16),
               child: Column(
@@ -106,11 +107,53 @@ class _SignUpScreen5State extends State<SignUpScreen5> {
                         color: AppColors.white, fontSize: Sizes.TEXT_SIZE_16),
                     onPressed: () {},
                   ),
+                  SpaceH20(),
                 ],
               ),
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _drawCircles() {
+    var heightOfScreen = MediaQuery.of(context).size.height;
+    var widthOfScreen = MediaQuery.of(context).size.width;
+    return Container(
+      height: heightOfScreen * 0.2,
+      child: Stack(
+        children: <Widget>[
+          ClipPath(
+            clipper: SemiCircleShapeClipper2(),
+            child: Container(
+              height: heightOfScreen * 0.2,
+              width: widthOfScreen,
+              color: AppColors.redShade5,
+            ),
+          ),
+          Container(
+            height: heightOfScreen * 0.2,
+            width: widthOfScreen,
+            child: Opacity(
+              opacity: 0.9,
+              child: CustomPaint(
+                painter: DrawCircle(),
+              ),
+            ),
+          ),
+          ClipPath(
+            clipper: SemiCircleShapeClipper(),
+            child: Opacity(
+              opacity: 0.95,
+              child: Container(
+                height: heightOfScreen * 0.2,
+                width: widthOfScreen,
+                color: AppColors.yellow,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -130,7 +173,7 @@ class _SignUpScreen5State extends State<SignUpScreen5> {
           hintTextStyle: Styles.customTextStyle(color: AppColors.white),
           enabledBorder: Borders.customUnderlineInputBorder(),
           focusedBorder:
-          Borders.customUnderlineInputBorder(color: AppColors.pinkShade3),
+              Borders.customUnderlineInputBorder(color: AppColors.pinkShade3),
           textStyle: Styles.customTextStyle(color: AppColors.blackShade10),
           hintText: StringConst.USER_NAME,
         ),
@@ -146,7 +189,7 @@ class _SignUpScreen5State extends State<SignUpScreen5> {
           hintTextStyle: Styles.customTextStyle(color: AppColors.white),
           enabledBorder: Borders.customUnderlineInputBorder(),
           focusedBorder:
-          Borders.customUnderlineInputBorder(color: AppColors.pinkShade3),
+              Borders.customUnderlineInputBorder(color: AppColors.pinkShade3),
           textStyle: Styles.customTextStyle(color: AppColors.blackShade10),
           hintText: StringConst.PASSWORD,
           obscured: true,
@@ -163,7 +206,7 @@ class _SignUpScreen5State extends State<SignUpScreen5> {
           hintTextStyle: Styles.customTextStyle(color: AppColors.white),
           enabledBorder: Borders.customUnderlineInputBorder(),
           focusedBorder:
-          Borders.customUnderlineInputBorder(color: AppColors.pinkShade3),
+              Borders.customUnderlineInputBorder(color: AppColors.pinkShade3),
           textStyle: Styles.customTextStyle(color: AppColors.blackShade10),
           hintText: StringConst.USER_NAME,
         ),
