@@ -43,7 +43,8 @@ class StringConst {
   static const String PASSWORD_2 = "PASSWORD";
   static const String CONFIRM_PASSWORD = "Confirm Password";
 
-  static const String PASSWORD_HINT_TEXT = "******";
+  static const String USERNAME_HINT_TEXT = "DavidLegend47";
+  static const String PASSWORD_HINT_TEXT = "********";
   static const String EMAIL_HINT_TEXT = "example@gmail.com";
   //Buttons
   static const String SIGN_ME_IN = "Sign me in";

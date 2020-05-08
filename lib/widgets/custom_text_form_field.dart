@@ -17,6 +17,8 @@ class CustomTextFormField extends StatelessWidget {
   final bool hasPrefixIcon;
   final bool hasSuffixIcon;
   final bool hasTitle;
+  final bool hasTitleIcon;
+  final Widget titleIcon;
   final TextInputType textInputType;
   final ValueChanged<String> onChanged;
   final FormFieldValidator<String> validator;
@@ -27,6 +29,7 @@ class CustomTextFormField extends StatelessWidget {
   final double width;
   final double height;
   final EdgeInsetsGeometry contentPadding;
+  final EdgeInsetsGeometry textFormFieldMargin;
 
   CustomTextFormField({
     this.prefixIcon,
@@ -35,8 +38,11 @@ class CustomTextFormField extends StatelessWidget {
     this.hintTextStyle,
     this.labelStyle,
     this.titleStyle,
+    this.titleIcon,
+    this.hasTitleIcon = false,
     this.title,
     this.contentPadding,
+    this.textFormFieldMargin,
     this.hasTitle = false,
     this.border = Borders.primaryInputBorder,
     this.focusedBorder = Borders.focusedBorder,
@@ -59,11 +65,17 @@ class CustomTextFormField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        hasTitle ? Text(title, style: titleStyle) : Container(),
-        hasTitle ? SpaceH4()  : Container(),
+        Row(
+          children: <Widget>[
+            hasTitleIcon ? titleIcon : Container(),
+            hasTitle ? Text(title, style: titleStyle) : Container(),
+          ],
+        ),
+//        hasTitle ? SpaceH4() : Container(),
         Container(
           width: width,
           height: height,
+          margin: textFormFieldMargin,
           child: TextFormField(
             style: textStyle,
             keyboardType: textInputType,
