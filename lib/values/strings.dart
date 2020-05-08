@@ -31,10 +31,13 @@ class StringConst {
   //hint_text
   static const String FIRST_NAME = "First Name";
   static const String USER_NAME = "Username";
+  static const String USER_NAME_2 = "USER NAME";
   static const String LAST_NAME = "Last Name";
   static const String NAME = "Name";
   static const String EMAIL_ADDRESS = "Email Address";
+  static const String EMAIL = "EMAIL";
   static const String PASSWORD = "Password";
+  static const String PASSWORD_2 = "PASSWORD";
   static const String CONFIRM_PASSWORD = "Confirm Password";
 
   //Buttons

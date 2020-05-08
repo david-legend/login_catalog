@@ -60,7 +60,7 @@ class CustomTextFormField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         hasTitle ? Text(title, style: titleStyle) : Container(),
-        hasTitle ? SpaceH8()  : Container(),
+        hasTitle ? SpaceH4()  : Container(),
         Container(
           width: width,
           height: height,

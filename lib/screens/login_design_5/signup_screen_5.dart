@@ -1,72 +1,113 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_feather_icons/flutter_feather_icons.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:logincatalog/routes/router.gr.dart';
 import 'package:logincatalog/values/values.dart';
 import 'package:logincatalog/widgets/custom_button.dart';
 import 'package:logincatalog/widgets/custom_text_form_field.dart';
 import 'package:logincatalog/widgets/spaces.dart';
 
-class SignUpScreen5 extends StatelessWidget {
+class SignUpScreen5 extends StatefulWidget {
+
+
+  @override
+  _SignUpScreen5State createState() => _SignUpScreen5State();
+}
+
+class _SignUpScreen5State extends State<SignUpScreen5> {
+
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);
+    var heightOfScreen = MediaQuery.of(context).size.height;
+    var widthOfScreen = MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: Container(
         child: ListView(
-          shrinkWrap: true,
           children: <Widget>[
-            Text(
-              StringConst.SIGN_UP.toUpperCase(),
-              style: theme.textTheme.headline.copyWith(
-                color: AppColors.black,
-                fontSize: 32,
-              ),
-            ),
-            RichText(
-              text: TextSpan(
-                children: [
-                  TextSpan(
-                    text: StringConst.ALREADY_HAVE_AN_ACCOUNT,
-                    style: theme.textTheme.subtitle.copyWith(
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: Sizes.MARGIN_16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    StringConst.SIGN_UP_2,
+                    style: theme.textTheme.headline4.copyWith(
                       color: AppColors.black,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                  TextSpan(
-                    text: StringConst.LOG_IN_3,
-                    style: theme.textTheme.subtitle.copyWith(
-                      color: AppColors.pinkShade3,
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
+                  SpaceH8(),
+                  InkWell(
+                    onTap: () => Router.navigator.pop(),
+                    child: RichText(
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                            text: StringConst.ALREADY_HAVE_AN_ACCOUNT,
+                            style: theme.textTheme.subtitle2.copyWith(
+                              color: AppColors.black,
+                              fontSize: Sizes.TEXT_SIZE_16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          TextSpan(
+                            text: StringConst.LOG_IN_3.toUpperCase(),
+                            style: theme.textTheme.subtitle2.copyWith(
+                              color: AppColors.pinkShade3,
+                              fontSize: Sizes.TEXT_SIZE_16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
+                  SizedBox(
+                    height: heightOfScreen * 0.05,
+                  ),
+                  _buildForm(context),
                 ],
               ),
             ),
-            _buildForm(context),
-            SpaceH16(),
-            CustomButton(
-              title: StringConst.LOGIN_WITH_FACEBOOK,
-              color: AppColors.white,
-              borderRadius: Sizes.RADIUS_4,
-              hasIcon: true,
-              textStyle: theme.textTheme.button
-                  .copyWith(color: AppColors.facebookBlue),
-              icon: Icon(
-                FeatherIcons.facebook,
-                color: AppColors.facebookBlue,
-              ),
-              onPressed: () {},
+            SizedBox(
+              height: heightOfScreen * 0.1,
             ),
-            SpaceH16(),
-            CustomButton(
-              title: StringConst.SIGN_UP.toUpperCase(),
-              borderRadius: Sizes.RADIUS_4,
-              color: AppColors.redShade4,
-              textStyle: theme.textTheme.button.copyWith(
-                color: AppColors.white,
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: Sizes.MARGIN_20),
+              child: Column(
+                children: <Widget>[
+                  CustomButton(
+                    title: StringConst.LOGIN_WITH_FACEBOOK,
+                    color: AppColors.white,
+                    borderRadius: Sizes.RADIUS_4,
+                    hasIcon: true,
+                    elevation: Sizes.ELEVATION_0,
+                    height: Sizes.HEIGHT_60,
+                    textStyle: theme.textTheme.button.copyWith(
+                      color: AppColors.facebookBlue,
+                      fontWeight: FontWeight.w800,
+                    ),
+                    borderSide: Borders.customBorder(
+                      color: AppColors.grey,
+                    ),
+                    icon: Icon(
+                      FontAwesomeIcons.facebookSquare,
+                      color: AppColors.facebookBlue,
+                    ),
+                    onPressed: () {},
+                  ),
+                  SpaceH20(),
+                  CustomButton(
+                    title: StringConst.LOG_IN_3,
+                    borderRadius: Sizes.RADIUS_4,
+                    color: AppColors.redShade4,
+                    height: Sizes.HEIGHT_60,
+                    textStyle: theme.textTheme.button.copyWith(
+                        color: AppColors.white, fontSize: Sizes.TEXT_SIZE_16),
+                    onPressed: () {},
+                  ),
+                ],
               ),
-              onPressed: () {},
             ),
           ],
         ),
@@ -80,46 +121,64 @@ class SignUpScreen5 extends StatelessWidget {
       children: <Widget>[
         CustomTextFormField(
           hasTitle: true,
-          title: "USER NAME",
-          titleStyle: theme.textTheme.title
-              .copyWith(color: AppColors.greyShade8, fontSize: 16),
-          textInputType: TextInputType.text,
-          hintTextStyle: Styles.customTextStyle(color: AppColors.white),
-          enabledBorder: Borders.customUnderlineInputBorder(),
-          focusedBorder:
-              Borders.customUnderlineInputBorder(color: AppColors.pinkShade3),
-          textStyle: Styles.customTextStyle(color: AppColors.white),
-          hintText: StringConst.USER_NAME,
-        ),
-        SpaceH16(),
-        CustomTextFormField(
-          hasTitle: true,
-          title: "PASSWORD",
-          titleStyle: theme.textTheme.title
-              .copyWith(color: AppColors.greyShade8, fontSize: 16),
+          title: StringConst.USER_NAME_2,
+          titleStyle: theme.textTheme.subtitle1.copyWith(
+            color: AppColors.greyShade8,
+            fontSize: Sizes.TEXT_SIZE_14,
+          ),
           textInputType: TextInputType.text,
           hintTextStyle: Styles.customTextStyle(color: AppColors.white),
           enabledBorder: Borders.customUnderlineInputBorder(),
           focusedBorder:
           Borders.customUnderlineInputBorder(color: AppColors.pinkShade3),
-          textStyle: Styles.customTextStyle(color: AppColors.white),
+          textStyle: Styles.customTextStyle(color: AppColors.blackShade10),
+          hintText: StringConst.USER_NAME,
+        ),
+        SpaceH16(),
+        CustomTextFormField(
+          hasTitle: true,
+          title: StringConst.PASSWORD_2,
+          titleStyle: theme.textTheme.subtitle1.copyWith(
+            color: AppColors.greyShade8,
+            fontSize: Sizes.TEXT_SIZE_14,
+          ),
+          textInputType: TextInputType.text,
+          hintTextStyle: Styles.customTextStyle(color: AppColors.white),
+          enabledBorder: Borders.customUnderlineInputBorder(),
+          focusedBorder:
+          Borders.customUnderlineInputBorder(color: AppColors.pinkShade3),
+          textStyle: Styles.customTextStyle(color: AppColors.blackShade10),
           hintText: StringConst.PASSWORD,
           obscured: true,
         ),
         SpaceH16(),
         CustomTextFormField(
           hasTitle: true,
-          title: "EMAIL",
-          titleStyle: theme.textTheme.title
-              .copyWith(color: AppColors.greyShade8, fontSize: 16),
+          title: StringConst.EMAIL,
+          titleStyle: theme.textTheme.subtitle1.copyWith(
+            color: AppColors.greyShade8,
+            fontSize: Sizes.TEXT_SIZE_14,
+          ),
           textInputType: TextInputType.text,
           hintTextStyle: Styles.customTextStyle(color: AppColors.white),
           enabledBorder: Borders.customUnderlineInputBorder(),
           focusedBorder:
           Borders.customUnderlineInputBorder(color: AppColors.pinkShade3),
-          textStyle: Styles.customTextStyle(color: AppColors.white),
-          hintText: StringConst.EMAIL_ADDRESS,
+          textStyle: Styles.customTextStyle(color: AppColors.blackShade10),
+          hintText: StringConst.USER_NAME,
         ),
+        SpaceH24(),
+        SpaceH8(),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: <Widget>[
+            Text(
+              StringConst.FORGOT_PASSWORD,
+              style: theme.textTheme.title
+                  .copyWith(color: AppColors.greyShade8, fontSize: 14),
+            ),
+          ],
+        )
       ],
     );
   }

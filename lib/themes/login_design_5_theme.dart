@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:logincatalog/values/values.dart';
 
-class LoginDesign1Theme {
+class LoginDesign5Theme {
   static const _lightFillColor = Colors.black;
 
   static final Color _lightFocusColor = Colors.black.withOpacity(0.12);
@@ -24,7 +24,7 @@ class LoginDesign1Theme {
   }
 
   static const ColorScheme lightColorScheme = ColorScheme(
-    primary: Color(0xFFC2366D),
+    primary: Color(0xFFFF6673),
     primaryVariant: Color(0xFF117378),
     secondary: Color(0xFFEFF3F3),
     secondaryVariant: Color(0xFFFAFBFB),
@@ -53,67 +53,67 @@ class LoginDesign1Theme {
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    headline2: GoogleFonts.roboto(
+    headline2: GoogleFonts.poppins(
       fontSize: Sizes.TEXT_SIZE_60,
       color: AppColors.primaryText,
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    headline3: GoogleFonts.roboto(
+    headline3: GoogleFonts.poppins(
       fontSize: Sizes.TEXT_SIZE_48,
       color: AppColors.primaryText,
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    headline4: GoogleFonts.roboto(
+    headline4: GoogleFonts.poppins(
       fontSize: Sizes.TEXT_SIZE_34,
       color: AppColors.primaryText,
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    headline5: GoogleFonts.roboto(
+    headline5: GoogleFonts.poppins(
       fontSize: Sizes.TEXT_SIZE_24,
       color: AppColors.primaryText,
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    headline6: GoogleFonts.roboto(
+    headline6: GoogleFonts.poppins(
       fontSize: Sizes.TEXT_SIZE_20,
       color: AppColors.primaryText,
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    subtitle1: GoogleFonts.roboto(
+    subtitle1: GoogleFonts.poppins(
       fontSize: Sizes.TEXT_SIZE_16,
       color: AppColors.primaryText,
       fontWeight: _semiBold,
       fontStyle: FontStyle.normal,
     ),
-    subtitle2: GoogleFonts.roboto(
+    subtitle2: GoogleFonts.poppins(
       fontSize: Sizes.TEXT_SIZE_14,
       color: AppColors.primaryText,
       fontWeight: _semiBold,
       fontStyle: FontStyle.normal,
     ),
-    bodyText1: GoogleFonts.roboto(
+    bodyText1: GoogleFonts.poppins(
       fontSize: Sizes.TEXT_SIZE_16,
       color: AppColors.primaryText,
       fontWeight: _light,
       fontStyle: FontStyle.normal,
     ),
-    bodyText2: GoogleFonts.roboto(
+    bodyText2: GoogleFonts.poppins(
       fontSize: Sizes.TEXT_SIZE_14,
       color: AppColors.primaryText,
       fontWeight: _light,
       fontStyle: FontStyle.normal,
     ),
-    button: GoogleFonts.roboto(
+    button: GoogleFonts.poppins(
       fontSize: Sizes.TEXT_SIZE_14,
       color: AppColors.primaryText,
       fontStyle: FontStyle.normal,
       fontWeight: _medium,
     ),
-    caption: GoogleFonts.roboto(
+    caption: GoogleFonts.poppins(
       fontSize: Sizes.TEXT_SIZE_12,
       color: AppColors.white,
       fontWeight: _regular,
