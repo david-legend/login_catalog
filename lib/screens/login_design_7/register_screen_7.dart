@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:logincatalog/bloc/theme_bloc.dart';
 import 'package:logincatalog/themes/login_design_1_theme.dart';
+import 'package:logincatalog/themes/login_design_5_theme.dart';
 import 'package:logincatalog/values/values.dart';
 import 'package:logincatalog/widgets/clipShadowPath.dart';
 import 'package:logincatalog/widgets/custom_button.dart';
@@ -27,7 +28,7 @@ class _RegisterScreen7State extends State<RegisterScreen7> {
   }
 
   CurrentTheme _buildLightTheme() {
-    return CurrentTheme('light', LoginDesign1Theme.lightThemeData);
+    return CurrentTheme('light', LoginDesign5Theme.lightThemeData);
   }
 
   @override
@@ -58,7 +59,7 @@ class _RegisterScreen7State extends State<RegisterScreen7> {
                   Container(
                     margin: EdgeInsets.only(
                       left: widthOfScreen * 0.1,
-                      right: widthOfScreen * 0.4,
+                      right: widthOfScreen * 0.3,
                     ),
                     child: TabBar(
                       labelStyle: theme.textTheme.subtitle1

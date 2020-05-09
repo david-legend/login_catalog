@@ -46,7 +46,7 @@ class CustomButton extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           hasIcon ? icon : Container(),
-          hasIcon ? SpaceW16() : Container(),
+          hasIcon ? SpaceW8() : Container(),
           title != null
               ? Text(
                   title,

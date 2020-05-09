@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:logincatalog/bloc/theme_bloc.dart';
 import 'package:logincatalog/routes/router.gr.dart';
 import 'package:logincatalog/themes/login_design_1_theme.dart';
+import 'package:logincatalog/themes/login_design_5_theme.dart';
 import 'package:logincatalog/values/values.dart';
 import 'package:logincatalog/widgets/custom_button.dart';
 import 'package:logincatalog/widgets/custom_shape_clippers.dart';
@@ -27,7 +28,7 @@ class _LoginScreen6State extends State<LoginScreen6> {
   }
 
   CurrentTheme _buildLightTheme() {
-    return CurrentTheme('light', LoginDesign1Theme.lightThemeData);
+    return CurrentTheme('light', LoginDesign5Theme.lightThemeData);
   }
 
   @override
@@ -64,7 +65,7 @@ class _LoginScreen6State extends State<LoginScreen6> {
                 shrinkWrap: true,
                 children: <Widget>[
                   SizedBox(
-                    height: heightOfScreen * 0.5 * 0.95,
+                    height: heightOfScreen * 0.5 * 0.90,
                   ),
                   Container(
                     margin: EdgeInsets.only(left: widthOfScreen * 0.15),
@@ -158,11 +159,10 @@ class _LoginScreen6State extends State<LoginScreen6> {
           ),
         ),
         SizedBox(
-          height: heightOfScreen * 0.05,
+          height: heightOfScreen * 0.04,
         ),
         InkWell(
-          onTap: () =>
-              Router.navigator.pushNamed(Routes.signUpScreen6),
+          onTap: () => Router.navigator.pushNamed(Routes.signUpScreen6),
           child: RichText(
             text: TextSpan(
               children: [
@@ -185,7 +185,7 @@ class _LoginScreen6State extends State<LoginScreen6> {
             ),
           ),
         ),
-
+        SpaceH16(),
       ],
     );
   }

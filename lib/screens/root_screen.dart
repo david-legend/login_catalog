@@ -10,45 +10,6 @@ class RootScreen extends StatelessWidget {
 
   final ThemeBloc themeBloc;
 
-//  List<Map<String, dynamic>> designs = [
-//    {
-//      "name": "Login Design 1",
-//      "image_url": ImagePath.LOGIN_1,
-//      "routeName": Routes.loginScreen1,
-//      "arguments": null,
-//    },
-//    {
-//      "name": "Login Design 2",
-//      "image_url": ImagePath.LOGIN_2,
-//      "routeName": Routes.loginScreen2,
-//    },
-//    {
-//      "name": "Login Design 3",
-//      "image_url": ImagePath.LOGIN_3,
-//      "routeName": Routes.loginScreen3,
-//    },
-//    {
-//      "name": "Login Design 4",
-//      "image_url": ImagePath.LOGIN_4,
-//      "routeName": null,
-//    },
-//    {
-//      "name": "Login Design 5",
-//      "image_url": ImagePath.LOGIN_5,
-//      "routeName": null,
-//    },
-//    {
-//      "name": "Login Design 6",
-//      "image_url": ImagePath.LOGIN_6,
-//      "routeName": null,
-//    },
-//    {
-//      "name": "Login Design 7",
-//      "image_url": ImagePath.LOGIN_7,
-//      "routeName": null,
-//    },
-//  ];
-
   @override
   Widget build(BuildContext context) {
     var heightOfScreen = MediaQuery.of(context).size.height;
@@ -138,6 +99,10 @@ class RootScreen extends StatelessWidget {
                   context: context,
                   title: "Login Design 8",
                   imageUrl: ImagePath.LOGIN_8,
+                  navigate: () => Router.navigator.pushNamed(
+                    Routes.loginScreen8,
+                    arguments: LoginScreen8Arguments(themeBloc: themeBloc),
+                  ),
                 ),
               ],
             ),
@@ -213,25 +178,4 @@ class RootScreen extends StatelessWidget {
       ),
     );
   }
-
-//  List<Widget> _buildDesignCards({
-//    @required BuildContext context,
-//    @required List<Map<String, dynamic>> designs,
-//  }) {
-//    List<Widget> cards = [];
-//    for (var i = 0; i < designs.length; i++) {
-//      cards.add(SpaceW16());
-//      cards.add(
-//        designCard(
-//          context: context,
-//          title: designs[i]['name'],
-//          imageUrl: designs[i]['image_url'],
-////          routeName: designs[i]['routeName'],
-////          arguments: ""
-//        ),
-//      );
-//      cards.add(SpaceW16());
-//    }
-//    return cards;
-//  }
 }

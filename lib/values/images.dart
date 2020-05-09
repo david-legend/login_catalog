@@ -5,7 +5,7 @@ class ImagePath {
   static const String imageDir = "assets/images";
   static const String screenshotsDir = "assets/screenshots";
 
-  //Images
+  //Screenshots
   static const String LOGIN_1 = "$screenshotsDir/login1.png";
   static const String LOGIN_2 = "$screenshotsDir/login2.png";
   static const String LOGIN_3 = "$screenshotsDir/login3.png";
@@ -15,6 +15,9 @@ class ImagePath {
   static const String LOGIN_7 = "$screenshotsDir/login7.jpg";
   static const String LOGIN_8 = "$screenshotsDir/login8.png";
 
+
+  //Images
+  static const String GYM = "$imageDir/gym.jpg";
 
   //Icons
   static const String GOOGLE_LOGO = "$imageDir/google.png";

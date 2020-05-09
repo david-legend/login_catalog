@@ -5,6 +5,7 @@ class StringConst {
   static const String APP_NAME = "Login Catalog";
 
   static const String WELCOME = "Welcome";
+  static const String FITNESS_GYM = "Fitness Gym";
   static const String WELCOME_BACK = "Welcome back,";
   static const String HELLO = "HELLO";
   static const String HELLO_2 = "Hello,";
@@ -14,8 +15,8 @@ class StringConst {
   static const String SIGN_IN_MSG = "Hey! Good to see you again.";
   static const String SIGN_UP_MSG = "We are happy to see you here!";
 
-  static const String LOGIN_MSG = '''Enter your registered email id or contact 
-  number and password to login into your acount.''';
+  static const String LOGIN_MSG = '''Enter your registered email id or contact number and password to login into your acount.''';
+
 
   static const String LOG_IN = "Log in";
   static const String LOG_IN_2 = "Login";
