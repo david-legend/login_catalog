@@ -111,8 +111,12 @@ class Router extends RouterBase {
           settings: settings,
         );
       case Routes.signUp4:
+        if (hasInvalidArgs<SignUp4Arguments>(args, isRequired: true)) {
+          return misTypedArgsRoute<SignUp4Arguments>(args);
+        }
+        final typedArgs = args as SignUp4Arguments;
         return MaterialPageRoute<dynamic>(
-          builder: (_) => SignUp4(),
+          builder: (_) => SignUp4(themeBloc: typedArgs.themeBloc),
           settings: settings,
         );
       case Routes.signUpScreen4:
@@ -198,6 +202,12 @@ class LoginScreen2Arguments {
 class LoginScreen3Arguments {
   final ThemeBloc themeBloc;
   LoginScreen3Arguments({@required this.themeBloc});
+}
+
+//SignUp4 arguments holder class
+class SignUp4Arguments {
+  final ThemeBloc themeBloc;
+  SignUp4Arguments({@required this.themeBloc});
 }
 
 //LoginScreen5 arguments holder class

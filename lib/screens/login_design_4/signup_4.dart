@@ -1,17 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:logincatalog/bloc/theme_bloc.dart';
 import 'package:logincatalog/routes/router.gr.dart';
+import 'package:logincatalog/themes/login_design_5_theme.dart';
 import 'package:logincatalog/values/values.dart';
 import 'package:logincatalog/widgets/custom_button.dart';
 import 'package:logincatalog/widgets/spaces.dart';
 
 class SignUp4 extends StatefulWidget {
+  SignUp4({@required this.themeBloc});
+
+  ThemeBloc themeBloc;
+
   @override
   _SignUp4State createState() => _SignUp4State();
 }
 
 class _SignUp4State extends State<SignUp4> {
+  @override
+  void initState() {
+    super.initState();
+    widget.themeBloc.selectedTheme.add(_buildLightTheme());
+
+  }
+
+  CurrentTheme _buildLightTheme() {
+    return CurrentTheme('light', LoginDesign5Theme.lightThemeData);
+  }
+
   @override
   Widget build(BuildContext context) {
     ThemeData theme = Theme.of(context);

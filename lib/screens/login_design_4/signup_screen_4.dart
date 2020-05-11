@@ -31,8 +31,7 @@ class _SignUpScreen4State extends State<SignUpScreen4> {
           }
         },
         child: Container(
-          child: ListView(
-            padding: EdgeInsets.all(Sizes.PADDING_0),
+          child: Stack(
             children: <Widget>[
               ClipShadowPath(
                 clipper: LoginDesign4ShapeClipper(),
@@ -67,12 +66,17 @@ class _SignUpScreen4State extends State<SignUpScreen4> {
                   ),
                 ),
               ),
-              SizedBox(
-                height: heightOfScreen * 0.05,
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: Sizes.MARGIN_20),
-                child: _buildForm(),
+              ListView(
+                padding: EdgeInsets.all(Sizes.PADDING_0),
+                children: <Widget>[
+                  SizedBox(
+                    height: heightOfScreen * 0.45,
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: Sizes.MARGIN_20),
+                    child: _buildForm(),
+                  ),
+                ],
               ),
             ],
           ),

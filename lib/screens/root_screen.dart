@@ -65,7 +65,7 @@ class RootScreen extends StatelessWidget {
                   imageUrl: ImagePath.LOGIN_4,
                   navigate: () => Router.navigator.pushNamed(
                     Routes.signUp4,
-//                    arguments: LoginScreen3Arguments(themeBloc: themeBloc),
+                    arguments: SignUp4Arguments(themeBloc: themeBloc),
                   ),
                 ),
                 designCard(

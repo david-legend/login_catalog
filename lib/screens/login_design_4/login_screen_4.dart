@@ -8,12 +8,16 @@ import 'package:logincatalog/widgets/custom_text_form_field.dart';
 import 'package:logincatalog/widgets/spaces.dart';
 
 class LoginScreen4 extends StatefulWidget {
+
   @override
   _LoginScreen4State createState() => _LoginScreen4State();
 }
 
 class _LoginScreen4State extends State<LoginScreen4> {
   bool isSwitched = false;
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +34,7 @@ class _LoginScreen4State extends State<LoginScreen4> {
           }
         },
         child: Container(
-          child: ListView(
-            padding: EdgeInsets.all(Sizes.PADDING_0),
+          child: Stack(
             children: <Widget>[
               ClipShadowPath(
                 clipper: LoginDesign4ShapeClipper(),
@@ -66,12 +69,18 @@ class _LoginScreen4State extends State<LoginScreen4> {
                   ),
                 ),
               ),
-              SizedBox(
-                height: heightOfScreen * 0.05,
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: Sizes.MARGIN_20),
-                child: _buildForm(),
+              ListView(
+                padding: EdgeInsets.all(Sizes.PADDING_0),
+                children: <Widget>[
+
+                  SizedBox(
+                    height: heightOfScreen * 0.45,
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: Sizes.MARGIN_20),
+                    child: _buildForm(),
+                  ),
+                ],
               ),
             ],
           ),
