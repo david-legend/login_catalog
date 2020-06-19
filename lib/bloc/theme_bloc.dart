@@ -23,11 +23,7 @@ class ThemeBloc {
 
   const ThemeBloc._(this.themeDataStream, this.selectedTheme);
 
-
   CurrentTheme initialTheme() {
-    return CurrentTheme(
-      'initial',
-      LoginDesign1Theme.lightThemeData
-    );
+    return CurrentTheme('initial', LoginDesign1Theme.lightThemeData);
   }
 }
