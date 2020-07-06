@@ -24,6 +24,8 @@ import 'package:logincatalog/screens/login_design_6/login_screen_6.dart';
 import 'package:logincatalog/screens/login_design_6/signup_screen_6.dart';
 import 'package:logincatalog/screens/login_design_7/register_screen_7.dart';
 import 'package:logincatalog/screens/login_design_8/login_screen_8.dart';
+import 'package:logincatalog/screens/login_design_9/login_screen_9.dart';
+import 'package:logincatalog/screens/login_design_9/signup_screen_9.dart';
 
 abstract class Routes {
   static const rootScreen = '/';
@@ -42,11 +44,35 @@ abstract class Routes {
   static const signUpScreen6 = '/sign-up-screen6';
   static const registerScreen7 = '/register-screen7';
   static const loginScreen8 = '/login-screen8';
+  static const loginScreen9 = '/login-screen9';
+  static const signUpScreen9 = '/sign-up-screen9';
+  static const all = {
+    rootScreen,
+    loginScreen1,
+    signUpScreen1,
+    loginScreen2,
+    signUpScreen2,
+    signUpScreen3,
+    loginScreen3,
+    loginScreen4,
+    signUp4,
+    signUpScreen4,
+    loginScreen5,
+    signUpScreen5,
+    loginScreen6,
+    signUpScreen6,
+    registerScreen7,
+    loginScreen8,
+    loginScreen9,
+    signUpScreen9,
+  };
 }
 
 class Router extends RouterBase {
-  //This will probably be removed in future versions
-  //you should call ExtendedNavigator.ofRouter<Router>() directly
+  @override
+  Set<String> get allRoutes => Routes.all;
+
+  @Deprecated('call ExtendedNavigator.ofRouter<Router>() directly')
   static ExtendedNavigatorState get navigator =>
       ExtendedNavigator.ofRouter<Router>();
 
@@ -60,7 +86,7 @@ class Router extends RouterBase {
         }
         final typedArgs = args as RootScreenArguments;
         return MaterialPageRoute<dynamic>(
-          builder: (_) => RootScreen(themeBloc: typedArgs.themeBloc),
+          builder: (context) => RootScreen(themeBloc: typedArgs.themeBloc),
           settings: settings,
         );
       case Routes.loginScreen1:
@@ -69,12 +95,12 @@ class Router extends RouterBase {
         }
         final typedArgs = args as LoginScreen1Arguments;
         return MaterialPageRoute<dynamic>(
-          builder: (_) => LoginScreen1(themeBloc: typedArgs.themeBloc),
+          builder: (context) => LoginScreen1(themeBloc: typedArgs.themeBloc),
           settings: settings,
         );
       case Routes.signUpScreen1:
         return MaterialPageRoute<dynamic>(
-          builder: (_) => SignUpScreen1(),
+          builder: (context) => SignUpScreen1(),
           settings: settings,
         );
       case Routes.loginScreen2:
@@ -83,17 +109,17 @@ class Router extends RouterBase {
         }
         final typedArgs = args as LoginScreen2Arguments;
         return MaterialPageRoute<dynamic>(
-          builder: (_) => LoginScreen2(themeBloc: typedArgs.themeBloc),
+          builder: (context) => LoginScreen2(themeBloc: typedArgs.themeBloc),
           settings: settings,
         );
       case Routes.signUpScreen2:
         return MaterialPageRoute<dynamic>(
-          builder: (_) => SignUpScreen2(),
+          builder: (context) => SignUpScreen2(),
           settings: settings,
         );
       case Routes.signUpScreen3:
         return MaterialPageRoute<dynamic>(
-          builder: (_) => SignUpScreen3(),
+          builder: (context) => SignUpScreen3(),
           settings: settings,
         );
       case Routes.loginScreen3:
@@ -102,12 +128,12 @@ class Router extends RouterBase {
         }
         final typedArgs = args as LoginScreen3Arguments;
         return MaterialPageRoute<dynamic>(
-          builder: (_) => LoginScreen3(themeBloc: typedArgs.themeBloc),
+          builder: (context) => LoginScreen3(themeBloc: typedArgs.themeBloc),
           settings: settings,
         );
       case Routes.loginScreen4:
         return MaterialPageRoute<dynamic>(
-          builder: (_) => LoginScreen4(),
+          builder: (context) => LoginScreen4(),
           settings: settings,
         );
       case Routes.signUp4:
@@ -116,12 +142,12 @@ class Router extends RouterBase {
         }
         final typedArgs = args as SignUp4Arguments;
         return MaterialPageRoute<dynamic>(
-          builder: (_) => SignUp4(themeBloc: typedArgs.themeBloc),
+          builder: (context) => SignUp4(themeBloc: typedArgs.themeBloc),
           settings: settings,
         );
       case Routes.signUpScreen4:
         return MaterialPageRoute<dynamic>(
-          builder: (_) => SignUpScreen4(),
+          builder: (context) => SignUpScreen4(),
           settings: settings,
         );
       case Routes.loginScreen5:
@@ -130,12 +156,12 @@ class Router extends RouterBase {
         }
         final typedArgs = args as LoginScreen5Arguments;
         return MaterialPageRoute<dynamic>(
-          builder: (_) => LoginScreen5(themeBloc: typedArgs.themeBloc),
+          builder: (context) => LoginScreen5(themeBloc: typedArgs.themeBloc),
           settings: settings,
         );
       case Routes.signUpScreen5:
         return MaterialPageRoute<dynamic>(
-          builder: (_) => SignUpScreen5(),
+          builder: (context) => SignUpScreen5(),
           settings: settings,
         );
       case Routes.loginScreen6:
@@ -144,12 +170,12 @@ class Router extends RouterBase {
         }
         final typedArgs = args as LoginScreen6Arguments;
         return MaterialPageRoute<dynamic>(
-          builder: (_) => LoginScreen6(themeBloc: typedArgs.themeBloc),
+          builder: (context) => LoginScreen6(themeBloc: typedArgs.themeBloc),
           settings: settings,
         );
       case Routes.signUpScreen6:
         return MaterialPageRoute<dynamic>(
-          builder: (_) => SignUpScreen6(),
+          builder: (context) => SignUpScreen6(),
           settings: settings,
         );
       case Routes.registerScreen7:
@@ -158,7 +184,7 @@ class Router extends RouterBase {
         }
         final typedArgs = args as RegisterScreen7Arguments;
         return MaterialPageRoute<dynamic>(
-          builder: (_) => RegisterScreen7(themeBloc: typedArgs.themeBloc),
+          builder: (context) => RegisterScreen7(themeBloc: typedArgs.themeBloc),
           settings: settings,
         );
       case Routes.loginScreen8:
@@ -167,7 +193,21 @@ class Router extends RouterBase {
         }
         final typedArgs = args as LoginScreen8Arguments;
         return MaterialPageRoute<dynamic>(
-          builder: (_) => LoginScreen8(themeBloc: typedArgs.themeBloc),
+          builder: (context) => LoginScreen8(themeBloc: typedArgs.themeBloc),
+          settings: settings,
+        );
+      case Routes.loginScreen9:
+        if (hasInvalidArgs<LoginScreen9Arguments>(args, isRequired: true)) {
+          return misTypedArgsRoute<LoginScreen9Arguments>(args);
+        }
+        final typedArgs = args as LoginScreen9Arguments;
+        return MaterialPageRoute<dynamic>(
+          builder: (context) => LoginScreen9(themeBloc: typedArgs.themeBloc),
+          settings: settings,
+        );
+      case Routes.signUpScreen9:
+        return MaterialPageRoute<dynamic>(
+          builder: (context) => SignUpScreen9(),
           settings: settings,
         );
       default:
@@ -176,9 +216,9 @@ class Router extends RouterBase {
   }
 }
 
-//**************************************************************************
+// *************************************************************************
 // Arguments holder classes
-//***************************************************************************
+// **************************************************************************
 
 //RootScreen arguments holder class
 class RootScreenArguments {
@@ -232,4 +272,10 @@ class RegisterScreen7Arguments {
 class LoginScreen8Arguments {
   final ThemeBloc themeBloc;
   LoginScreen8Arguments({@required this.themeBloc});
+}
+
+//LoginScreen9 arguments holder class
+class LoginScreen9Arguments {
+  final ThemeBloc themeBloc;
+  LoginScreen9Arguments({@required this.themeBloc});
 }

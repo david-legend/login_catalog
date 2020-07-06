@@ -6,7 +6,6 @@ class AppColors {
 
   static const Color primaryText = Color(0xFF000000);
 
-
   //Black
   static const Color black = Color(0xFF000000);
   static const Color blackShade1 = Color(0xFF3B3870);
@@ -20,10 +19,7 @@ class AppColors {
   static const Color blackShade9 = Color(0xFF767676);
   static const Color blackShade10 = Color(0xFF606060);
 
-
-
   static const Color darkModeColor = Color(0xFF323337);
-
 
   //White
   static const Color white = Color(0xFFFFFFFF);
@@ -34,6 +30,7 @@ class AppColors {
   static const Color lightBlueShade1 = Color(0xFFCED5E0);
   static const Color lightBlueShade2 = Color(0xFFA7B4C5);
   static const Color lightBlueShade5 = Color(0xFF526479);
+  static const Color deepBlue200 = Color(0xFF2B3F51);
 
   //Orange
   static const Color orange = Color(0xFFF9AC5F);
@@ -43,6 +40,7 @@ class AppColors {
   static const Color orangeShade3 = Color(0xFFFA947F);
   static const Color orangeShade4 = Color(0xFFFF9023);
   static const Color orangeShade5 = Color(0xFFF59312);
+  static const Color orangeShade6 = Color(0xFFDE7E5D);
 
   //Grey
   static const Color grey = Color(0xFFE0E0E0);
@@ -52,6 +50,9 @@ class AppColors {
   static const Color greyShade6 = Color(0xFFADB1C0);
   static const Color greyShade7 = Color(0xFFB2B2B2);
   static const Color greyShade8 = Color(0xFFA3A3A3);
+
+  //indigo
+  static const Color indigo200 = Color(0xFF9FB5D1);
 
   //green
   static const Color green = Color(0xFF18D3BF);
@@ -87,7 +88,6 @@ class AppColors {
   static const Color seaBlue2 = Color(0xFF2DCBFE);
   static const Color seaBlue3 = Color(0xFF0DE6FE);
 
-
   static const Color purple = Color(0xFF7B80FF);
 
   static const Color violet = Color(0xFF8764C3);
@@ -98,13 +98,5 @@ class AppColors {
 
   static const Color yellow = Color(0xFFFFC702);
 
-
   static const Color deepBrown = Color(0xFF666D73);
-
-
-
-
-
-
-
 }

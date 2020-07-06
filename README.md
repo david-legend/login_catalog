@@ -33,3 +33,6 @@ to help developers kickstart their apps faster.
 ## Login Design 8
 ![Screenshot](assets/screenshots/login8.png)
 
+## Login Design 9
+![Screenshot](assets/screenshots/login9.png)
+

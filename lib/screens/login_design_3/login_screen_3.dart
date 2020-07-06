@@ -139,7 +139,8 @@ class _LoginScreen3State extends State<LoginScreen3> {
                           _buildForm(context: context),
                           SpaceH16(),
                           Container(
-                            margin: EdgeInsets.only(left: (widthOfScreen * 0.75)),
+                            margin:
+                                EdgeInsets.only(left: (widthOfScreen * 0.75)),
                             child: Text(
                               "Forgot ?",
                               style: textTheme.body1.copyWith(
@@ -153,7 +154,8 @@ class _LoginScreen3State extends State<LoginScreen3> {
                           Container(
                             height: 60,
                             width: 120,
-                            margin: EdgeInsets.only(right: (widthOfScreen - 120)),
+                            margin:
+                                EdgeInsets.only(right: (widthOfScreen - 120)),
                             child: RaisedButton(
                               onPressed: () => Router.navigator
                                   .pushNamed(Routes.signUpScreen3),
@@ -222,7 +224,8 @@ class _LoginScreen3State extends State<LoginScreen3> {
                       ),
                       hintText: StringConst.USER_NAME,
                       hintTextStyle: Styles.customTextStyle(
-                          color: AppColors.lightBlueShade2),
+                        color: AppColors.lightBlueShade2,
+                      ),
                       textStyle: Styles.customTextStyle(
                         color: AppColors.lightBlueShade5,
                       ),

@@ -16,11 +16,12 @@ import 'package:logincatalog/screens/login_design_6/login_screen_6.dart';
 import 'package:logincatalog/screens/login_design_6/signup_screen_6.dart';
 import 'package:logincatalog/screens/login_design_7/register_screen_7.dart';
 import 'package:logincatalog/screens/login_design_8/login_screen_8.dart';
+import 'package:logincatalog/screens/login_design_9/login_screen_9.dart';
+import 'package:logincatalog/screens/login_design_9/signup_screen_9.dart';
 import 'package:logincatalog/screens/root_screen.dart';
 
 @MaterialAutoRouter()
 class $Router {
-
   @initial
   RootScreen rootScreen;
 
@@ -46,6 +47,9 @@ class $Router {
   RegisterScreen7 registerScreen7;
 
   LoginScreen8 loginScreen8;
+
+  LoginScreen9 loginScreen9;
+  SignUpScreen9 signUpScreen9;
 }
 
 //ScreenArguments arguments holder class
