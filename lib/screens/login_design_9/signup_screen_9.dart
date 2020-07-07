@@ -1,10 +1,13 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:logincatalog/layout/adaptive.dart';
+import 'package:logincatalog/routes/router.gr.dart';
 import 'package:logincatalog/values/values.dart';
 import 'package:logincatalog/widgets/custom_painters.dart';
 import 'package:logincatalog/widgets/custom_text_form_field.dart';
 import 'package:logincatalog/widgets/spaces.dart';
+import 'package:logincatalog/widgets/tear_drop_button.dart';
 
 class SignUpScreen9 extends StatefulWidget {
   @override
@@ -14,8 +17,13 @@ class SignUpScreen9 extends StatefulWidget {
 class _SignUpScreen9State extends State<SignUpScreen9> {
   @override
   Widget build(BuildContext context) {
+    double tearDropButtonRadius =
+        assignHeight(context: context, fraction: 0.07);
+    ThemeData theme = Theme.of(context);
+
     return Scaffold(
       backgroundColor: AppColors.deepBlue200,
+      resizeToAvoidBottomPadding: false,
       body: Container(
         child: Column(
           children: [
@@ -23,6 +31,53 @@ class _SignUpScreen9State extends State<SignUpScreen9> {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: Sizes.PADDING_24),
               child: _buildForm(),
+            ),
+            SpaceH20(),
+            Container(
+              height: tearDropButtonRadius * 3,
+              child: Column(
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(top: tearDropButtonRadius),
+                        child: TearDropButton(
+                          buttonText: StringConst.SIGN_IN_2,
+                          radius: tearDropButtonRadius,
+                          tearDropAlignment: TearDropAlignment.bottomRight,
+                          style: PaintingStyle.stroke,
+                          color: AppColors.indigo200,
+                          buttonTextStyle: theme.textTheme.bodyText1.copyWith(
+                            color: AppColors.indigo200,
+                          ),
+                          onTap: () {
+                            ExtendedNavigator.ofRouter<Router>().pop();
+                          },
+                        ),
+                      ),
+                      SpaceW16(),
+                      TearDropButton(
+                        buttonText: StringConst.SIGN_UP_4,
+                        radius: tearDropButtonRadius,
+                        tearDropAlignment: TearDropAlignment.topLeft,
+                        onTap: () {},
+                      )
+                    ],
+                  )
+                ],
+              ),
+            ),
+            SpaceH20(),
+            Align(
+              alignment: Alignment.center,
+              child: Text(
+                StringConst.ALREADY_HAVE_AN_ACCOUNT,
+                style: theme.textTheme.bodyText1.copyWith(
+                  color: AppColors.indigo200,
+                ),
+              ),
             ),
           ],
         ),
@@ -149,14 +204,6 @@ class _SignUpScreen9State extends State<SignUpScreen9> {
           enabledBorder: customUnderlineInputBorder,
           hintText: StringConst.PASSWORD_HINT_TEXT,
           hintTextStyle: hintTextStyle,
-        ),
-        SpaceH16(),
-        Align(
-          alignment: Alignment.center,
-          child: Text(
-            StringConst.ALREADY_HAVE_AN_ACCOUNT,
-            style: hintTextStyle,
-          ),
         ),
       ],
     );

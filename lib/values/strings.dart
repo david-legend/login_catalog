@@ -28,9 +28,11 @@ class StringConst {
   static const String LOG_IN_4 = "Log In";
   static const String LOG_IN_5 = "Log In!";
   static const String SIGN_IN = "Sign in";
+  static const String SIGN_IN_2 = "Signin";
   static const String SIGN_UP = "Sign up";
   static const String SIGN_UP_2 = "Sign Up";
   static const String SIGN_UP_3 = "Sign Up!";
+  static const String SIGN_UP_4 = "Signup";
   static const String SIGN = "Sign";
   static const String UP = "up";
   static const String EASY_SIGN_UP = "It's easier to sign up now";

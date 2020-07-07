@@ -10,6 +10,7 @@ import 'package:logincatalog/widgets/custom_painters.dart';
 import 'package:logincatalog/widgets/custom_shape_clippers.dart';
 import 'package:logincatalog/widgets/custom_text_form_field.dart';
 import 'package:logincatalog/widgets/spaces.dart';
+import 'package:logincatalog/widgets/tear_drop_button.dart';
 
 class LoginScreen9 extends StatefulWidget {
   LoginScreen9({
@@ -35,7 +36,11 @@ class _LoginScreen9State extends State<LoginScreen9> {
 
   @override
   Widget build(BuildContext context) {
+    double tearDropButtonRadius =
+        assignHeight(context: context, fraction: 0.07);
+    ThemeData theme = Theme.of(context);
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       backgroundColor: AppColors.deepBlue200,
       body: Container(
         child: Column(
@@ -44,6 +49,54 @@ class _LoginScreen9State extends State<LoginScreen9> {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: Sizes.PADDING_24),
               child: _buildForm(),
+            ),
+            SpaceH20(),
+            Container(
+              height: tearDropButtonRadius * 3,
+              child: Column(
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      TearDropButton(
+                        buttonText: StringConst.SIGN_IN_2,
+                        radius: tearDropButtonRadius,
+                        tearDropAlignment: TearDropAlignment.topRight,
+                        onTap: () {},
+                      ),
+                      SpaceW16(),
+                      Container(
+                        margin: EdgeInsets.only(top: tearDropButtonRadius),
+                        child: TearDropButton(
+                          buttonText: StringConst.SIGN_UP_4,
+                          radius: tearDropButtonRadius,
+                          tearDropAlignment: TearDropAlignment.bottomLeft,
+                          style: PaintingStyle.stroke,
+                          color: AppColors.indigo200,
+                          buttonTextStyle: theme.textTheme.bodyText1.copyWith(
+                            color: AppColors.indigo200,
+                          ),
+                          onTap: () {
+                            ExtendedNavigator.ofRouter<Router>()
+                                .pushNamed(Routes.signUpScreen9);
+                          },
+                        ),
+                      )
+                    ],
+                  )
+                ],
+              ),
+            ),
+            SpaceH20(),
+            Align(
+              alignment: Alignment.center,
+              child: Text(
+                StringConst.DONT_HAVE_AN_ACCOUNT,
+                style: theme.textTheme.bodyText1.copyWith(
+                  color: AppColors.indigo200,
+                ),
+              ),
             ),
           ],
         ),
@@ -154,23 +207,13 @@ class _LoginScreen9State extends State<LoginScreen9> {
           ),
           SpaceH16(),
           InkWell(
-            onTap: () {
-              ExtendedNavigator.ofRouter<Router>()
-                  .pushNamed(Routes.signUpScreen9);
-            },
+            onTap: () {},
             child: Align(
               alignment: Alignment.centerRight,
               child: Text(
                 StringConst.FORGOT_PASSWORD,
                 style: titleTextStyle,
               ),
-            ),
-          ),
-          Align(
-            alignment: Alignment.center,
-            child: Text(
-              StringConst.DONT_HAVE_AN_ACCOUNT,
-              style: hintTextStyle,
             ),
           ),
         ],

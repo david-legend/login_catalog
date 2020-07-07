@@ -170,10 +170,9 @@ class _LoginScreen5State extends State<LoginScreen5> {
               opacity: 0.9,
               child: CustomPaint(
                 painter: DrawCircle(
-                  offset: Offset(widthOfScreen * 0.7, heightOfScreen * 0.1),
-                  radius: 70.0,
-                  color: AppColors.blueShade2
-                ),
+                    offset: Offset(widthOfScreen * 0.7, heightOfScreen * 0.1),
+                    radius: 70.0,
+                    color: AppColors.blueShade2),
               ),
             ),
           ),

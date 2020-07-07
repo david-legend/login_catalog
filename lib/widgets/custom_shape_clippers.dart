@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:logincatalog/widgets/tear_drop_button.dart';
 
 //************************ for root screen *********************************//
 class CustomRootScreenShapeClipper extends CustomClipper<Path> {
@@ -550,43 +551,66 @@ class LoginDesign7ShapeClipper3 extends CustomClipper<Path> {
 //************************ for LoginDesign9 *********************************//
 
 class LoginDesign9ShapeClipper extends CustomClipper<Path> {
+  LoginDesign9ShapeClipper({
+    @required this.offset,
+    @required this.radius,
+    this.tearDropAlignment = TearDropAlignment.topRight,
+  });
+
+  final double radius;
+  final Offset offset;
+  final TearDropAlignment tearDropAlignment;
+
   @override
   getClip(Size size) {
     final Path path = Path();
-    path.lineTo(0.0, size.height * 0.5);
 
-    var firstEndpoint = Offset(size.width * 0.6, size.height * 0.55);
-    var firstControlPoint = Offset(size.width * 0.40, size.height);
+    if (tearDropAlignment == TearDropAlignment.topLeft) {
+      drawPathForTopLeftAlignment(size, path);
+    } else if (tearDropAlignment == TearDropAlignment.topRight) {
+      drawPathForTopRightAlignment(size, path);
+    } else if (tearDropAlignment == TearDropAlignment.bottomRight) {
+      drawPathForBottomRightAlignment(size, path);
+    } else if (tearDropAlignment == TearDropAlignment.bottomLeft) {
+      drawPathForBottomLeftAlignment(size, path);
+    }
 
-    path.quadraticBezierTo(firstControlPoint.dx, firstControlPoint.dy,
-        firstEndpoint.dx, firstEndpoint.dy);
+    path.addOval(Rect.fromCircle(center: offset, radius: radius));
 
-    var secondEndpoint = Offset(size.width * 0.8, size.height * 0.35);
-    var secondControlPoint = Offset(size.width * 0.7, size.height * 0.35);
-
-    path.quadraticBezierTo(secondControlPoint.dx, secondControlPoint.dy,
-        secondEndpoint.dx, secondEndpoint.dy);
-
-    var thirdEndpoint = Offset(size.width * 0.9, size.height * 0.25);
-    var thirdControlPoint = Offset(size.width * 0.9, size.height * 0.35);
-
-    path.quadraticBezierTo(thirdControlPoint.dx, thirdControlPoint.dy,
-        thirdEndpoint.dx, thirdEndpoint.dy);
-
-    var fourthEndpoint = Offset(size.width * 0.78, size.height * 0.15);
-    var fourthControlPoint = Offset(size.width * 0.9, size.height * 0.15);
-
-    path.quadraticBezierTo(fourthControlPoint.dx, fourthControlPoint.dy,
-        fourthEndpoint.dx, fourthEndpoint.dy);
-
-    var fifthEndpoint = Offset(size.width * 0.5, size.height * 0);
-    var fifthControlPoint = Offset(size.width * 0.6, size.height * 0.15);
-
-    path.quadraticBezierTo(fifthControlPoint.dx, fifthControlPoint.dy,
-        fifthEndpoint.dx, fifthEndpoint.dy);
-//    path.lineTo(size.width, 0.0);
     path.close();
     return path;
+  }
+
+  void drawPathForTopRightAlignment(Size size, Path path) {
+    path.moveTo(size.width, size.height * 0.0);
+    path.lineTo(size.width, size.height * 0.5);
+    path.lineTo(size.width * 0.5, size.height * 0.5);
+    path.lineTo(size.width * 0.5, size.height * 0.0);
+    path.lineTo(size.width, size.height * 0);
+  }
+
+  void drawPathForTopLeftAlignment(Size size, Path path) {
+    path.moveTo(size.width * 0.0, size.height * 0.0);
+    path.lineTo(size.width * 0.5, size.height * 0.0);
+    path.lineTo(size.width * 0.5, size.height * 0.5);
+    path.lineTo(size.width * 0.0, size.height * 0.5);
+    path.lineTo(size.width * 0.0, size.height * 0);
+  }
+
+  void drawPathForBottomRightAlignment(Size size, Path path) {
+    path.moveTo(size.width, size.height);
+    path.lineTo(size.width * 0.5, size.height);
+    path.lineTo(size.width * 0.5, size.height * 0.5);
+    path.lineTo(size.width, size.height * 0.5);
+    path.lineTo(size.width, size.height);
+  }
+
+  void drawPathForBottomLeftAlignment(Size size, Path path) {
+    path.moveTo(size.width * 0.0, size.height);
+    path.lineTo(size.width * 0.0, size.height * 0.5);
+    path.lineTo(size.width * 0.5, size.height * 0.5);
+    path.lineTo(size.width * 0.5, size.height);
+    path.lineTo(size.width * 0.0, size.height);
   }
 
   @override
