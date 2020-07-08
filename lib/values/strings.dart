@@ -20,7 +20,7 @@ class StringConst {
 
   static const String LOGIN_MSG =
       '''Enter your registered email id or contact number and password to login into your acount.''';
-  static const String LOGIN_MSG_2 = "Login into your existing account";
+  static const String LOGIN_MSG_2 = "Log into your existing account";
 
   static const String LOG_IN = "Log in";
   static const String LOG_IN_2 = "Login";

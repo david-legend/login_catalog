@@ -16,6 +16,9 @@ class TearDropButton extends StatelessWidget {
     this.color = AppColors.orangeShade6,
     this.style = PaintingStyle.fill,
     this.onTap,
+    this.elevation = Sizes.ELEVATION_8,
+    this.hasShadow = false,
+    this.shadowColor,
   });
 
   final double radius;
@@ -25,6 +28,9 @@ class TearDropButton extends StatelessWidget {
   final TextStyle buttonTextStyle;
   final PaintingStyle style;
   final GestureTapCallback onTap;
+  final bool hasShadow;
+  final double elevation;
+  final Color shadowColor;
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +54,9 @@ class TearDropButton extends StatelessWidget {
                       defaultRadius ?? radius,
                       defaultRadius ?? radius,
                     ),
+                    elevation: elevation,
+                    shadowColor: shadowColor,
+                    hasShadow: hasShadow,
                     paintingStyle: style,
                     radius: defaultRadius ?? radius,
                     tearDropAlignment: tearDropAlignment),

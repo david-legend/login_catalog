@@ -38,8 +38,12 @@ class DrawCircle extends CustomPainter {
         ..addOval(
             Rect.fromCircle(center: offset, radius: radius + shadowOffset));
 
-      canvas.drawShadow(oval, shadowColor ?? Colors.black.withOpacity(0.7),
-          elevation, transparentOccluder);
+      canvas.drawShadow(
+        oval,
+        shadowColor ?? Colors.black.withOpacity(0.7),
+        elevation,
+        transparentOccluder,
+      );
     }
 
     canvas.drawCircle(offset, radius, _paint);
@@ -86,16 +90,25 @@ class DrawTearDrop extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-//    if (hasShadow) {
-//      Path oval = Path()
-//        ..addOval(
-//            Rect.fromCircle(center: offset, radius: radius + shadowOffset));
-//
-//      canvas.drawShadow(oval, shadowColor ?? Colors.black.withOpacity(0.7),
-//          elevation, transparentOccluder);
-//    }
-
     Path path = Path();
+    if (hasShadow) {
+//      Path oval = Path();
+
+      if (tearDropAlignment == TearDropAlignment.topLeft) {
+        canvas.drawPath(drawPathForTopLeftAlignment(size, path), _paint);
+      } else if (tearDropAlignment == TearDropAlignment.topRight) {
+        canvas.drawPath(drawPathForTopRightAlignment(size, path), _paint);
+      } else if (tearDropAlignment == TearDropAlignment.bottomRight) {
+        canvas.drawPath(drawPathForBottomRightAlignment(size, path), _paint);
+      } else if (tearDropAlignment == TearDropAlignment.bottomLeft) {
+        canvas.drawPath(drawPathForBottomLeftAlignment(size, path), _paint);
+      }
+
+      canvas.drawShadow(path, shadowColor ?? Colors.black.withOpacity(0.8),
+          elevation, transparentOccluder);
+    }
+
+//    Path path = Path();
 
     if (tearDropAlignment == TearDropAlignment.topLeft) {
       canvas.drawPath(drawPathForTopLeftAlignment(size, path), _paint);
@@ -106,8 +119,6 @@ class DrawTearDrop extends CustomPainter {
     } else if (tearDropAlignment == TearDropAlignment.bottomLeft) {
       canvas.drawPath(drawPathForBottomLeftAlignment(size, path), _paint);
     }
-
-//    canvas.drawCircle(offset, radius, _paint);
 
     path.close();
   }

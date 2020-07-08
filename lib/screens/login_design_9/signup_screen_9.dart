@@ -21,65 +21,74 @@ class _SignUpScreen9State extends State<SignUpScreen9> {
         assignHeight(context: context, fraction: 0.07);
     ThemeData theme = Theme.of(context);
 
-    return Scaffold(
-      backgroundColor: AppColors.deepBlue200,
-      resizeToAvoidBottomPadding: false,
-      body: Container(
-        child: Column(
-          children: [
-            _drawTearDrop(),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: Sizes.PADDING_24),
-              child: _buildForm(),
-            ),
-            SpaceH20(),
-            Container(
-              height: tearDropButtonRadius * 3,
-              child: Column(
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(top: tearDropButtonRadius),
-                        child: TearDropButton(
-                          buttonText: StringConst.SIGN_IN_2,
-                          radius: tearDropButtonRadius,
-                          tearDropAlignment: TearDropAlignment.bottomRight,
-                          style: PaintingStyle.stroke,
-                          color: AppColors.indigo200,
-                          buttonTextStyle: theme.textTheme.bodyText1.copyWith(
-                            color: AppColors.indigo200,
-                          ),
-                          onTap: () {
-                            ExtendedNavigator.ofRouter<Router>().pop();
-                          },
-                        ),
-                      ),
-                      SpaceW16(),
-                      TearDropButton(
-                        buttonText: StringConst.SIGN_UP_4,
-                        radius: tearDropButtonRadius,
-                        tearDropAlignment: TearDropAlignment.topLeft,
-                        onTap: () {},
-                      )
-                    ],
-                  )
-                ],
+    return GestureDetector(
+      onTap: () {
+        FocusScopeNode currentFocus = FocusScope.of(context);
+        if (!currentFocus.hasPrimaryFocus) {
+          currentFocus.unfocus();
+        }
+      },
+      child: Scaffold(
+        backgroundColor: AppColors.deepBlue200,
+        body: Container(
+          child: ListView(
+            children: [
+              _drawTearDrop(),
+              Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: Sizes.PADDING_24),
+                child: _buildForm(),
               ),
-            ),
-            SpaceH20(),
-            Align(
-              alignment: Alignment.center,
-              child: Text(
-                StringConst.ALREADY_HAVE_AN_ACCOUNT,
-                style: theme.textTheme.bodyText1.copyWith(
-                  color: AppColors.indigo200,
+              SpaceH20(),
+              Container(
+                height: tearDropButtonRadius * 3,
+                child: Column(
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(top: tearDropButtonRadius),
+                          child: TearDropButton(
+                            buttonText: StringConst.SIGN_IN_2,
+                            radius: tearDropButtonRadius,
+                            tearDropAlignment: TearDropAlignment.bottomRight,
+                            style: PaintingStyle.stroke,
+                            color: AppColors.indigo200,
+                            buttonTextStyle: theme.textTheme.bodyText1.copyWith(
+                              color: AppColors.indigo200,
+                            ),
+                            onTap: () {
+                              ExtendedNavigator.ofRouter<Router>().pop();
+                            },
+                          ),
+                        ),
+                        SpaceW16(),
+                        TearDropButton(
+                          buttonText: StringConst.SIGN_UP_4,
+                          radius: tearDropButtonRadius,
+                          tearDropAlignment: TearDropAlignment.topLeft,
+                          hasShadow: true,
+                          onTap: () {},
+                        )
+                      ],
+                    )
+                  ],
                 ),
               ),
-            ),
-          ],
+              SpaceH20(),
+              Align(
+                alignment: Alignment.center,
+                child: Text(
+                  StringConst.ALREADY_HAVE_AN_ACCOUNT,
+                  style: theme.textTheme.bodyText1.copyWith(
+                    color: AppColors.indigo200,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -156,10 +165,13 @@ class _SignUpScreen9State extends State<SignUpScreen9> {
           title: StringConst.EMAIL,
           textStyle: hintTextStyle,
           hasPrefixIcon: true,
-          prefixIcon: Icon(
-            Icons.email,
-            color: AppColors.orangeShade6,
-            size: Sizes.ICON_SIZE_18,
+          prefixIcon: Container(
+            transform: Matrix4.translationValues(-10.0, 0.0, 0.0),
+            child: Icon(
+              Icons.email,
+              color: AppColors.orangeShade6,
+              size: Sizes.ICON_SIZE_18,
+            ),
           ),
           border: customUnderlineInputBorder,
           focusedBorder: customUnderlineInputBorder,
@@ -174,10 +186,13 @@ class _SignUpScreen9State extends State<SignUpScreen9> {
           titleStyle: titleTextStyle,
           textStyle: hintTextStyle,
           hasPrefixIcon: true,
-          prefixIcon: Icon(
-            FeatherIcons.key,
-            color: AppColors.orangeShade6,
-            size: Sizes.ICON_SIZE_18,
+          prefixIcon: Container(
+            transform: Matrix4.translationValues(-10.0, 0.0, 0.0),
+            child: Icon(
+              FeatherIcons.key,
+              color: AppColors.orangeShade6,
+              size: Sizes.ICON_SIZE_18,
+            ),
           ),
           obscured: true,
           border: customUnderlineInputBorder,
@@ -193,10 +208,13 @@ class _SignUpScreen9State extends State<SignUpScreen9> {
           titleStyle: titleTextStyle,
           textStyle: hintTextStyle,
           hasPrefixIcon: true,
-          prefixIcon: Icon(
-            FeatherIcons.key,
-            color: AppColors.orangeShade6,
-            size: Sizes.ICON_SIZE_18,
+          prefixIcon: Container(
+            transform: Matrix4.translationValues(-10.0, 0.0, 0.0),
+            child: Icon(
+              FeatherIcons.key,
+              color: AppColors.orangeShade6,
+              size: Sizes.ICON_SIZE_18,
+            ),
           ),
           obscured: true,
           border: customUnderlineInputBorder,
