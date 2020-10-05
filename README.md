@@ -1,11 +1,9 @@
 <h1 align="center">
-  <a href="http://davidcobbina.com" target="_blank">davidcobbina.com</a>
-</h1>
-
-<h1 align="center">
    Login Catalog
 </h1>
-
+<h3 align="center">
+  <a href="http://davidcobbina.com" target="_blank">davidcobbina.com</a>
+</h3>
 <p align="center">
     A catalog of beautiful login UI built with <strong>flutter</strong>.
 </p>
