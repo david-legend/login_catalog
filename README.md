@@ -1,8 +1,14 @@
-# Login Catalog
+<h1 align="center">
+  <a href="http://davidcobbina.com" target="_blank">davidcobbina.com</a>
+</h1>
 
-A catalog of beautiful login UI
+<h1 align="center">
+   Login Catalog
+</h1>
 
-Built with flutter
+<p align="center">
+    A catalog of beautiful login UI built with <strong>flutter</strong>.
+</p>
 
 ## Onboarding App
 
