@@ -8,10 +8,10 @@
     A catalog of beautiful login UI built with <strong>flutter</strong>.
 </p>
 
-## Onboarding App
-
+<p align="center">
 Beautifully crafted with flutter and love, a useful UI full of different Login and Registration Screens
 to help developers kickstart their apps faster.
+</p>
 
 ### Login Design 1
 ![Screenshot](assets/screenshots/login1.png)
