@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 
 import 'login_design_1_theme.dart';
 import 'login_design_2_theme.dart';

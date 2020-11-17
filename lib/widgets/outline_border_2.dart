@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'dart:math' as math;
 import 'dart:ui' show lerpDouble;
 

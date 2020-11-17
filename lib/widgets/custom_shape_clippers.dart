@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:logincatalog/widgets/tear_drop_button.dart';
 
 //************************ for root screen *********************************//

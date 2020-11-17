@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:logincatalog/bloc/theme_bloc.dart';
 import 'package:logincatalog/routes/router.gr.dart';
 import 'package:logincatalog/themes/login_design_1_theme.dart';

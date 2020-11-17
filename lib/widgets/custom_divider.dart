@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:logincatalog/values/values.dart';
 
 class CustomDivider extends StatelessWidget {
