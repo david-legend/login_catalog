@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:logincatalog/bloc/theme_bloc.dart';
@@ -9,7 +10,6 @@ import 'package:logincatalog/widgets/custom_divider.dart';
 import 'package:logincatalog/widgets/custom_shape_clippers.dart';
 import 'package:logincatalog/widgets/custom_text_form_field.dart';
 import 'package:logincatalog/widgets/spaces.dart';
-
 
 class LoginScreen1 extends StatefulWidget {
   LoginScreen1({@required this.themeBloc});
@@ -32,7 +32,6 @@ class _LoginScreen1State extends State<LoginScreen1> {
   CurrentTheme _buildLightTheme() {
     return CurrentTheme('light', LoginDesign1Theme.lightThemeData);
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -181,9 +180,7 @@ class _LoginScreen1State extends State<LoginScreen1> {
         ),
         SpaceH20(),
         InkWell(
-          onTap: () => Router.navigator.pushNamed(
-            Routes.signUpScreen1,
-          ),
+          onTap: () => ExtendedNavigator.root.push(Routes.signUpScreen1),
           child: Text(
             StringConst.DONT_HAVE_AN_ACCOUNT,
             textAlign: TextAlign.center,

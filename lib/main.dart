@@ -33,8 +33,8 @@ class _MyAppState extends State<MyApp> {
           debugShowCheckedModeBanner: false,
           theme: snapshot.data,
           darkTheme: null,
-          builder: ExtendedNavigator<Router>(
-            router: Router(),
+          builder: ExtendedNavigator<AppRouter>(
+            router: AppRouter(),
             initialRoute: Routes.rootScreen,
             initialRouteArgs: RootScreenArguments(themeBloc: _themeBloc),
 //            initialRoute: Routes.loginScreen1,

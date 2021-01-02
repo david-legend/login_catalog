@@ -37,8 +37,7 @@ class RootScreen extends StatelessWidget {
                   context: context,
                   title: "Login Design 1",
                   imageUrl: ImagePath.LOGIN_1,
-                  navigate: () =>
-                      ExtendedNavigator.ofRouter<Router>().pushNamed(
+                  navigate: () => ExtendedNavigator.root.push(
                     Routes.loginScreen1,
                     arguments: LoginScreen1Arguments(themeBloc: themeBloc),
                   ),
@@ -47,8 +46,7 @@ class RootScreen extends StatelessWidget {
                   context: context,
                   title: "Login Design 2",
                   imageUrl: ImagePath.LOGIN_2,
-                  navigate: () =>
-                      ExtendedNavigator.ofRouter<Router>().pushNamed(
+                  navigate: () => ExtendedNavigator.root.push(
                     Routes.loginScreen2,
                     arguments: LoginScreen2Arguments(themeBloc: themeBloc),
                   ),
@@ -57,8 +55,7 @@ class RootScreen extends StatelessWidget {
                   context: context,
                   title: "Login Design 3",
                   imageUrl: ImagePath.LOGIN_3,
-                  navigate: () =>
-                      ExtendedNavigator.ofRouter<Router>().pushNamed(
+                  navigate: () => ExtendedNavigator.root.push(
                     Routes.loginScreen3,
                     arguments: LoginScreen3Arguments(themeBloc: themeBloc),
                   ),
@@ -67,8 +64,7 @@ class RootScreen extends StatelessWidget {
                   context: context,
                   title: "Login Design 4",
                   imageUrl: ImagePath.LOGIN_4,
-                  navigate: () =>
-                      ExtendedNavigator.ofRouter<Router>().pushNamed(
+                  navigate: () => ExtendedNavigator.root.push(
                     Routes.signUp4,
                     arguments: SignUp4Arguments(themeBloc: themeBloc),
                   ),
@@ -77,8 +73,7 @@ class RootScreen extends StatelessWidget {
                   context: context,
                   title: "Login Design 5",
                   imageUrl: ImagePath.LOGIN_5,
-                  navigate: () =>
-                      ExtendedNavigator.ofRouter<Router>().pushNamed(
+                  navigate: () => ExtendedNavigator.root.push(
                     Routes.loginScreen5,
                     arguments: LoginScreen5Arguments(themeBloc: themeBloc),
                   ),
@@ -87,8 +82,7 @@ class RootScreen extends StatelessWidget {
                   context: context,
                   title: "Login Design 6",
                   imageUrl: ImagePath.LOGIN_6,
-                  navigate: () =>
-                      ExtendedNavigator.ofRouter<Router>().pushNamed(
+                  navigate: () => ExtendedNavigator.root.push(
                     Routes.loginScreen6,
                     arguments: LoginScreen6Arguments(themeBloc: themeBloc),
                   ),
@@ -97,8 +91,7 @@ class RootScreen extends StatelessWidget {
                   context: context,
                   title: "Login Design 7",
                   imageUrl: ImagePath.LOGIN_7,
-                  navigate: () =>
-                      ExtendedNavigator.ofRouter<Router>().pushNamed(
+                  navigate: () => ExtendedNavigator.root.push(
                     Routes.registerScreen7,
                     arguments: RegisterScreen7Arguments(themeBloc: themeBloc),
                   ),
@@ -107,8 +100,7 @@ class RootScreen extends StatelessWidget {
                   context: context,
                   title: "Login Design 8",
                   imageUrl: ImagePath.LOGIN_8,
-                  navigate: () =>
-                      ExtendedNavigator.ofRouter<Router>().pushNamed(
+                  navigate: () => ExtendedNavigator.root.push(
                     Routes.loginScreen8,
                     arguments: LoginScreen8Arguments(themeBloc: themeBloc),
                   ),
@@ -117,8 +109,7 @@ class RootScreen extends StatelessWidget {
                   context: context,
                   title: "Login Design 9",
                   imageUrl: ImagePath.LOGIN_9,
-                  navigate: () =>
-                      ExtendedNavigator.ofRouter<Router>().pushNamed(
+                  navigate: () => ExtendedNavigator.root.push(
                     Routes.loginScreen9,
                     arguments: LoginScreen9Arguments(themeBloc: themeBloc),
                   ),
@@ -132,8 +123,7 @@ class RootScreen extends StatelessWidget {
   }
 
   navigate(String routeName, Object arguments) {
-    ExtendedNavigator.ofRouter<Router>()
-        .pushNamed(routeName, arguments: arguments);
+    ExtendedNavigator.root.push(routeName, arguments: arguments);
   }
 
   Widget designCard({

@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -22,7 +23,6 @@ class _SignUp4State extends State<SignUp4> {
   void initState() {
     super.initState();
     widget.themeBloc.selectedTheme.add(_buildLightTheme());
-
   }
 
   CurrentTheme _buildLightTheme() {
@@ -73,10 +73,9 @@ class _SignUp4State extends State<SignUp4> {
                   ),
                   color: AppColors.blue,
                   textStyle: theme.textTheme.button.copyWith(
-                    color: AppColors.white,
-                    fontWeight: FontWeight.w600,
-                    fontSize: Sizes.TEXT_SIZE_14
-                  ),
+                      color: AppColors.white,
+                      fontWeight: FontWeight.w600,
+                      fontSize: Sizes.TEXT_SIZE_14),
                   onPressed: () {},
                 ),
               ),
@@ -89,11 +88,11 @@ class _SignUp4State extends State<SignUp4> {
                   color: AppColors.white,
                   borderSide: Borders.customBorder(width: 1.5),
                   textStyle: theme.textTheme.button.copyWith(
-                    color: AppColors.blackShade10,
-                    fontWeight: FontWeight.w600,
-                    fontSize: Sizes.TEXT_SIZE_14
-                  ),
-                  onPressed: () => Router.navigator.pushNamed(Routes.signUpScreen4),
+                      color: AppColors.blackShade10,
+                      fontWeight: FontWeight.w600,
+                      fontSize: Sizes.TEXT_SIZE_14),
+                  onPressed: () =>
+                      ExtendedNavigator.root.push(Routes.signUpScreen4),
                 ),
               ),
               Spacer(flex: 1),
@@ -139,7 +138,7 @@ class _SignUp4State extends State<SignUp4> {
               ),
               Spacer(flex: 1),
               InkWell(
-                onTap: () => Router.navigator.pushNamed(Routes.loginScreen4),
+                onTap: () => ExtendedNavigator.root.push(Routes.loginScreen4),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: RichText(

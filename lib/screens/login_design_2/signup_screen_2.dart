@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:logincatalog/bloc/theme_bloc.dart';
 import 'package:logincatalog/routes/router.dart';
@@ -12,15 +13,11 @@ import 'package:logincatalog/widgets/spaces.dart';
 class SignUpScreen2 extends StatefulWidget {
   SignUpScreen2();
 
-
-
   @override
   _SignUpScreen2State createState() => _SignUpScreen2State();
 }
 
 class _SignUpScreen2State extends State<SignUpScreen2> {
-
-
   @override
   Widget build(BuildContext context) {
     var heightOfScreen = MediaQuery.of(context).size.height;
@@ -58,7 +55,7 @@ class _SignUpScreen2State extends State<SignUpScreen2> {
                   ),
                 ),
                 InkWell(
-                  onTap: () => Router.navigator.pushNamed(Routes.loginScreen2),
+                  onTap: () => ExtendedNavigator.root.push(Routes.loginScreen2),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
@@ -74,7 +71,7 @@ class _SignUpScreen2State extends State<SignUpScreen2> {
                         StringConst.LOG_IN,
                         style: textTheme.body1.copyWith(
                           color: AppColors.lightBlue,
-                            fontWeight: FontWeight.w600,
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
                     ],
@@ -105,8 +102,7 @@ class _SignUpScreen2State extends State<SignUpScreen2> {
               enabledBorder: Borders.outlineEnabledBorder,
               focusedBorder: Borders.outlineFocusedBorder,
               labelStyle: Styles.customTextStyle2(),
-              hintTextStyle:
-                  Styles.customTextStyle2(),
+              hintTextStyle: Styles.customTextStyle2(),
               textStyle: Styles.customTextStyle2(),
             ),
             SpaceW16(),
@@ -118,8 +114,7 @@ class _SignUpScreen2State extends State<SignUpScreen2> {
               enabledBorder: Borders.outlineEnabledBorder,
               focusedBorder: Borders.outlineFocusedBorder,
               labelStyle: Styles.customTextStyle2(),
-              hintTextStyle:
-                  Styles.customTextStyle2(),
+              hintTextStyle: Styles.customTextStyle2(),
               textStyle: Styles.customTextStyle2(),
             ),
           ],
@@ -150,9 +145,7 @@ class _SignUpScreen2State extends State<SignUpScreen2> {
         SpaceH20(),
         CustomButton(
           title: StringConst.REGISTER,
-          textStyle: textTheme.title.copyWith(
-            color: AppColors.white
-          ),
+          textStyle: textTheme.title.copyWith(color: AppColors.white),
           color: AppColors.pinkShade2,
           onPressed: () {},
         ),
@@ -182,7 +175,9 @@ class _SignUpScreen2State extends State<SignUpScreen2> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Expanded(child: CustomDivider(color: AppColors.black),),
+          Expanded(
+            child: CustomDivider(color: AppColors.black),
+          ),
           SpaceW8(),
           Text(StringConst.OR, style: textTheme.title),
           SpaceW8(),

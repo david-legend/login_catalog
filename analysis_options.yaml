@@ -1,0 +1,6 @@
+#analyzer:
+#  - enable-experiment:
+#      - non-nullable
+
+analyzer:
+  auto_route_generator

@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:logincatalog/routes/router.gr.dart';
@@ -19,7 +20,7 @@ class SignUpScreen1 extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: AppColors.greyShade2,
         leading: IconButton(
-          onPressed: () => Router.navigator.pop(),
+          onPressed: () => ExtendedNavigator.root.pop(),
           icon: Icon(Icons.arrow_back_ios),
         ),
         elevation: Sizes.ELEVATION_0,
@@ -69,7 +70,8 @@ class SignUpScreen1 extends StatelessWidget {
               child: ListView(
                 children: <Widget>[
                   Container(
-                    margin: const EdgeInsets.symmetric(horizontal: Sizes.MARGIN_36),
+                    margin:
+                        const EdgeInsets.symmetric(horizontal: Sizes.MARGIN_36),
                     child: Column(
                       children: <Widget>[
                         SizedBox(height: heightOfScreen * 0.2),
@@ -79,7 +81,6 @@ class SignUpScreen1 extends StatelessWidget {
                       ],
                     ),
                   ),
-
                 ],
               ),
             ),
@@ -112,6 +113,7 @@ class SignUpScreen1 extends StatelessWidget {
       ],
     );
   }
+
   Widget _buildForm(BuildContext context) {
     var textTheme = Theme.of(context).textTheme;
     return Column(
@@ -166,7 +168,7 @@ class SignUpScreen1 extends StatelessWidget {
         ),
         SpaceH20(),
         InkWell(
-          onTap: () => Router.navigator.pushReplacementNamed(Routes.loginScreen1),
+          onTap: () => ExtendedNavigator.root.popAndPush(Routes.loginScreen1),
           child: Text(
             StringConst.ALREADY_HAVE_AN_ACCOUNT,
             style: textTheme.subtitle.copyWith(
@@ -188,6 +190,5 @@ class SignUpScreen1 extends StatelessWidget {
       ],
     );
   }
-
 }
 //transform: Matrix4.translationValues(-12.0, 0.0, 0.0),

@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:logincatalog/bloc/theme_bloc.dart';
 import 'package:logincatalog/routes/router.gr.dart';
@@ -64,17 +65,16 @@ class _LoginScreen2State extends State<LoginScreen2> {
                   ),
                 ),
                 InkWell(
-                  onTap: () => Router.navigator.pushNamed(Routes.signUpScreen2),
+                  onTap: () =>
+                      ExtendedNavigator.root.push(Routes.signUpScreen2),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text(
-                        StringConst.DONT_HAVE_AN_ACCOUNT,
-                        style: textTheme.body1.copyWith(
+                      Text(StringConst.DONT_HAVE_AN_ACCOUNT,
+                          style: textTheme.body1.copyWith(
                             color: AppColors.blackShade9,
                             fontWeight: FontWeight.w600,
-                        )
-                      ),
+                          )),
                       SpaceW16(),
                       Text(
                         StringConst.REGISTER,
@@ -166,7 +166,9 @@ class _LoginScreen2State extends State<LoginScreen2> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Expanded(child: CustomDivider(color: AppColors.black),),
+          Expanded(
+            child: CustomDivider(color: AppColors.black),
+          ),
           SpaceW8(),
           Text(StringConst.OR, style: textTheme.title),
           SpaceW8(),

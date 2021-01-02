@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:logincatalog/routes/router.gr.dart';
@@ -121,7 +122,8 @@ class _SignUpScreen3State extends State<SignUpScreen3> {
                 height: Sizes.HEIGHT_60,
                 width: Sizes.WIDTH_120,
                 child: RaisedButton(
-                  onPressed: () => Router.navigator.pushNamed(Routes.loginScreen3),
+                  onPressed: () =>
+                      ExtendedNavigator.root.push(Routes.loginScreen3),
                   color: AppColors.white,
                   elevation: Sizes.ELEVATION_6,
                   shape: RoundedRectangleBorder(
@@ -160,8 +162,6 @@ class _SignUpScreen3State extends State<SignUpScreen3> {
                               ),
                               SizedBox(height: heightOfScreen * 0.05),
                               _buildForm(context: context),
-
-
                             ],
                           ),
                         ),
@@ -275,7 +275,7 @@ class _SignUpScreen3State extends State<SignUpScreen3> {
               child: RaisedButton(
                 padding: const EdgeInsets.all(Sizes.PADDING_0),
                 elevation: Sizes.ELEVATION_8,
-                onPressed: (){},
+                onPressed: () {},
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(Sizes.RADIUS_30),
                 ),

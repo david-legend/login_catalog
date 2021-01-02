@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:logincatalog/bloc/theme_bloc.dart';
 import 'package:logincatalog/routes/router.gr.dart';
@@ -162,7 +163,7 @@ class _LoginScreen6State extends State<LoginScreen6> {
           height: heightOfScreen * 0.04,
         ),
         InkWell(
-          onTap: () => Router.navigator.pushNamed(Routes.signUpScreen6),
+          onTap: () => ExtendedNavigator.root.push(Routes.signUpScreen6),
           child: RichText(
             text: TextSpan(
               children: [

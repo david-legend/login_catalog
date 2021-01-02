@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:logincatalog/bloc/theme_bloc.dart';
@@ -157,8 +158,8 @@ class _LoginScreen3State extends State<LoginScreen3> {
                             margin:
                                 EdgeInsets.only(right: (widthOfScreen - 120)),
                             child: RaisedButton(
-                              onPressed: () => Router.navigator
-                                  .pushNamed(Routes.signUpScreen3),
+                              onPressed: () => ExtendedNavigator.root
+                                  .push(Routes.signUpScreen3),
                               color: AppColors.white,
                               elevation: Sizes.ELEVATION_6,
                               shape: RoundedRectangleBorder(

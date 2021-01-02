@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:logincatalog/bloc/theme_bloc.dart';
@@ -67,7 +68,7 @@ class _LoginScreen5State extends State<LoginScreen5> {
                         SpaceH8(),
                         InkWell(
                           onTap: () =>
-                              Router.navigator.pushNamed(Routes.signUpScreen5),
+                              ExtendedNavigator.root.push(Routes.signUpScreen5),
                           child: RichText(
                             text: TextSpan(
                               children: [
