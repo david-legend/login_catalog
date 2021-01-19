@@ -13,6 +13,8 @@ Beautifully crafted with flutter and love, a useful UI full of different Login a
 to help developers kickstart their apps faster.
 </p>
 
+<a href="https://play.google.com/store/apps/details?id=dev.davidcobbina.logincatalog" target="_blank"><img src="assets/screenshots/playstore.png"/></a>
+
 ### Login Design 1
 ![Screenshot](assets/screenshots/login1.png)
 
