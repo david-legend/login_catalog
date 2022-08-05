@@ -5,7 +5,6 @@ import 'package:logincatalog/routes/router.gr.dart';
 import 'package:logincatalog/values/values.dart';
 import 'package:logincatalog/widgets/custom_shape_clippers.dart';
 import 'package:logincatalog/widgets/custom_text_form_field.dart';
-import 'package:logincatalog/widgets/spaces.dart';
 
 class SignUpScreen3 extends StatefulWidget {
   @override
@@ -156,7 +155,7 @@ class _SignUpScreen3State extends State<SignUpScreen3> {
                               Text(
                                 StringConst.REGISTER,
                                 textAlign: TextAlign.center,
-                                style: textTheme.headline.copyWith(
+                                style: textTheme.headlineMedium.copyWith(
                                   color: AppColors.lightBlueShade5,
                                 ),
                               ),

@@ -161,7 +161,7 @@ class _SignUpScreen4State extends State<SignUpScreen4> {
           child: CustomButton(
             title: StringConst.SIGN_UP,
             elevation: Sizes.ELEVATION_12,
-            textStyle: theme.textTheme.subtitle.copyWith(
+            textStyle: theme.textTheme.titleSmall.copyWith(
               color: AppColors.white,
               fontWeight: FontWeight.w600,
             ),

@@ -7,7 +7,6 @@ import 'package:logincatalog/routes/router.gr.dart';
 import 'package:logincatalog/themes/login_design_5_theme.dart';
 import 'package:logincatalog/values/values.dart';
 import 'package:logincatalog/widgets/custom_painters.dart';
-import 'package:logincatalog/widgets/custom_shape_clippers.dart';
 import 'package:logincatalog/widgets/custom_text_form_field.dart';
 import 'package:logincatalog/widgets/spaces.dart';
 import 'package:logincatalog/widgets/tear_drop_button.dart';
@@ -47,7 +46,7 @@ class _LoginScreen9State extends State<LoginScreen9> {
         }
       },
       child: Scaffold(
-        resizeToAvoidBottomPadding: false,
+        resizeToAvoidBottomInset: false,
         backgroundColor: AppColors.deepBlue200,
         body: Container(
           child: Column(

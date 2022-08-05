@@ -233,7 +233,7 @@ class _LoginScreen5State extends State<LoginScreen5> {
           children: <Widget>[
             Text(
               StringConst.FORGOT_PASSWORD,
-              style: theme.textTheme.title
+              style: theme.textTheme.titleMedium
                   .copyWith(color: AppColors.greyShade8, fontSize: 14),
             ),
           ],

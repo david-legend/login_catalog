@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:logincatalog/routes/router.gr.dart';
 import 'package:logincatalog/values/values.dart';
 import 'package:logincatalog/widgets/custom_button.dart';
 import 'package:logincatalog/widgets/custom_painters.dart';
@@ -231,7 +230,7 @@ class _SignUpScreen5State extends State<SignUpScreen5> {
           children: <Widget>[
             Text(
               StringConst.FORGOT_PASSWORD,
-              style: theme.textTheme.title
+              style: theme.textTheme.titleMedium
                   .copyWith(color: AppColors.greyShade8, fontSize: 14),
             ),
           ],

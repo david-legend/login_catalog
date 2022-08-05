@@ -5,7 +5,6 @@ import 'package:logincatalog/bloc/theme_bloc.dart';
 import 'package:logincatalog/routes/router.gr.dart';
 import 'package:logincatalog/themes/login_design_1_theme.dart';
 import 'package:logincatalog/values/values.dart';
-import 'package:logincatalog/widgets/custom_button.dart';
 import 'package:logincatalog/widgets/custom_shape_clippers.dart';
 import 'package:logincatalog/widgets/custom_text_form_field.dart';
 import 'package:logincatalog/widgets/spaces.dart';
@@ -132,7 +131,7 @@ class _LoginScreen3State extends State<LoginScreen3> {
                           Text(
                             StringConst.LOG_IN_2,
                             textAlign: TextAlign.center,
-                            style: textTheme.headline.copyWith(
+                            style: textTheme.headlineMedium.copyWith(
                               color: AppColors.lightBlueShade5,
                             ),
                           ),
@@ -144,7 +143,7 @@ class _LoginScreen3State extends State<LoginScreen3> {
                                 EdgeInsets.only(left: (widthOfScreen * 0.75)),
                             child: Text(
                               "Forgot ?",
-                              style: textTheme.body1.copyWith(
+                              style: textTheme.bodyLarge.copyWith(
                                 fontSize: Sizes.TEXT_SIZE_16,
                                 color: AppColors.lightBlueShade1,
                                 fontWeight: FontWeight.w600,

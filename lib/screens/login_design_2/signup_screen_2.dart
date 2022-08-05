@@ -1,9 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:logincatalog/bloc/theme_bloc.dart';
-import 'package:logincatalog/routes/router.dart';
 import 'package:logincatalog/routes/router.gr.dart';
-import 'package:logincatalog/themes/login_design_2_theme.dart';
 import 'package:logincatalog/values/values.dart';
 import 'package:logincatalog/widgets/custom_button.dart';
 import 'package:logincatalog/widgets/custom_divider.dart';
@@ -46,7 +43,7 @@ class _SignUpScreen2State extends State<SignUpScreen2> {
                         Text(
                           StringConst.REGISTER,
                           textAlign: TextAlign.center,
-                          style: textTheme.headline,
+                          style: textTheme.headlineMedium,
                         ),
                         SpaceH20(),
                         _buildForm()
@@ -61,7 +58,7 @@ class _SignUpScreen2State extends State<SignUpScreen2> {
                     children: <Widget>[
                       Text(
                         StringConst.ALREADY_REGISTERED,
-                        style: textTheme.body1.copyWith(
+                        style: textTheme.bodySmall.copyWith(
                           color: AppColors.blackShade9,
                           fontWeight: FontWeight.w600,
                         ),
@@ -69,7 +66,7 @@ class _SignUpScreen2State extends State<SignUpScreen2> {
                       SpaceW8(),
                       Text(
                         StringConst.LOG_IN,
-                        style: textTheme.body1.copyWith(
+                        style: textTheme.bodySmall.copyWith(
                           color: AppColors.lightBlue,
                           fontWeight: FontWeight.w600,
                         ),
@@ -145,7 +142,7 @@ class _SignUpScreen2State extends State<SignUpScreen2> {
         SpaceH20(),
         CustomButton(
           title: StringConst.REGISTER,
-          textStyle: textTheme.title.copyWith(color: AppColors.white),
+          textStyle: textTheme.titleMedium.copyWith(color: AppColors.white),
           color: AppColors.pinkShade2,
           onPressed: () {},
         ),
@@ -154,7 +151,7 @@ class _SignUpScreen2State extends State<SignUpScreen2> {
         SpaceH16(),
         CustomButton(
           title: StringConst.REGISTER_WITH_GOOGLE,
-          textStyle: textTheme.title,
+          textStyle: textTheme.titleMedium,
           hasIcon: true,
           color: AppColors.white,
           onPressed: () {},
@@ -179,7 +176,7 @@ class _SignUpScreen2State extends State<SignUpScreen2> {
             child: CustomDivider(color: AppColors.black),
           ),
           SpaceW8(),
-          Text(StringConst.OR, style: textTheme.title),
+          Text(StringConst.OR, style: textTheme.titleMedium),
           SpaceW8(),
           Expanded(child: CustomDivider(color: AppColors.black)),
         ],

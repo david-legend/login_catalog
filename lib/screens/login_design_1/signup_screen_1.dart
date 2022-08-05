@@ -96,7 +96,7 @@ class SignUpScreen1 extends StatelessWidget {
       children: <Widget>[
         Text(
           StringConst.SIGN_UP,
-          style: textTheme.headline.copyWith(
+          style: textTheme.headlineMedium.copyWith(
             color: AppColors.blackShade2,
             fontWeight: FontWeight.w900,
           ),
@@ -104,7 +104,7 @@ class SignUpScreen1 extends StatelessWidget {
         SpaceH8(),
         Text(
           StringConst.SIGN_UP_MSG,
-          style: textTheme.subtitle.copyWith(
+          style: textTheme.titleSmall.copyWith(
             color: AppColors.pinkShade1,
             fontSize: Sizes.TEXT_SIZE_16,
             fontWeight: FontWeight.w600,
@@ -171,7 +171,7 @@ class SignUpScreen1 extends StatelessWidget {
           onTap: () => ExtendedNavigator.root.popAndPush(Routes.loginScreen1),
           child: Text(
             StringConst.ALREADY_HAVE_AN_ACCOUNT,
-            style: textTheme.subtitle.copyWith(
+            style: textTheme.titleSmall.copyWith(
               fontSize: Sizes.TEXT_SIZE_14,
               fontWeight: FontWeight.w600,
             ),
@@ -180,7 +180,7 @@ class SignUpScreen1 extends StatelessWidget {
         SpaceH16(),
         Text(
           StringConst.NEED_HELP,
-          style: textTheme.subtitle.copyWith(
+          style: textTheme.titleSmall.copyWith(
             fontSize: Sizes.TEXT_SIZE_14,
             fontWeight: FontWeight.w600,
           ),

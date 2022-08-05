@@ -139,7 +139,7 @@ class _LoginScreen4State extends State<LoginScreen4> {
             ),
             Text(
               StringConst.REMEMBER_ME,
-              style: theme.textTheme.subtitle.copyWith(
+              style: theme.textTheme.titleSmall.copyWith(
                 color: AppColors.blackShade10,
                 fontSize: Sizes.TEXT_SIZE_14,
               ),
@@ -147,7 +147,7 @@ class _LoginScreen4State extends State<LoginScreen4> {
             Spacer(flex: 1),
             Text(
               StringConst.FORGOT_PASSWORD,
-              style: theme.textTheme.subtitle.copyWith(
+              style: theme.textTheme.titleSmall.copyWith(
                 color: AppColors.blackShade10,
                 fontSize: Sizes.TEXT_SIZE_14,
               ),

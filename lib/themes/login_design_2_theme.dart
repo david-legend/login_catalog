@@ -47,46 +47,49 @@ class LoginDesign2Theme {
   static const _light = FontWeight.w300;
 
   static final TextTheme _textTheme = TextTheme(
-    display1: GoogleFonts.comfortaa(
+    displayMedium: GoogleFonts.comfortaa(
       fontSize: Sizes.TEXT_SIZE_44,
       color: AppColors.primaryText,
       fontWeight: _superBold,
       fontStyle: FontStyle.normal,
     ),
-    headline: GoogleFonts.comfortaa(
+    headlineMedium: GoogleFonts.comfortaa(
       fontSize: Sizes.TEXT_SIZE_30,
       color: AppColors.primaryText,
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    subhead: GoogleFonts.comfortaa(
+    titleLarge: GoogleFonts.comfortaa(
       fontSize: Sizes.TEXT_SIZE_18,
       color: AppColors.primaryText,
       fontWeight: _semiBold,
       fontStyle: FontStyle.normal,
     ),
-    title: GoogleFonts.comfortaa(
+    titleMedium: GoogleFonts.comfortaa(
       fontSize: Sizes.TEXT_SIZE_18,
       color: AppColors.primaryText,
       fontWeight: _semiBold,
       fontStyle: FontStyle.normal,
     ),
-    body1: GoogleFonts.comfortaa(
-      fontSize: Sizes.TEXT_SIZE_14,
-      color: AppColors.primaryText,
-      fontWeight: _light,
-      fontStyle: FontStyle.normal,
-    ),
-    button: GoogleFonts.comfortaa(
+    //button
+    bodyLarge: GoogleFonts.comfortaa(
       fontSize: Sizes.TEXT_SIZE_18,
       color: AppColors.primaryText,
       fontStyle: FontStyle.normal,
       fontWeight: _medium,
     ),
-    subtitle: GoogleFonts.comfortaa(
+    //subtitle
+    bodyMedium: GoogleFonts.comfortaa(
       fontSize: Sizes.TEXT_SIZE_16,
       color: AppColors.primaryText,
       fontWeight: _regular,
+      fontStyle: FontStyle.normal,
+    ),
+    //body1
+    bodySmall: GoogleFonts.comfortaa(
+      fontSize: Sizes.TEXT_SIZE_14,
+      color: AppColors.primaryText,
+      fontWeight: _light,
       fontStyle: FontStyle.normal,
     ),
   );

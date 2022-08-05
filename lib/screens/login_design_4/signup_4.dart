@@ -146,7 +146,7 @@ class _SignUp4State extends State<SignUp4> {
                       children: [
                         TextSpan(
                           text: StringConst.ALREADY_HAVE_AN_ACCOUNT,
-                          style: theme.textTheme.subtitle.copyWith(
+                          style: theme.textTheme.titleSmall.copyWith(
                             color: AppColors.greyShade8,
                             fontSize: Sizes.TEXT_SIZE_14,
                             fontWeight: FontWeight.bold,
@@ -154,7 +154,7 @@ class _SignUp4State extends State<SignUp4> {
                         ),
                         TextSpan(
                             text: StringConst.LOG_IN_2,
-                            style: theme.textTheme.subtitle.copyWith(
+                            style: theme.textTheme.titleSmall.copyWith(
                               color: AppColors.purple,
                               fontSize: Sizes.TEXT_SIZE_14,
                               decoration: TextDecoration.underline,

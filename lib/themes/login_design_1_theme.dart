@@ -47,77 +47,76 @@ class LoginDesign1Theme {
   static const _light = FontWeight.w300;
 
   static final TextTheme _textTheme = TextTheme(
-    headline1: GoogleFonts.roboto(
+    displayLarge: GoogleFonts.roboto(
       fontSize: Sizes.TEXT_SIZE_96,
       color: AppColors.primaryText,
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    headline2: GoogleFonts.roboto(
+    displayMedium: GoogleFonts.roboto(
       fontSize: Sizes.TEXT_SIZE_60,
       color: AppColors.primaryText,
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    headline3: GoogleFonts.roboto(
+    displaySmall: GoogleFonts.roboto(
       fontSize: Sizes.TEXT_SIZE_48,
       color: AppColors.primaryText,
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    headline4: GoogleFonts.roboto(
+    headlineLarge: GoogleFonts.roboto(
       fontSize: Sizes.TEXT_SIZE_34,
       color: AppColors.primaryText,
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    headline5: GoogleFonts.roboto(
+    headlineMedium: GoogleFonts.roboto(
       fontSize: Sizes.TEXT_SIZE_24,
       color: AppColors.primaryText,
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    headline6: GoogleFonts.roboto(
+    headlineSmall: GoogleFonts.roboto(
       fontSize: Sizes.TEXT_SIZE_20,
       color: AppColors.primaryText,
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    subtitle1: GoogleFonts.roboto(
+    titleMedium: GoogleFonts.roboto(
       fontSize: Sizes.TEXT_SIZE_16,
       color: AppColors.primaryText,
       fontWeight: _semiBold,
       fontStyle: FontStyle.normal,
     ),
-    subtitle2: GoogleFonts.roboto(
+    titleSmall: GoogleFonts.roboto(
       fontSize: Sizes.TEXT_SIZE_14,
       color: AppColors.primaryText,
       fontWeight: _semiBold,
       fontStyle: FontStyle.normal,
     ),
-    bodyText1: GoogleFonts.roboto(
+    //body1
+    bodyLarge: GoogleFonts.roboto(
       fontSize: Sizes.TEXT_SIZE_16,
       color: AppColors.primaryText,
       fontWeight: _light,
       fontStyle: FontStyle.normal,
     ),
-    bodyText2: GoogleFonts.roboto(
-      fontSize: Sizes.TEXT_SIZE_14,
-      color: AppColors.primaryText,
-      fontWeight: _light,
-      fontStyle: FontStyle.normal,
-    ),
-    button: GoogleFonts.roboto(
+    //button
+    bodyMedium: GoogleFonts.roboto(
       fontSize: Sizes.TEXT_SIZE_14,
       color: AppColors.primaryText,
       fontStyle: FontStyle.normal,
       fontWeight: _medium,
     ),
-    caption: GoogleFonts.roboto(
-      fontSize: Sizes.TEXT_SIZE_12,
-      color: AppColors.white,
-      fontWeight: _regular,
+    //body2
+    bodySmall: GoogleFonts.roboto(
+      fontSize: Sizes.TEXT_SIZE_14,
+      color: AppColors.primaryText,
+      fontWeight: _light,
       fontStyle: FontStyle.normal,
     ),
+
+
   );
 }
