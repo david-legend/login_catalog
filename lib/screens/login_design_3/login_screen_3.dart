@@ -10,9 +10,9 @@ import 'package:logincatalog/widgets/custom_text_form_field.dart';
 import 'package:logincatalog/widgets/spaces.dart';
 
 class LoginScreen3 extends StatefulWidget {
-  LoginScreen3({@required this.themeBloc});
+  LoginScreen3({ this.themeBloc});
 
-  ThemeBloc themeBloc;
+  ThemeBloc? themeBloc;
 
   @override
   _LoginScreen3State createState() => _LoginScreen3State();
@@ -26,7 +26,7 @@ class _LoginScreen3State extends State<LoginScreen3> {
   @override
   void initState() {
     super.initState();
-    widget.themeBloc.selectedTheme.add(_buildLightTheme());
+    widget.themeBloc?.selectedTheme.add(_buildLightTheme());
     WidgetsBinding.instance.addPostFrameCallback((_) {
       // executes after build
       getSizeOfCard();
@@ -131,7 +131,7 @@ class _LoginScreen3State extends State<LoginScreen3> {
                           Text(
                             StringConst.LOG_IN_2,
                             textAlign: TextAlign.center,
-                            style: textTheme.headlineMedium.copyWith(
+                            style: textTheme.headlineMedium?.copyWith(
                               color: AppColors.lightBlueShade5,
                             ),
                           ),
@@ -143,7 +143,7 @@ class _LoginScreen3State extends State<LoginScreen3> {
                                 EdgeInsets.only(left: (widthOfScreen * 0.75)),
                             child: Text(
                               "Forgot ?",
-                              style: textTheme.bodyLarge.copyWith(
+                              style: textTheme.bodyLarge?.copyWith(
                                 fontSize: Sizes.TEXT_SIZE_16,
                                 color: AppColors.lightBlueShade1,
                                 fontWeight: FontWeight.w600,
@@ -157,8 +157,8 @@ class _LoginScreen3State extends State<LoginScreen3> {
                             margin:
                                 EdgeInsets.only(right: (widthOfScreen - 120)),
                             child: RaisedButton(
-                              onPressed: () => ExtendedNavigator.root
-                                  .push(Routes.signUpScreen3),
+                              onPressed: () => AutoRouter.of(context).push(SignUpScreen3Route()),
+
                               color: AppColors.white,
                               elevation: Sizes.ELEVATION_6,
                               shape: RoundedRectangleBorder(
@@ -169,7 +169,7 @@ class _LoginScreen3State extends State<LoginScreen3> {
                               ),
                               child: Text(
                                 StringConst.REGISTER,
-                                style: textTheme.button.copyWith(
+                                style: textTheme.bodyMedium?.copyWith(
                                   color: AppColors.orangeShade1,
                                 ),
                               ),
@@ -188,7 +188,7 @@ class _LoginScreen3State extends State<LoginScreen3> {
     );
   }
 
-  Widget _buildForm({@required BuildContext context}) {
+  Widget _buildForm({required BuildContext context}) {
     var widthOfScreen = MediaQuery.of(context).size.width;
 
     return Container(

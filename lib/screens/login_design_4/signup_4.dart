@@ -10,7 +10,7 @@ import 'package:logincatalog/widgets/custom_button.dart';
 import 'package:logincatalog/widgets/spaces.dart';
 
 class SignUp4 extends StatefulWidget {
-  SignUp4({@required this.themeBloc});
+  SignUp4({required this.themeBloc});
 
   ThemeBloc themeBloc;
 
@@ -47,7 +47,7 @@ class _SignUp4State extends State<SignUp4> {
               Spacer(flex: 1),
               Text(
                 StringConst.SIGN_UP_2,
-                style: theme.textTheme.headline5.copyWith(
+                style: theme.textTheme.headlineMedium?.copyWith(
                   color: AppColors.black,
                   fontSize: Sizes.TEXT_SIZE_40,
                   fontWeight: FontWeight.w600,
@@ -56,7 +56,7 @@ class _SignUp4State extends State<SignUp4> {
               SpaceH8(),
               Text(
                 StringConst.EASY_SIGN_UP,
-                style: theme.textTheme.subtitle2.copyWith(
+                style: theme.textTheme.titleSmall?.copyWith(
                     color: AppColors.greyShade8, fontWeight: FontWeight.bold),
               ),
               Spacer(flex: 1),
@@ -72,7 +72,7 @@ class _SignUp4State extends State<SignUp4> {
                     color: AppColors.white,
                   ),
                   color: AppColors.blue,
-                  textStyle: theme.textTheme.button.copyWith(
+                  textStyle: theme.textTheme.bodyMedium?.copyWith(
                       color: AppColors.white,
                       fontWeight: FontWeight.w600,
                       fontSize: Sizes.TEXT_SIZE_14),
@@ -87,12 +87,12 @@ class _SignUp4State extends State<SignUp4> {
                   elevation: Sizes.ELEVATION_2,
                   color: AppColors.white,
                   borderSide: Borders.customBorder(width: 1.5),
-                  textStyle: theme.textTheme.button.copyWith(
+                  textStyle: theme.textTheme.bodyMedium?.copyWith(
                       color: AppColors.blackShade10,
                       fontWeight: FontWeight.w600,
                       fontSize: Sizes.TEXT_SIZE_14),
                   onPressed: () =>
-                      ExtendedNavigator.root.push(Routes.signUpScreen4),
+                      AutoRouter.of(context).push(SignUpScreen4Route()),
                 ),
               ),
               Spacer(flex: 1),
@@ -138,7 +138,7 @@ class _SignUp4State extends State<SignUp4> {
               ),
               Spacer(flex: 1),
               InkWell(
-                onTap: () => ExtendedNavigator.root.push(Routes.loginScreen4),
+                onTap: () => AutoRouter.of(context).push(LoginScreen4Route()),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: RichText(
@@ -146,7 +146,7 @@ class _SignUp4State extends State<SignUp4> {
                       children: [
                         TextSpan(
                           text: StringConst.ALREADY_HAVE_AN_ACCOUNT,
-                          style: theme.textTheme.titleSmall.copyWith(
+                          style: theme.textTheme.titleSmall?.copyWith(
                             color: AppColors.greyShade8,
                             fontSize: Sizes.TEXT_SIZE_14,
                             fontWeight: FontWeight.bold,
@@ -154,7 +154,7 @@ class _SignUp4State extends State<SignUp4> {
                         ),
                         TextSpan(
                             text: StringConst.LOG_IN_2,
-                            style: theme.textTheme.titleSmall.copyWith(
+                            style: theme.textTheme.titleSmall?.copyWith(
                               color: AppColors.purple,
                               fontSize: Sizes.TEXT_SIZE_14,
                               decoration: TextDecoration.underline,

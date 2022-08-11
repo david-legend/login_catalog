@@ -12,9 +12,9 @@ import 'package:logincatalog/widgets/custom_text_form_field.dart';
 import 'package:logincatalog/widgets/spaces.dart';
 
 class LoginScreen1 extends StatefulWidget {
-  LoginScreen1({@required this.themeBloc});
+  LoginScreen1({ this.themeBloc});
 
-  final ThemeBloc themeBloc;
+  final ThemeBloc? themeBloc;
 
   @override
   _LoginScreen1State createState() => _LoginScreen1State();
@@ -26,7 +26,7 @@ class _LoginScreen1State extends State<LoginScreen1> {
   @override
   void initState() {
     super.initState();
-    widget.themeBloc.selectedTheme.add(_buildLightTheme());
+    widget.themeBloc?.selectedTheme.add(_buildLightTheme());
   }
 
   CurrentTheme _buildLightTheme() {
@@ -104,7 +104,7 @@ class _LoginScreen1State extends State<LoginScreen1> {
       children: <Widget>[
         Text(
           StringConst.WELCOME,
-          style: textTheme.headlineMedium.copyWith(
+          style: textTheme.headlineMedium?.copyWith(
             color: AppColors.white,
             fontWeight: FontWeight.w900,
           ),
@@ -112,7 +112,7 @@ class _LoginScreen1State extends State<LoginScreen1> {
         SpaceH4(),
         Text(
           StringConst.BACK,
-          style: textTheme.headlineMedium.copyWith(
+          style: textTheme.headlineMedium?.copyWith(
             color: AppColors.white,
             fontWeight: FontWeight.w900,
           ),
@@ -120,7 +120,7 @@ class _LoginScreen1State extends State<LoginScreen1> {
         SpaceH4(),
         Text(
           StringConst.SIGN_IN_MSG,
-          style: textTheme.titleSmall.copyWith(
+          style: textTheme.titleSmall?.copyWith(
             color: AppColors.white,
             fontSize: Sizes.TEXT_SIZE_16,
             fontWeight: FontWeight.w600,
@@ -129,7 +129,7 @@ class _LoginScreen1State extends State<LoginScreen1> {
         SizedBox(height: heightOfScreen * 0.075),
         Text(
           StringConst.SIGN_IN,
-          style: textTheme.headlineMedium.copyWith(
+          style: textTheme.headlineMedium?.copyWith(
             color: AppColors.white,
             fontWeight: FontWeight.w900,
           ),
@@ -173,18 +173,19 @@ class _LoginScreen1State extends State<LoginScreen1> {
         SpaceH24(),
         CustomButton(
           title: StringConst.SIGN_ME_IN,
-          textStyle: textTheme.button.copyWith(
+          textStyle: textTheme.bodyLarge?.copyWith(
             color: AppColors.white,
           ),
           onPressed: () {},
         ),
         SpaceH20(),
         InkWell(
-          onTap: () => ExtendedNavigator.root.push(Routes.signUpScreen1),
+          onTap: () => AutoRouter.of(context).push(SignUpScreen1Route()),
+          // ExtendedNavigator.root.push(Routes.signUpScreen1),
           child: Text(
             StringConst.DONT_HAVE_AN_ACCOUNT,
             textAlign: TextAlign.center,
-            style: textTheme.titleSmall.copyWith(
+            style: textTheme.titleSmall?.copyWith(
               fontSize: Sizes.TEXT_SIZE_14,
               color: AppColors.blackShade6,
               fontWeight: FontWeight.w600,
@@ -195,7 +196,7 @@ class _LoginScreen1State extends State<LoginScreen1> {
         Text(
           StringConst.NEED_HELP,
           textAlign: TextAlign.center,
-          style: textTheme.titleSmall.copyWith(
+          style: textTheme.titleSmall?.copyWith(
             fontSize: Sizes.TEXT_SIZE_14,
             color: AppColors.blackShade6,
             fontWeight: FontWeight.w600,

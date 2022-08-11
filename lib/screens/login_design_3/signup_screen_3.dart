@@ -121,8 +121,9 @@ class _SignUpScreen3State extends State<SignUpScreen3> {
                 height: Sizes.HEIGHT_60,
                 width: Sizes.WIDTH_120,
                 child: RaisedButton(
-                  onPressed: () =>
-                      ExtendedNavigator.root.push(Routes.loginScreen3),
+                  onPressed: () => AutoRouter.of(context).push(
+                    LoginScreen3Route(),
+                  ),
                   color: AppColors.white,
                   elevation: Sizes.ELEVATION_6,
                   shape: RoundedRectangleBorder(
@@ -133,7 +134,7 @@ class _SignUpScreen3State extends State<SignUpScreen3> {
                   ),
                   child: Text(
                     StringConst.LOG_IN_2,
-                    style: textTheme.button.copyWith(
+                    style: textTheme.bodyMedium?.copyWith(
                       color: AppColors.orangeShade1,
                     ),
                   ),
@@ -155,7 +156,7 @@ class _SignUpScreen3State extends State<SignUpScreen3> {
                               Text(
                                 StringConst.REGISTER,
                                 textAlign: TextAlign.center,
-                                style: textTheme.headlineMedium.copyWith(
+                                style: textTheme.headlineMedium?.copyWith(
                                   color: AppColors.lightBlueShade5,
                                 ),
                               ),
@@ -176,7 +177,7 @@ class _SignUpScreen3State extends State<SignUpScreen3> {
     );
   }
 
-  Widget _buildForm({@required BuildContext context}) {
+  Widget _buildForm({required BuildContext context}) {
     var widthOfScreen = MediaQuery.of(context).size.width;
 
     return Container(

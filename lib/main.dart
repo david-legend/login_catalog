@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:logincatalog/routes/router.gr.dart';
 import 'package:logincatalog/bloc/theme_bloc.dart';
+import 'package:logincatalog/screens/root_screen.dart';
 
 void main() {
   runApp(
@@ -15,7 +16,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  ThemeBloc _themeBloc;
+  late ThemeBloc _themeBloc;
+  final _appRouter = AppRouter();
 
   @override
   void initState() {
@@ -29,16 +31,21 @@ class _MyAppState extends State<MyApp> {
       initialData: _themeBloc.initialTheme().data,
       stream: _themeBloc.themeDataStream,
       builder: (BuildContext context, AsyncSnapshot<ThemeData> snapshot) {
-        return MaterialApp(
+        return MaterialApp.router(
+          routerDelegate: _appRouter.delegate(
+            placeholder: (context) {
+              return RootScreen(themeBloc: _themeBloc);
+            }
+          ),
+          // routeInformationProvider: _appRouter.routeInfoProvider(
+          //   initialRouteInformation: RouteInformation(
+          //     location: "/",
+          //     state: _themeBloc,
+          //   ),
+          // ),
+          routeInformationParser: _appRouter.defaultRouteParser(),
           debugShowCheckedModeBanner: false,
           theme: snapshot.data,
-          darkTheme: null,
-          builder: ExtendedNavigator<AppRouter>(
-            router: AppRouter(),
-            initialRoute: Routes.rootScreen,
-            initialRouteArgs: RootScreenArguments(themeBloc: _themeBloc),
-//            initialRoute: Routes.loginScreen1,
-          ),
         );
       },
     );

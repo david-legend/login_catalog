@@ -52,13 +52,13 @@ class _SignUpScreen2State extends State<SignUpScreen2> {
                   ),
                 ),
                 InkWell(
-                  onTap: () => ExtendedNavigator.root.push(Routes.loginScreen2),
+                  onTap: () => AutoRouter.of(context).push(LoginScreen2Route()),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
                         StringConst.ALREADY_REGISTERED,
-                        style: textTheme.bodySmall.copyWith(
+                        style: textTheme.bodySmall?.copyWith(
                           color: AppColors.blackShade9,
                           fontWeight: FontWeight.w600,
                         ),
@@ -66,7 +66,7 @@ class _SignUpScreen2State extends State<SignUpScreen2> {
                       SpaceW8(),
                       Text(
                         StringConst.LOG_IN,
-                        style: textTheme.bodySmall.copyWith(
+                        style: textTheme.bodySmall?.copyWith(
                           color: AppColors.lightBlue,
                           fontWeight: FontWeight.w600,
                         ),
@@ -142,7 +142,7 @@ class _SignUpScreen2State extends State<SignUpScreen2> {
         SpaceH20(),
         CustomButton(
           title: StringConst.REGISTER,
-          textStyle: textTheme.titleMedium.copyWith(color: AppColors.white),
+          textStyle: textTheme.titleMedium?.copyWith(color: AppColors.white),
           color: AppColors.pinkShade2,
           onPressed: () {},
         ),

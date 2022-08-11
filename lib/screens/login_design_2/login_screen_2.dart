@@ -10,9 +10,9 @@ import 'package:logincatalog/widgets/custom_text_form_field.dart';
 import 'package:logincatalog/widgets/spaces.dart';
 
 class LoginScreen2 extends StatefulWidget {
-  LoginScreen2({@required this.themeBloc});
+  LoginScreen2({ this.themeBloc});
 
-  ThemeBloc themeBloc;
+  ThemeBloc? themeBloc;
   @override
   _LoginScreen2State createState() => _LoginScreen2State();
 }
@@ -21,7 +21,7 @@ class _LoginScreen2State extends State<LoginScreen2> {
   @override
   void initState() {
     super.initState();
-    widget.themeBloc.selectedTheme.add(_buildLightTheme());
+    widget.themeBloc?.selectedTheme.add(_buildLightTheme());
   }
 
   CurrentTheme _buildLightTheme() {
@@ -65,20 +65,19 @@ class _LoginScreen2State extends State<LoginScreen2> {
                   ),
                 ),
                 InkWell(
-                  onTap: () =>
-                      ExtendedNavigator.root.push(Routes.signUpScreen2),
+                  onTap: () => AutoRouter.of(context).push(SignUpScreen2Route()),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(StringConst.DONT_HAVE_AN_ACCOUNT,
-                          style: textTheme.bodySmall.copyWith(
+                          style: textTheme.bodySmall?.copyWith(
                             color: AppColors.blackShade9,
                             fontWeight: FontWeight.w600,
                           )),
                       SpaceW16(),
                       Text(
                         StringConst.REGISTER,
-                        style: textTheme.bodySmall.copyWith(
+                        style: textTheme.bodySmall?.copyWith(
                           color: AppColors.lightBlue,
                           fontWeight: FontWeight.w600,
                         ),
@@ -127,7 +126,7 @@ class _LoginScreen2State extends State<LoginScreen2> {
           children: <Widget>[
             Text(
               StringConst.FORGOT_PASSWORD,
-              style: textTheme.bodySmall.copyWith(
+              style: textTheme.bodySmall?.copyWith(
                 color: AppColors.lightBlue,
               ),
             ),
@@ -136,7 +135,7 @@ class _LoginScreen2State extends State<LoginScreen2> {
         SpaceH20(),
         CustomButton(
           title: StringConst.SIGN_IN,
-          textStyle: textTheme.titleMedium.copyWith(color: AppColors.white),
+          textStyle: textTheme.titleMedium?.copyWith(color: AppColors.white),
           color: AppColors.pinkShade2,
           onPressed: () {},
         ),

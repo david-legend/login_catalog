@@ -7,14 +7,13 @@ import 'package:logincatalog/values/values.dart';
 import 'package:logincatalog/widgets/custom_shape_clippers.dart';
 
 class RootScreen extends StatelessWidget {
-  RootScreen({@required this.themeBloc});
+  RootScreen({required this.themeBloc});
 
   final ThemeBloc themeBloc;
 
   @override
   Widget build(BuildContext context) {
     var heightOfScreen = MediaQuery.of(context).size.height;
-    var widthOfScreen = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -37,81 +36,71 @@ class RootScreen extends StatelessWidget {
                   context: context,
                   title: "Login Design 1",
                   imageUrl: ImagePath.LOGIN_1,
-                  navigate: () => ExtendedNavigator.root.push(
-                    Routes.loginScreen1,
-                    arguments: LoginScreen1Arguments(themeBloc: themeBloc),
+                  navigate: () => AutoRouter.of(context).push(
+                    LoginScreen1Route(themeBloc: themeBloc),
                   ),
                 ),
                 designCard(
                   context: context,
                   title: "Login Design 2",
                   imageUrl: ImagePath.LOGIN_2,
-                  navigate: () => ExtendedNavigator.root.push(
-                    Routes.loginScreen2,
-                    arguments: LoginScreen2Arguments(themeBloc: themeBloc),
+                  navigate: () => AutoRouter.of(context).push(
+                    LoginScreen2Route(themeBloc: themeBloc),
                   ),
                 ),
                 designCard(
-                  context: context,
-                  title: "Login Design 3",
-                  imageUrl: ImagePath.LOGIN_3,
-                  navigate: () => ExtendedNavigator.root.push(
-                    Routes.loginScreen3,
-                    arguments: LoginScreen3Arguments(themeBloc: themeBloc),
-                  ),
-                ),
+                    context: context,
+                    title: "Login Design 3",
+                    imageUrl: ImagePath.LOGIN_3,
+                    navigate: () => AutoRouter.of(context).push(
+                          LoginScreen3Route(themeBloc: themeBloc),
+                        )),
                 designCard(
                   context: context,
                   title: "Login Design 4",
                   imageUrl: ImagePath.LOGIN_4,
-                  navigate: () => ExtendedNavigator.root.push(
-                    Routes.signUp4,
-                    arguments: SignUp4Arguments(themeBloc: themeBloc),
+                  navigate: () => AutoRouter.of(context).push(
+                    SignUp4Route(themeBloc: themeBloc),
                   ),
                 ),
                 designCard(
                   context: context,
                   title: "Login Design 5",
                   imageUrl: ImagePath.LOGIN_5,
-                  navigate: () => ExtendedNavigator.root.push(
-                    Routes.loginScreen5,
-                    arguments: LoginScreen5Arguments(themeBloc: themeBloc),
+                  navigate: () => AutoRouter.of(context).push(
+                    LoginScreen5Route(themeBloc: themeBloc),
                   ),
                 ),
                 designCard(
                   context: context,
                   title: "Login Design 6",
                   imageUrl: ImagePath.LOGIN_6,
-                  navigate: () => ExtendedNavigator.root.push(
-                    Routes.loginScreen6,
-                    arguments: LoginScreen6Arguments(themeBloc: themeBloc),
+                  navigate: () => AutoRouter.of(context).push(
+                    LoginScreen6Route(themeBloc: themeBloc),
                   ),
                 ),
                 designCard(
                   context: context,
                   title: "Login Design 7",
                   imageUrl: ImagePath.LOGIN_7,
-                  navigate: () => ExtendedNavigator.root.push(
-                    Routes.registerScreen7,
-                    arguments: RegisterScreen7Arguments(themeBloc: themeBloc),
+                  navigate: () => AutoRouter.of(context).push(
+                    RegisterScreen7Route(themeBloc: themeBloc),
                   ),
                 ),
                 designCard(
                   context: context,
                   title: "Login Design 8",
                   imageUrl: ImagePath.LOGIN_8,
-                  navigate: () => ExtendedNavigator.root.push(
-                    Routes.loginScreen8,
-                    arguments: LoginScreen8Arguments(themeBloc: themeBloc),
+                  navigate: () => AutoRouter.of(context).push(
+                    LoginScreen8Route(themeBloc: themeBloc),
                   ),
                 ),
                 designCard(
                   context: context,
                   title: "Login Design 9",
                   imageUrl: ImagePath.LOGIN_9,
-                  navigate: () => ExtendedNavigator.root.push(
-                    Routes.loginScreen9,
-                    arguments: LoginScreen9Arguments(themeBloc: themeBloc),
+                  navigate: () => AutoRouter.of(context).push(
+                    LoginScreen9Route(themeBloc: themeBloc),
                   ),
                 ),
               ],
@@ -122,15 +111,11 @@ class RootScreen extends StatelessWidget {
     );
   }
 
-  navigate(String routeName, Object arguments) {
-    ExtendedNavigator.root.push(routeName, arguments: arguments);
-  }
-
   Widget designCard({
-    @required BuildContext context,
-    @required String title,
-    @required String imageUrl,
-    Function() navigate,
+    required BuildContext context,
+    required String title,
+    required String imageUrl,
+    required Function() navigate,
   }) {
     var heightOfScreen = MediaQuery.of(context).size.height;
     var widthOfScreen = MediaQuery.of(context).size.width;

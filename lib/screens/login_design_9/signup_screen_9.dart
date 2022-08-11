@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:logincatalog/layout/adaptive.dart';
-import 'package:logincatalog/routes/router.gr.dart';
 import 'package:logincatalog/values/values.dart';
 import 'package:logincatalog/widgets/custom_painters.dart';
 import 'package:logincatalog/widgets/custom_text_form_field.dart';
@@ -56,11 +55,11 @@ class _SignUpScreen9State extends State<SignUpScreen9> {
                             tearDropAlignment: TearDropAlignment.bottomRight,
                             style: PaintingStyle.stroke,
                             color: AppColors.indigo200,
-                            buttonTextStyle: theme.textTheme.bodyText1.copyWith(
+                            buttonTextStyle: theme.textTheme.bodyLarge?.copyWith(
                               color: AppColors.indigo200,
                             ),
                             onTap: () {
-                              ExtendedNavigator.root.pop();
+                              AutoRouter.of(context).pop();
                             },
                           ),
                         ),
@@ -82,7 +81,7 @@ class _SignUpScreen9State extends State<SignUpScreen9> {
                 alignment: Alignment.center,
                 child: Text(
                   StringConst.ALREADY_HAVE_AN_ACCOUNT,
-                  style: theme.textTheme.bodyText1.copyWith(
+                  style: theme.textTheme.bodyLarge?.copyWith(
                     color: AppColors.indigo200,
                   ),
                 ),
@@ -126,13 +125,13 @@ class _SignUpScreen9State extends State<SignUpScreen9> {
               children: [
                 Text(
                   StringConst.GET_STARTED,
-                  style: theme.textTheme.headline5.copyWith(
+                  style: theme.textTheme.headlineMedium?.copyWith(
                     color: AppColors.white,
                   ),
                 ),
                 Text(
                   StringConst.CREATE_ACCOUNT,
-                  style: theme.textTheme.bodyText1.copyWith(
+                  style: theme.textTheme.bodyLarge?.copyWith(
                     color: AppColors.white,
                   ),
                 ),
@@ -146,10 +145,10 @@ class _SignUpScreen9State extends State<SignUpScreen9> {
 
   Widget _buildForm() {
     ThemeData theme = Theme.of(context);
-    TextStyle titleTextStyle = theme.textTheme.subtitle2.copyWith(
+    TextStyle? titleTextStyle = theme.textTheme.titleSmall?.copyWith(
       color: AppColors.orangeShade6,
     );
-    TextStyle hintTextStyle = theme.textTheme.bodyText1.copyWith(
+    TextStyle? hintTextStyle = theme.textTheme.bodyLarge?.copyWith(
       color: AppColors.indigo200,
     );
     UnderlineInputBorder customUnderlineInputBorder =

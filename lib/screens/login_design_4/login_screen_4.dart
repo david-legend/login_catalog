@@ -53,14 +53,14 @@ class _LoginScreen4State extends State<LoginScreen4> {
                         ),
                         Text(
                           StringConst.WELCOME_BACK,
-                          style: theme.textTheme.headline6.copyWith(
+                          style: theme.textTheme.headlineSmall?.copyWith(
                             fontSize: Sizes.TEXT_SIZE_20,
                             color: AppColors.white,
                           ),
                         ),
                         Text(
                           StringConst.LOG_IN_5,
-                          style: theme.textTheme.headline4.copyWith(
+                          style: theme.textTheme.headlineLarge?.copyWith(
                             color: AppColors.white,
                           ),
                         ),
@@ -139,7 +139,7 @@ class _LoginScreen4State extends State<LoginScreen4> {
             ),
             Text(
               StringConst.REMEMBER_ME,
-              style: theme.textTheme.titleSmall.copyWith(
+              style: theme.textTheme.titleSmall?.copyWith(
                 color: AppColors.blackShade10,
                 fontSize: Sizes.TEXT_SIZE_14,
               ),
@@ -147,7 +147,7 @@ class _LoginScreen4State extends State<LoginScreen4> {
             Spacer(flex: 1),
             Text(
               StringConst.FORGOT_PASSWORD,
-              style: theme.textTheme.titleSmall.copyWith(
+              style: theme.textTheme.titleSmall?.copyWith(
                 color: AppColors.blackShade10,
                 fontSize: Sizes.TEXT_SIZE_14,
               ),
@@ -161,7 +161,7 @@ class _LoginScreen4State extends State<LoginScreen4> {
           child: CustomButton(
             title: StringConst.LOG_IN,
             elevation: Sizes.ELEVATION_8,
-            textStyle: theme.textTheme.subtitle2.copyWith(
+            textStyle: theme.textTheme.titleMedium?.copyWith(
               color: AppColors.white,
               fontWeight: FontWeight.w600,
             ),

@@ -10,6 +10,8 @@ import 'package:logincatalog/widgets/custom_text_form_field.dart';
 import 'package:logincatalog/widgets/spaces.dart';
 
 class SignUpScreen1 extends StatelessWidget {
+
+
   @override
   Widget build(BuildContext context) {
     var heightOfAppBar = 56.0;
@@ -20,7 +22,7 @@ class SignUpScreen1 extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: AppColors.greyShade2,
         leading: IconButton(
-          onPressed: () => ExtendedNavigator.root.pop(),
+          onPressed: () => AutoRouter.of(context).pop(),
           icon: Icon(Icons.arrow_back_ios),
         ),
         elevation: Sizes.ELEVATION_0,
@@ -96,7 +98,7 @@ class SignUpScreen1 extends StatelessWidget {
       children: <Widget>[
         Text(
           StringConst.SIGN_UP,
-          style: textTheme.headlineMedium.copyWith(
+          style: textTheme.headlineMedium?.copyWith(
             color: AppColors.blackShade2,
             fontWeight: FontWeight.w900,
           ),
@@ -104,7 +106,7 @@ class SignUpScreen1 extends StatelessWidget {
         SpaceH8(),
         Text(
           StringConst.SIGN_UP_MSG,
-          style: textTheme.titleSmall.copyWith(
+          style: textTheme.titleSmall?.copyWith(
             color: AppColors.pinkShade1,
             fontSize: Sizes.TEXT_SIZE_16,
             fontWeight: FontWeight.w600,
@@ -161,17 +163,17 @@ class SignUpScreen1 extends StatelessWidget {
         CustomButton(
           title: StringConst.SIGN_ME_UP,
           color: AppColors.blackShade5,
-          textStyle: textTheme.button.copyWith(
+          textStyle: textTheme.bodyLarge?.copyWith(
             color: AppColors.white,
           ),
           onPressed: () {},
         ),
         SpaceH20(),
         InkWell(
-          onTap: () => ExtendedNavigator.root.popAndPush(Routes.loginScreen1),
+          onTap: () => AutoRouter.of(context).pop(),
           child: Text(
             StringConst.ALREADY_HAVE_AN_ACCOUNT,
-            style: textTheme.titleSmall.copyWith(
+            style: textTheme.titleSmall?.copyWith(
               fontSize: Sizes.TEXT_SIZE_14,
               fontWeight: FontWeight.w600,
             ),
@@ -180,7 +182,7 @@ class SignUpScreen1 extends StatelessWidget {
         SpaceH16(),
         Text(
           StringConst.NEED_HELP,
-          style: textTheme.titleSmall.copyWith(
+          style: textTheme.titleSmall?.copyWith(
             fontSize: Sizes.TEXT_SIZE_14,
             fontWeight: FontWeight.w600,
           ),

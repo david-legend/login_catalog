@@ -1,4 +1,4 @@
-import 'package:auto_route/auto_route_annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/foundation.dart';
 import 'package:logincatalog/bloc/theme_bloc.dart';
 import 'package:logincatalog/screens/login_design_1/login_screen_1.dart';
@@ -20,42 +20,11 @@ import 'package:logincatalog/screens/login_design_9/login_screen_9.dart';
 import 'package:logincatalog/screens/login_design_9/signup_screen_9.dart';
 import 'package:logincatalog/screens/root_screen.dart';
 
-//@MaterialAutoRouter()
-//class $AppRouter {
-//  @initial
-//  RootScreen rootScreen;
-//
-//  LoginScreen1 loginScreen1;
-//  SignUpScreen1 signUpScreen1;
-//
-//  LoginScreen2 loginScreen2;
-//  SignUpScreen2 signUpScreen2;
-//
-//  SignUpScreen3 signUpScreen3;
-//  LoginScreen3 loginScreen3;
-//
-//  LoginScreen4 loginScreen4;
-//  SignUp4 signUp4;
-//  SignUpScreen4 signUpScreen4;
-//
-//  LoginScreen5 loginScreen5;
-//  SignUpScreen5 signUpScreen5;
-//
-//  LoginScreen6 loginScreen6;
-//  SignUpScreen6 signUpScreen6;
-//
-//  RegisterScreen7 registerScreen7;
-//
-//  LoginScreen8 loginScreen8;
-//
-//  LoginScreen9 loginScreen9;
-//  SignUpScreen9 signUpScreen9;
-//}
 
 @MaterialAutoRouter(
   routes: <AutoRoute>[
     // initial route is named "/"
-    MaterialRoute(page: RootScreen, initial: true),
+    MaterialRoute(page: RootScreen, initial: true, ),
 
     MaterialRoute(page: LoginScreen1),
     MaterialRoute(page: SignUpScreen1),
@@ -89,5 +58,5 @@ class $AppRouter {}
 //ScreenArguments arguments holder class
 class ScreenArguments {
   final ThemeBloc themeBloc;
-  ScreenArguments({@required this.themeBloc});
+  ScreenArguments({required this.themeBloc});
 }

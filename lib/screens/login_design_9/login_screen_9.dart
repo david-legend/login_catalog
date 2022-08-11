@@ -13,7 +13,7 @@ import 'package:logincatalog/widgets/tear_drop_button.dart';
 
 class LoginScreen9 extends StatefulWidget {
   LoginScreen9({
-    @required this.themeBloc,
+    required this.themeBloc,
   });
 
   final ThemeBloc themeBloc;
@@ -82,11 +82,11 @@ class _LoginScreen9State extends State<LoginScreen9> {
                             tearDropAlignment: TearDropAlignment.bottomLeft,
                             style: PaintingStyle.stroke,
                             color: AppColors.indigo200,
-                            buttonTextStyle: theme.textTheme.bodyText1.copyWith(
+                            buttonTextStyle: theme.textTheme.bodyLarge?.copyWith(
                               color: AppColors.indigo200,
                             ),
                             onTap: () {
-                              ExtendedNavigator.root.push(Routes.signUpScreen9);
+                              AutoRouter.of(context).push(SignUpScreen9Route());
                             },
                           ),
                         )
@@ -100,7 +100,7 @@ class _LoginScreen9State extends State<LoginScreen9> {
                 alignment: Alignment.center,
                 child: Text(
                   StringConst.DONT_HAVE_AN_ACCOUNT,
-                  style: theme.textTheme.bodyText1.copyWith(
+                  style: theme.textTheme.bodyLarge?.copyWith(
                     color: AppColors.indigo200,
                   ),
                 ),
@@ -144,13 +144,13 @@ class _LoginScreen9State extends State<LoginScreen9> {
               children: [
                 Text(
                   StringConst.GET_STARTED,
-                  style: theme.textTheme.headline5.copyWith(
+                  style: theme.textTheme.headlineMedium?.copyWith(
                     color: AppColors.white,
                   ),
                 ),
                 Text(
                   StringConst.LOGIN_MSG_2,
-                  style: theme.textTheme.bodyText1.copyWith(
+                  style: theme.textTheme.bodyLarge?.copyWith(
                     color: AppColors.white,
                   ),
                 ),
@@ -164,10 +164,10 @@ class _LoginScreen9State extends State<LoginScreen9> {
 
   Widget _buildForm() {
     ThemeData theme = Theme.of(context);
-    TextStyle titleTextStyle = theme.textTheme.subtitle2.copyWith(
+    TextStyle? titleTextStyle = theme.textTheme.titleMedium?.copyWith(
       color: AppColors.orangeShade6,
     );
-    TextStyle hintTextStyle = theme.textTheme.bodyText1.copyWith(
+    TextStyle? hintTextStyle = theme.textTheme.bodyLarge?.copyWith(
       color: AppColors.indigo200,
     );
     UnderlineInputBorder customUnderlineInputBorder =

@@ -12,7 +12,7 @@ import 'package:logincatalog/widgets/custom_text_form_field.dart';
 import 'package:logincatalog/widgets/spaces.dart';
 
 class RegisterScreen7 extends StatefulWidget {
-  RegisterScreen7({@required this.themeBloc});
+  RegisterScreen7({required this.themeBloc});
 
   final ThemeBloc themeBloc;
 
@@ -62,8 +62,8 @@ class _RegisterScreen7State extends State<RegisterScreen7> {
                       right: widthOfScreen * 0.3,
                     ),
                     child: TabBar(
-                      labelStyle: theme.textTheme.subtitle1
-                          .copyWith(color: AppColors.violet),
+                      labelStyle: theme.textTheme.titleMedium
+                          ?.copyWith(color: AppColors.violet),
                       indicatorColor: AppColors.violet,
                       labelColor: AppColors.violet,
                       unselectedLabelColor: AppColors.violetShade1,
@@ -169,7 +169,7 @@ class _RegisterScreen7State extends State<RegisterScreen7> {
               textFormFieldMargin: EdgeInsets.only(left: Sizes.MARGIN_26),
               hasTitle: true,
               title: StringConst.USER_NAME,
-              titleStyle: theme.textTheme.subtitle1.copyWith(
+              titleStyle: theme.textTheme.titleMedium?.copyWith(
                 color: AppColors.violet,
                 fontSize: Sizes.TEXT_SIZE_14,
               ),
@@ -203,7 +203,7 @@ class _RegisterScreen7State extends State<RegisterScreen7> {
               textFormFieldMargin: EdgeInsets.only(left: Sizes.MARGIN_26),
               hasTitle: true,
               title: StringConst.PASSWORD,
-              titleStyle: theme.textTheme.subtitle1.copyWith(
+              titleStyle: theme.textTheme.titleMedium?.copyWith(
                 color: AppColors.violet,
                 fontSize: Sizes.TEXT_SIZE_14,
               ),
@@ -231,7 +231,7 @@ class _RegisterScreen7State extends State<RegisterScreen7> {
             child: CustomButton(
               title: StringConst.LOG_IN_2,
               color: AppColors.violet,
-              textStyle: theme.textTheme.button.copyWith(
+              textStyle: theme.textTheme.bodyMedium?.copyWith(
                 color: AppColors.white,
                 fontSize: Sizes.TEXT_SIZE_16,
               ),
@@ -262,7 +262,7 @@ class _RegisterScreen7State extends State<RegisterScreen7> {
               textFormFieldMargin: EdgeInsets.only(left: Sizes.MARGIN_26),
               hasTitle: true,
               title: StringConst.USER_NAME,
-              titleStyle: theme.textTheme.subtitle1.copyWith(
+              titleStyle: theme.textTheme.titleMedium?.copyWith(
                 color: AppColors.violet,
                 fontSize: Sizes.TEXT_SIZE_14,
               ),
@@ -296,7 +296,7 @@ class _RegisterScreen7State extends State<RegisterScreen7> {
               textFormFieldMargin: EdgeInsets.only(left: Sizes.MARGIN_26),
               hasTitle: true,
               title: StringConst.PASSWORD,
-              titleStyle: theme.textTheme.subtitle1.copyWith(
+              titleStyle: theme.textTheme.titleMedium?.copyWith(
                 color: AppColors.violet,
                 fontSize: Sizes.TEXT_SIZE_14,
               ),
@@ -331,7 +331,7 @@ class _RegisterScreen7State extends State<RegisterScreen7> {
               textFormFieldMargin: EdgeInsets.only(left: Sizes.MARGIN_26),
               hasTitle: true,
               title: StringConst.EMAIL_2,
-              titleStyle: theme.textTheme.subtitle1.copyWith(
+              titleStyle: theme.textTheme.titleMedium?.copyWith(
                 color: AppColors.violet,
                 fontSize: Sizes.TEXT_SIZE_14,
               ),
@@ -358,7 +358,7 @@ class _RegisterScreen7State extends State<RegisterScreen7> {
             child: CustomButton(
               title: StringConst.REGISTER,
               color: AppColors.violet,
-              textStyle: theme.textTheme.button.copyWith(
+              textStyle: theme.textTheme.bodyMedium?.copyWith(
                 color: AppColors.white,
                 fontSize: Sizes.TEXT_SIZE_16,
               ),

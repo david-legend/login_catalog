@@ -6,7 +6,6 @@ class CustomButton extends StatelessWidget {
   CustomButton({
     this.title,
     this.onPressed,
-//    this.width = Sizes.WIDTH_150,
     this.height = Sizes.HEIGHT_50,
     this.elevation = Sizes.ELEVATION_1,
     this.borderRadius = Sizes.RADIUS_24,
@@ -15,18 +14,18 @@ class CustomButton extends StatelessWidget {
     this.textStyle,
     this.icon,
     this.hasIcon = false,
-  });
+  }) : assert((hasIcon == true && icon != null) ||
+            (hasIcon == false && icon == null));
 
-  final VoidCallback onPressed;
-//  final double width;
+  final VoidCallback? onPressed;
   final double height;
   final double elevation;
   final double borderRadius;
-  final String title;
+  final String? title;
   final Color color;
   final BorderSide borderSide;
-  final TextStyle textStyle;
-  final Widget icon;
+  final TextStyle? textStyle;
+  final Widget? icon;
   final bool hasIcon;
 
   @override
@@ -34,7 +33,6 @@ class CustomButton extends StatelessWidget {
     return MaterialButton(
       onPressed: onPressed,
       elevation: elevation,
-//      minWidth: width ?? MediaQuery.of(context).size.width,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(borderRadius),
         side: borderSide,
@@ -45,11 +43,11 @@ class CustomButton extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          hasIcon ? icon : Container(),
+          hasIcon ? icon! : Container(),
           hasIcon ? SpaceW8() : Container(),
           title != null
               ? Text(
-                  title,
+                  title!,
                   style: textStyle,
                 )
               : Container(),

@@ -28,8 +28,7 @@ class OutlineInputBorder2 extends InputBorder {
     BorderSide borderSide = const BorderSide(),
     this.borderRadius = const BorderRadius.all(Radius.circular(4.0)),
     this.gapPadding = 2.0,
-  }) : assert(borderRadius != null),
-        assert(gapPadding != null && gapPadding >= 0.0),
+  })  : assert(gapPadding >= 0.0),
         super(borderSide: borderSide);
 
   // The label text's gap can extend into the corners (even both the top left
@@ -39,10 +38,10 @@ class OutlineInputBorder2 extends InputBorder {
   //
   // This can't be checked by the constructor because const constructor.
   static bool _cornersAreCircular(BorderRadius borderRadius) {
-    return borderRadius.topLeft.x == borderRadius.topLeft.y
-        && borderRadius.bottomLeft.x == borderRadius.bottomLeft.y
-        && borderRadius.topRight.x == borderRadius.topRight.y
-        && borderRadius.bottomRight.x == borderRadius.bottomRight.y;
+    return borderRadius.topLeft.x == borderRadius.topLeft.y &&
+        borderRadius.bottomLeft.x == borderRadius.bottomLeft.y &&
+        borderRadius.topRight.x == borderRadius.topRight.y &&
+        borderRadius.bottomRight.x == borderRadius.bottomRight.y;
   }
 
   /// Horizontal padding on either side of the border's
@@ -62,9 +61,9 @@ class OutlineInputBorder2 extends InputBorder {
 
   @override
   OutlineInputBorder2 copyWith({
-    BorderSide borderSide,
-    BorderRadius borderRadius,
-    double gapPadding,
+    BorderSide? borderSide,
+    BorderRadius? borderRadius,
+    double? gapPadding,
   }) {
     return OutlineInputBorder2(
       borderSide: borderSide ?? this.borderSide,
@@ -88,11 +87,11 @@ class OutlineInputBorder2 extends InputBorder {
   }
 
   @override
-  ShapeBorder lerpFrom(ShapeBorder a, double t) {
+  ShapeBorder? lerpFrom(ShapeBorder? a, double t) {
     if (a is OutlineInputBorder2) {
       final OutlineInputBorder2 outline = a;
       return OutlineInputBorder2(
-        borderRadius: BorderRadius.lerp(outline.borderRadius, borderRadius, t),
+        borderRadius: BorderRadius.lerp(outline.borderRadius, borderRadius, t)!,
         borderSide: BorderSide.lerp(outline.borderSide, borderSide, t),
         gapPadding: outline.gapPadding,
       );
@@ -101,11 +100,11 @@ class OutlineInputBorder2 extends InputBorder {
   }
 
   @override
-  ShapeBorder lerpTo(ShapeBorder b, double t) {
+  ShapeBorder? lerpTo(ShapeBorder? b, double t) {
     if (b is OutlineInputBorder2) {
       final OutlineInputBorder2 outline = b;
       return OutlineInputBorder2(
-        borderRadius: BorderRadius.lerp(borderRadius, outline.borderRadius, t),
+        borderRadius: BorderRadius.lerp(borderRadius, outline.borderRadius, t)!,
         borderSide: BorderSide.lerp(borderSide, outline.borderSide, t),
         gapPadding: outline.gapPadding,
       );
@@ -114,18 +113,21 @@ class OutlineInputBorder2 extends InputBorder {
   }
 
   @override
-  Path getInnerPath(Rect rect, { TextDirection textDirection }) {
+  Path getInnerPath(Rect rect, {TextDirection? textDirection}) {
     return Path()
-      ..addRRect(borderRadius.resolve(textDirection).toRRect(rect).deflate(borderSide.width));
+      ..addRRect(borderRadius
+          .resolve(textDirection)
+          .toRRect(rect)
+          .deflate(borderSide.width));
   }
 
   @override
-  Path getOuterPath(Rect rect, { TextDirection textDirection }) {
-    return Path()
-      ..addRRect(borderRadius.resolve(textDirection).toRRect(rect));
+  Path getOuterPath(Rect rect, {TextDirection? textDirection}) {
+    return Path()..addRRect(borderRadius.resolve(textDirection).toRRect(rect));
   }
 
-  Path _gapBorderPath(Canvas canvas, RRect center, double start, double extent) {
+  Path _gapBorderPath(
+      Canvas canvas, RRect center, double start, double extent) {
     // When the corner radii on any side add up to be greater than the
     // given height, each radius has to be scaled to not exceed the
     // size of the width/height of the RRect.
@@ -200,14 +202,13 @@ class OutlineInputBorder2 extends InputBorder {
   /// The gap's width is `(gapPadding + gapExtent + gapPadding) * gapPercentage`.
   @override
   void paint(
-      Canvas canvas,
-      Rect rect, {
-        double gapStart,
-        double gapExtent = 0.0,
-        double gapPercentage = 0.0,
-        TextDirection textDirection,
-      }) {
-    assert(gapExtent != null);
+    Canvas canvas,
+    Rect rect, {
+    double gapExtent = 0.0,
+    double gapPercentage = 0.0,
+    double? gapStart,
+    TextDirection? textDirection,
+  }) {
     assert(gapPercentage >= 0.0 && gapPercentage <= 1.0);
     assert(_cornersAreCircular(borderRadius));
 
@@ -217,16 +218,21 @@ class OutlineInputBorder2 extends InputBorder {
     if (gapStart == null || gapExtent <= 0.0 || gapPercentage == 0.0) {
       canvas.drawRRect(center, paint);
     } else {
-      final double extent = lerpDouble(0.0, gapExtent + gapPadding * 2.0, gapPercentage);
+      final double extent =
+          lerpDouble(0.0, gapExtent + gapPadding * 2.0, gapPercentage)!;
       switch (textDirection) {
         case TextDirection.rtl:
-          final Path path = _gapBorderPath(canvas, center, math.max(0.0, gapStart + gapPadding - extent), extent);
+          final Path path = _gapBorderPath(canvas, center,
+              math.max(0.0, gapStart + gapPadding - extent), extent);
           canvas.drawPath(path, paint);
           break;
 
         case TextDirection.ltr:
-          final Path path = _gapBorderPath(canvas, center, math.max(0.0, gapStart - gapPadding), extent);
+          final Path path = _gapBorderPath(
+              canvas, center, math.max(0.0, gapStart - gapPadding), extent);
           canvas.drawPath(path, paint);
+          break;
+        default:
           break;
       }
     }
@@ -234,14 +240,12 @@ class OutlineInputBorder2 extends InputBorder {
 
   @override
   bool operator ==(dynamic other) {
-    if (identical(this, other))
-      return true;
-    if (runtimeType != other.runtimeType)
-      return false;
+    if (identical(this, other)) return true;
+    if (runtimeType != other.runtimeType) return false;
     final OutlineInputBorder2 typedOther = other;
-    return typedOther.borderSide == borderSide
-        && typedOther.borderRadius == borderRadius
-        && typedOther.gapPadding == gapPadding;
+    return typedOther.borderSide == borderSide &&
+        typedOther.borderRadius == borderRadius &&
+        typedOther.gapPadding == gapPadding;
   }
 
   @override
